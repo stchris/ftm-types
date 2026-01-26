@@ -86,6 +86,11 @@ impl CodeGenerator {
             use serde::{Deserialize, Serialize};
             #[cfg(feature = "rand")] use enum_derived::Rand;
 
+            #[cfg(feature = "rand")]
+            fn default_json_value() -> Option<serde_json::Value> {
+                Some(serde_json::Value::Object(serde_json::Map::new()))
+            }
+
             #(#structs)*
         })
     }
@@ -126,6 +131,13 @@ impl CodeGenerator {
 
             let field_type = self.map_property_type(prop_type);
 
+            // Add custom_rand attribute for serde_json::Value fields
+            let custom_rand_attr = if prop_type == "json" {
+                quote! { #[cfg_attr(feature = "rand", custom_rand(default_json_value))] }
+            } else {
+                quote! {}
+            };
+
             let field_doc = if let Some(label) = &property.label {
                 format!("Property: {}", label)
             } else {
@@ -135,6 +147,7 @@ impl CodeGenerator {
             fields.push(quote! {
                 #[doc = #field_doc]
                 #[serde(skip_serializing_if = "Option::is_none")]
+                #custom_rand_attr
                 pub #field_name: #field_type
             });
         }

@@ -45,7 +45,10 @@ fn print_usage() {
     eprintln!("Usage: ftm-types [SCHEMA_VERSION]");
     eprintln!();
     eprintln!("Arguments:");
-    eprintln!("  SCHEMA_VERSION  Schema version to use (required, one of {})", get_available_versions().join(", "));
+    eprintln!(
+        "  SCHEMA_VERSION  Schema version to use (required, one of {})",
+        get_available_versions().join(", ")
+    );
     eprintln!("Hint: run ./download.sh <version> to download schema files.")
 }
 
@@ -59,7 +62,10 @@ pub fn main() -> anyhow::Result<()> {
     }
 
     // Parse arguments
-    let schema_version = args.get(1).map(|s| s.as_str()).context("schema version is required")?;
+    let schema_version = args
+        .get(1)
+        .map(|s| s.as_str())
+        .context("schema version is required")?;
 
     // Validate and get schema path
     let schema_path = validate_schema_version(schema_version)?;

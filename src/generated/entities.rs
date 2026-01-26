@@ -2,6 +2,10 @@
 use serde::{Deserialize, Serialize};
 #[cfg(feature = "rand")]
 use enum_derived::Rand;
+#[cfg(feature = "rand")]
+fn default_json_value() -> Option<serde_json::Value> {
+    Some(serde_json::Value::Object(serde_json::Map::new()))
+}
 ///FTM Schema: Address
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 #[cfg_attr(feature = "rand", derive(Rand))]
@@ -2277,6 +2281,7 @@ pub struct Email {
     pub from: Option<Vec<String>>,
     ///Property: Raw headers
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
     pub headers: Option<serde_json::Value>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3717,6 +3722,7 @@ pub struct Message {
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Metadata
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
     pub metadata: Option<serde_json::Value>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6251,6 +6257,7 @@ pub struct Table {
     pub body_text: Option<Vec<String>>,
     ///Property: Column headings
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
     pub columns: Option<serde_json::Value>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
