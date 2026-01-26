@@ -237,8 +237,13 @@ impl ResolvedSchema {
 
 #[cfg(test)]
 mod tests {
+    use crate::FtmEntity;
+
     use super::*;
-    use std::io::Write;
+    use std::{
+        fs::File,
+        io::{BufRead, BufReader, Write},
+    };
     use tempfile::TempDir;
 
     fn create_test_schema(dir: &Path, name: &str, yaml: &str) {
@@ -857,5 +862,33 @@ properties:
         assert_eq!(value_prop.label, Some("Overridden Value".to_string()));
         assert_eq!(value_prop.type_, Some("number".to_string()));
         assert_eq!(value_prop.description, Some("New description".to_string()));
+    }
+
+    #[test]
+    fn test_sample_sponsoring() {
+        // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sponsoring/
+        let test_file = "sample/de_abgeordnetenwatch_sponsoring.ftm.json";
+        let test_file = BufReader::new(File::open(test_file).unwrap());
+        for line in test_file.lines() {
+            let line = line.unwrap();
+            let entity = FtmEntity::from_ftm_json(&line).unwrap();
+            // Verify we can access basic properties
+            assert!(!entity.id().is_empty());
+            assert!(!entity.schema().is_empty());
+        }
+    }
+
+    #[test]
+    fn test_sample_sidejobs() {
+        // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sidejobs/
+        let test_file = "sample/de_abgeordnetenwatch_sidejobs.ftm.json";
+        let test_file = BufReader::new(File::open(test_file).unwrap());
+        for line in test_file.lines() {
+            let line = line.unwrap();
+            let entity = FtmEntity::from_ftm_json(&line).unwrap();
+            // Verify we can access basic properties
+            assert!(!entity.id().is_empty());
+            assert!(!entity.schema().is_empty());
+        }
     }
 }

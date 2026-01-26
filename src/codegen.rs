@@ -224,10 +224,11 @@ impl CodeGenerator {
 
             use super::entities::*;
             use serde::{Deserialize, Serialize};
+            use serde_json::Value;
 
             /// FTM Entity enum for runtime polymorphism
             #[derive(Debug, Clone, Serialize, Deserialize)]
-            #[serde(tag = "schema")]
+            #[serde(untagged)]
             pub enum FtmEntity {
                 #(#variants),*
             }
@@ -245,6 +246,59 @@ impl CodeGenerator {
                     match self {
                         #(#match_id_arms),*
                     }
+                }
+
+                /// Parse FTM entity from nested JSON format
+                ///
+                /// The standard FTM JSON format has a nested structure:
+                /// ```json
+                /// {
+                ///   "id": "...",
+                ///   "schema": "Payment",
+                ///   "properties": {
+                ///     "amount": ["100"],
+                ///     "date": ["2024-01-01"]
+                ///   }
+                /// }
+                /// ```
+                ///
+                /// This function flattens the structure to match the generated Rust types.
+                pub fn from_ftm_json(json_str: &str) -> Result<Self, serde_json::Error> {
+                    // First parse as generic JSON
+                    let mut value: Value = serde_json::from_str(json_str)?;
+
+                    // Extract the nested properties and flatten them
+                    if let Some(obj) = value.as_object_mut() {
+                        if let Some(properties) = obj.remove("properties") {
+                            if let Some(props_obj) = properties.as_object() {
+                                // Flatten properties into the root object
+                                for (key, val) in props_obj {
+                                    obj.insert(key.clone(), val.clone());
+                                }
+                            }
+                        }
+                    }
+
+                    // Now deserialize into FtmEntity
+                    // Note: The FtmEntity enum uses #[serde(tag = "schema")] which expects
+                    // the JSON to have a "schema" field that determines the variant
+                    serde_json::from_value(value)
+                }
+            }
+
+            impl TryFrom<String> for FtmEntity {
+                type Error = serde_json::Error;
+
+                fn try_from(s: String) -> Result<Self, Self::Error> {
+                    Self::from_ftm_json(&s)
+                }
+            }
+
+            impl TryFrom<&str> for FtmEntity {
+                type Error = serde_json::Error;
+
+                fn try_from(s: &str) -> Result<Self, Self::Error> {
+                    Self::from_ftm_json(s)
                 }
             }
 

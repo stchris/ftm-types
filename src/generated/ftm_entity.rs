@@ -1,9 +1,10 @@
 #![allow(missing_docs)]
 use super::entities::*;
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 /// FTM Entity enum for runtime polymorphism
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(tag = "schema")]
+#[serde(untagged)]
 pub enum FtmEntity {
     Address(Address),
     Airplane(Airplane),
@@ -205,6 +206,46 @@ impl FtmEntity {
             FtmEntity::Video(entity) => &entity.id,
             FtmEntity::Workbook(entity) => &entity.id,
         }
+    }
+    /// Parse FTM entity from nested JSON format
+    ///
+    /// The standard FTM JSON format has a nested structure:
+    /// ```json
+    /// {
+    ///   "id": "...",
+    ///   "schema": "Payment",
+    ///   "properties": {
+    ///     "amount": ["100"],
+    ///     "date": ["2024-01-01"]
+    ///   }
+    /// }
+    /// ```
+    ///
+    /// This function flattens the structure to match the generated Rust types.
+    pub fn from_ftm_json(json_str: &str) -> Result<Self, serde_json::Error> {
+        let mut value: Value = serde_json::from_str(json_str)?;
+        if let Some(obj) = value.as_object_mut() {
+            if let Some(properties) = obj.remove("properties") {
+                if let Some(props_obj) = properties.as_object() {
+                    for (key, val) in props_obj {
+                        obj.insert(key.clone(), val.clone());
+                    }
+                }
+            }
+        }
+        serde_json::from_value(value)
+    }
+}
+impl TryFrom<String> for FtmEntity {
+    type Error = serde_json::Error;
+    fn try_from(s: String) -> Result<Self, Self::Error> {
+        Self::from_ftm_json(&s)
+    }
+}
+impl TryFrom<&str> for FtmEntity {
+    type Error = serde_json::Error;
+    fn try_from(s: &str) -> Result<Self, Self::Error> {
+        Self::from_ftm_json(s)
     }
 }
 impl From<Address> for FtmEntity {
