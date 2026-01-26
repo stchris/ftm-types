@@ -1,0 +1,44 @@
+[package]
+name = "ftm-types-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+arbitrary = { version = "1", features = ["derive"] }
+tempfile = "3.8"
+
+[dependencies.ftm-types]
+path = ".."
+
+[[bin]]
+name = "fuzz_ftm_json"
+path = "fuzz_targets/fuzz_ftm_json.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "fuzz_ftm_structured"
+path = "fuzz_targets/fuzz_ftm_structured.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "fuzz_yaml_schema"
+path = "fuzz_targets/fuzz_yaml_schema.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "fuzz_inheritance"
+path = "fuzz_targets/fuzz_inheritance.rs"
+test = false
+doc = false
+bench = false

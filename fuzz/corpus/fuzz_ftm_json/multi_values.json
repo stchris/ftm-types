@@ -1,0 +1,1 @@
+{"id": "multi-001", "schema": "Person", "properties": {"name": ["John Doe", "Johnny D", "J. Doe"], "nationality": ["us", "uk", "de"], "alias": ["JD", "Johnny"]}}

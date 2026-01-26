@@ -1,0 +1,1 @@
+{"id": "ownership-abc", "schema": "Ownership", "properties": {"owner": ["person-123"], "asset": ["company-xyz"], "percentage": ["51"], "startDate": ["2015-03-10"]}}

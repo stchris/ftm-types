@@ -1,0 +1,1 @@
+{"id": "company-xyz", "schema": "Company", "properties": {"name": ["Acme Corporation"], "jurisdiction": ["us"], "registrationNumber": ["12345"], "incorporationDate": ["2000-05-20"]}}

@@ -1,0 +1,1 @@
+{"id": "person-123", "schema": "Person", "properties": {"name": ["John Doe"], "firstName": ["John"], "lastName": ["Doe"], "birthDate": ["1990-01-15"], "nationality": ["us"]}}

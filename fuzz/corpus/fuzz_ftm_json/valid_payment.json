@@ -1,0 +1,1 @@
+{"id": "payment-999", "schema": "Payment", "properties": {"payer": ["person-123"], "beneficiary": ["company-xyz"], "amount": ["1000000"], "currency": ["USD"], "date": ["2024-06-15"], "purpose": ["Contract payment"]}}

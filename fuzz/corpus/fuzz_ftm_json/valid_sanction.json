@@ -1,0 +1,1 @@
+{"id": "sanction-001", "schema": "Sanction", "properties": {"entity": ["person-123"], "program": ["OFAC SDN"], "reason": ["Terrorism"], "startDate": ["2020-01-01"], "status": ["active"]}}
