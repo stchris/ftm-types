@@ -23,6 +23,7 @@ proc-macro2 = "1.0"
 anyhow = "1.0"
 thiserror = "1.0"
 
+bon = {version = "3.8", optional = true}
 enum-derived = {version = "0.9", optional = true}
 
 [dev-dependencies]
@@ -34,4 +35,4 @@ path = "src/main.rs"
 
 [features]
 rand = ["enum-derived"]
-builder = []
+builder = ["bon"]

@@ -91,6 +91,8 @@ impl CodeGenerator {
                 Some(serde_json::Value::Object(serde_json::Map::new()))
             }
 
+            #[cfg(feature = "builder")] use bon::Builder;
+
             #(#structs)*
         })
     }
@@ -156,6 +158,7 @@ impl CodeGenerator {
             #[doc = #doc_comment]
             #[derive(Debug, Clone, Serialize, Deserialize, Default)]
             #[cfg_attr(feature = "rand", derive(Rand))]
+            #[cfg_attr(feature = "builder", derive(Builder))]
             #[serde(rename_all = "camelCase")]
             pub struct #struct_name {
                 #(#fields),*
@@ -658,7 +661,7 @@ impl CodeGenerator {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::schema::SchemaRegistry;
+    use crate::{generated::Person, schema::SchemaRegistry};
     use std::io::Write;
     use tempfile::TempDir;
 
@@ -830,5 +833,13 @@ properties:
         assert!(entities_content.contains("pub struct Company"));
         assert!(entities_content.contains("pub name: Option<Vec<String>>")); // Flattened from Thing
         assert!(entities_content.contains("pub country: Option<Vec<String>>")); // Flattened from LegalEntity
+    }
+
+    #[test]
+    #[cfg_attr(not(feature = "builder"), ignore)]
+    fn test_builder() {
+        let _person = Person::builder()
+            .name(vec!["Huh".to_string()])
+            .height(vec![123.45]);
     }
 }

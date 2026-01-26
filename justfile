@@ -12,3 +12,6 @@ download-fmt-schema VERSION:
     unzip v{{VERSION}}.zip >/dev/null
     mv followthemoney-{{VERSION}}/followthemoney/schema/*.yaml schemas/{{VERSION}}/ >/dev/null
     rm -rf followthemoney-{{VERSION}}/ v{{VERSION}}.zip
+
+test:
+  cargo test --features builder
