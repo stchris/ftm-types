@@ -1,0 +1,8 @@
+# Build artifacts
+target/
+
+# Crash artifacts (may contain sensitive data)
+artifacts/
+
+# Corpus can grow large during fuzzing - keep only seed corpus in git
+# corpus/ is tracked for seed files only
