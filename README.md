@@ -1,15 +1,14 @@
 # ftm-types
 
-FollowTheMoney (FTM) schema parser and code generator for Rust.
+[followthemoney](https://github.com/opensanctions/followthemoney) for Rust
+
+:warning: unstable, use at your own risk, many changes ahead :warning:
 
 ## Overview
 
-This library uses FTM YAML schemas from the [opensanctions/followthemoney](https://github.com/opensanctions/followthemoney) repository and generates type-safe Rust structs. It enables Rust applications to work with standardized entity types compatible with OpenAleph, OpenSanctions, and other FTM-based tools.
+This library downloads FTM YAML schemas from the [opensanctions/followthemoney](https://github.com/opensanctions/followthemoney) repository and generates structs, one large Enum and a bunch of helpers.
 
-## Features
-
-- **Code Generation**: Produces type-safe Rust structs from YAML definitions
-- **Type Safety**: Maps FTM types to appropriate Rust types
+At this moment this is an experiment, an attempt to bring the Python followthemoney API to Rust. Hopefully it enables upcoming Rust applications to be compatible with OpenAleph, OpenSanctions, and other followthemoney-based tools.
 
 ## Usage
 
@@ -19,20 +18,25 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-ftm-schema = { path = "../ftm-schema" }
+ftm-schema = { path = "/path/to/ftm-schema" }
+```
+
+And start exploring:
+
+```rust
+use ftm-types::generated::FtmEntity;
 ```
 
 ### Download and Generate Schemas
 
-```rust
-// Generate Rust code
-let codegen = CodeGenerator::new(registry, "src/generated");
-codegen.generate_all()?;
+```bash
+$ just download-ftm-schema 1.2.3
+$ cargo run -- 1.2.3
 ```
 
 ### Using Generated Types
 
-After code generation, the library produces:
+After code generation, the library produces one struct per schema:
 
 ```rust
 // Generated entity structs with all properties flattened
@@ -45,6 +49,8 @@ pub struct Person {
     // ... all properties from parent schemas flattened
 }
 
+but also a Trait for polymorphism:
+
 // Traits for polymorphic code
 pub trait Thing {
     fn id(&self) -> &str;
@@ -53,12 +59,16 @@ pub trait Thing {
     // ... methods for all Thing properties
 }
 
+and implementations of it:
+
 // Concrete types implement parent traits
 impl Thing for Person {
     fn id(&self) -> &str { &self.id }
     fn name(&self) -> Option<&[String]> { self.name.as_deref() }
     // ...
 }
+
+and then one Enum with all the entity types:
 
 // Enum for runtime polymorphism
 pub enum FtmEntity {
@@ -71,37 +81,11 @@ pub enum FtmEntity {
 
 ### Trait-Based Polymorphism
 
-The library uses a **hybrid approach**: entity structs have flat structures for direct access, but also implement traits for polymorphic code:
+The library uses a **hybrid approach**: entity structs have flat structures for direct access, but also implement traits for polymorphic code. See also [examples/first_steps.rs](./examples/first_steps.rs) by running:
 
-```rust
-use ftm_types::generated::*;
-
-// Generic function working with any Thing
-fn print_entity_name<T: Thing>(entity: &T) {
-    if let Some(names) = entity.name() {
-        println!("Names: {:?}", names);
-    }
-}
-
-let person = Person::new("person-1");
-let company = Company::new("company-1");
-
-// Works with both types through the trait
-print_entity_name(&person);
-print_entity_name(&company);
-
-// Trait objects for runtime polymorphism
-let entities: Vec<&dyn Thing> = vec![&person, &company];
-for entity in entities {
-    println!("{}: {}", entity.id(), entity.schema());
-}
-
-// Direct field access still available
-println!("Birth date: {:?}", person.birth_date);
+```bash
+$ cargo run --example first_steps
 ```
-
-See [examples/trait_polymorphism.rs](examples/trait_polymorphism.rs) for a complete example.
-
 ### Type Mapping
 
 FTM types are mapped to Rust types as follows:
@@ -114,21 +98,25 @@ FTM types are mapped to Rust types as follows:
 | `json` | `Option<serde_json::Value>` |
 | `country`, `email`, etc. | `Option<Vec<String>>` |
 
-All properties are multi-valued by default (following FTM semantics) and optional.
+All properties are multi-valued by default (following FTM semantics) and optional (unless `required`).
 
-## Development
+## Features
 
-### Running Tests
+* `builder` uses [Bon](https://bon-rs.com/) to generate a builder API. The builder will respect the `required` fields in the schema. 
 
-```bash
-cargo test
-```
+## TODOs
 
-### Building Documentation
-
-```bash
-cargo doc --open
-```
+- [ ] ID generation, hash-based
+- [ ] Property normalization, transliteration
+- [ ] unicode normalization (ICU)
+- [ ] Property validation
+- [ ] Fuzzy matching
+- [ ] Merge operations / entity deduplication
+- [ ] Schema metadata (`schema.is_a(other_schema)`)?
+- [ ] Consider adding `required` fields to `new()` fn
+- [ ] Consider helpers for single-value access (like `first_name()`)
+- [ ] Consider impl `From<&str>` or accept `Into<String>` to reduce the String boilerplate
+- [ ] feature `random` generates awkward structs
 
 ## License
 

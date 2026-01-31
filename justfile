@@ -6,7 +6,7 @@ download-sample-data:
     wget --continue --show-progress -O sample/de_abgeordnetenwatch_sidejobs.ftm.json https://data.ftm.store/de_abgeordnetenwatch_sidejobs/entities.ftm.json
     wget --continue --show-progress --verbose -O sample/de_abgeordnetenwatch_sponsoring.ftm.json https://data.ftm.store/de_abgeordnetenwatch_sponsoring/entities.ftm.json
 
-download-fmt-schema VERSION:
+download-ftm-schema VERSION:
     mkdir -p schemas/{{VERSION}}/
     wget https://github.com/opensanctions/followthemoney/archive/refs/tags/v{{VERSION}}.zip
     unzip v{{VERSION}}.zip >/dev/null
