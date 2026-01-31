@@ -933,7 +933,6 @@ properties:
     }
 
     #[test]
-    #[cfg_attr(not(feature = "builder"), ignore)]
     fn test_builder() {
         let _person = Person::builder()
             .name(vec!["Huh".to_string()])
