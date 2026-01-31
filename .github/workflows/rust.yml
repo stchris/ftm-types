@@ -16,6 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
+        override: true
     - name: Cache
       uses: actions/cache@v4
       with:
@@ -24,10 +29,15 @@ jobs:
             ~/.cargo/git
             target
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    - run: rustup component add clippy
     - name: Build
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+      - uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
     - name: Run clippy
       run: cargo clippy -- -Dwarnings
     - name: Run fmt check
