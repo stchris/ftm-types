@@ -34,5 +34,6 @@ name = "ftm-types"
 path = "src/main.rs"
 
 [features]
+default = ["builder"]
 rand = ["enum-derived"]
 builder = ["bon"]
