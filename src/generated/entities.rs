@@ -1,7 +1,7 @@
 #![allow(missing_docs)]
-use serde::{Deserialize, Serialize};
 #[cfg(feature = "rand")]
 use enum_derived::Rand;
+use serde::{Deserialize, Serialize};
 #[cfg(feature = "rand")]
 fn default_json_value() -> Option<serde_json::Value> {
     Some(serde_json::Value::Object(serde_json::Map::new()))
@@ -100,9 +100,7 @@ pub struct Address {
 }
 impl Address {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -251,9 +249,7 @@ pub struct Airplane {
 }
 impl Airplane {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -450,9 +446,7 @@ pub struct Article {
 }
 impl Article {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -597,9 +591,7 @@ pub struct Asset {
 }
 impl Asset {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -691,9 +683,7 @@ pub struct Associate {
 }
 impl Associate {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -878,9 +868,7 @@ pub struct Audio {
 }
 impl Audio {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -1057,9 +1045,7 @@ pub struct BankAccount {
 }
 impl BankAccount {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -1172,9 +1158,7 @@ pub struct Call {
 }
 impl Call {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -1340,9 +1324,7 @@ pub struct CallForTenders {
 }
 impl CallForTenders {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -1620,9 +1602,7 @@ pub struct Company {
 }
 impl Company {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -1805,9 +1785,7 @@ pub struct Contract {
 }
 impl Contract {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -1925,9 +1903,7 @@ pub struct ContractAward {
 }
 impl ContractAward {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2047,9 +2023,7 @@ pub struct CourtCase {
 }
 impl CourtCase {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2141,9 +2115,7 @@ pub struct CourtCaseParty {
 }
 impl CourtCaseParty {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2274,9 +2246,7 @@ pub struct CryptoWallet {
 }
 impl CryptoWallet {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2384,9 +2354,7 @@ pub struct Debt {
 }
 impl Debt {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2471,9 +2439,7 @@ pub struct Directorship {
 }
 impl Directorship {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2652,9 +2618,7 @@ pub struct Document {
 }
 impl Document {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -2812,9 +2776,7 @@ pub struct EconomicActivity {
 }
 impl EconomicActivity {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3044,9 +3006,7 @@ pub struct Email {
 }
 impl Email {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3172,9 +3132,7 @@ pub struct Employment {
 }
 impl Employment {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3326,9 +3284,7 @@ pub struct Event {
 }
 impl Event {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3433,9 +3389,7 @@ pub struct Family {
 }
 impl Family {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3614,9 +3568,7 @@ pub struct Folder {
 }
 impl Folder {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3830,9 +3782,7 @@ pub struct HyperText {
 }
 impl HyperText {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -3950,9 +3900,7 @@ pub struct Identification {
 }
 impl Identification {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -4138,9 +4086,7 @@ pub struct Image {
 }
 impl Image {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -4362,9 +4308,7 @@ pub struct LegalEntity {
 }
 impl LegalEntity {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -4528,9 +4472,7 @@ pub struct License {
 }
 impl License {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -4628,9 +4570,7 @@ pub struct Membership {
 }
 impl Membership {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -4685,9 +4625,7 @@ pub struct Mention {
 }
 impl Mention {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -4889,9 +4827,7 @@ pub struct Message {
 }
 impl Message {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5071,9 +5007,7 @@ pub struct Note {
 }
 impl Note {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5179,9 +5113,7 @@ pub struct Occupancy {
 }
 impl Occupancy {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5383,9 +5315,7 @@ pub struct Organization {
 }
 impl Organization {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5506,9 +5436,7 @@ pub struct Ownership {
 }
 impl Ownership {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5687,9 +5615,7 @@ pub struct Package {
 }
 impl Package {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5778,9 +5704,7 @@ pub struct Page {
 }
 impl Page {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -5953,9 +5877,7 @@ pub struct Pages {
 }
 impl Pages {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -6085,9 +6007,7 @@ pub struct Passport {
 }
 impl Passport {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -6198,9 +6118,7 @@ pub struct Payment {
 }
 impl Payment {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -6429,9 +6347,7 @@ pub struct Person {
 }
 impl Person {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -6656,9 +6572,7 @@ pub struct PlainText {
 }
 impl PlainText {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -6809,9 +6723,7 @@ pub struct Position {
 }
 impl Position {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -6951,9 +6863,7 @@ pub struct Project {
 }
 impl Project {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7052,9 +6962,7 @@ pub struct ProjectParticipant {
 }
 impl ProjectParticipant {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7254,9 +7162,7 @@ pub struct PublicBody {
 }
 impl PublicBody {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7432,9 +7338,7 @@ pub struct RealEstate {
 }
 impl RealEstate {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7534,9 +7438,7 @@ pub struct Representation {
 }
 impl Representation {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7631,9 +7533,7 @@ pub struct Risk {
 }
 impl Risk {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7741,9 +7641,7 @@ pub struct Sanction {
 }
 impl Sanction {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7884,9 +7782,7 @@ pub struct Security {
 }
 impl Security {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -7951,9 +7847,7 @@ pub struct Similar {
 }
 impl Similar {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8023,9 +7917,7 @@ pub struct Succession {
 }
 impl Succession {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8214,9 +8106,7 @@ pub struct Table {
 }
 impl Table {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8337,9 +8227,7 @@ pub struct TaxRoll {
 }
 impl TaxRoll {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8499,9 +8387,7 @@ pub struct Trip {
 }
 impl Trip {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8609,9 +8495,7 @@ pub struct UnknownLink {
 }
 impl UnknownLink {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8735,9 +8619,7 @@ pub struct UserAccount {
 }
 impl UserAccount {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -8882,9 +8764,7 @@ pub struct Vehicle {
 }
 impl Vehicle {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -9061,9 +8941,7 @@ pub struct Vessel {
 }
 impl Vessel {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -9271,9 +9149,7 @@ pub struct Video {
 }
 impl Video {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
@@ -9485,9 +9361,7 @@ pub struct Workbook {
 }
 impl Workbook {
     /// Create a new entity with the given ID
-    #[deprecated(
-        note = "Use the builder() method instead to ensure required fields are set"
-    )]
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),

@@ -83,8 +83,9 @@ impl CodeGenerator {
             // Auto-generated - DO NOT EDIT
             #![allow(missing_docs)]
 
+            #[cfg(feature = "rand")]
+            use enum_derived::Rand;
             use serde::{Deserialize, Serialize};
-            #[cfg(feature = "rand")] use enum_derived::Rand;
 
             #[cfg(feature = "rand")]
             fn default_json_value() -> Option<serde_json::Value> {
@@ -170,7 +171,7 @@ impl CodeGenerator {
         // Generate field initializers for new() method
         let mut field_inits = vec![
             quote! { id: id.into() },
-            quote! { schema: #schema_name_str.to_string() }
+            quote! { schema: #schema_name_str.to_string() },
         ];
 
         // Initialize all other fields
@@ -362,8 +363,8 @@ impl CodeGenerator {
 
             pub mod entities;
             pub mod ftm_entity;
-            pub mod traits;
             pub mod trait_impls;
+            pub mod traits;
 
             pub use entities::*;
             pub use ftm_entity::FtmEntity;
@@ -750,6 +751,9 @@ impl CodeGenerator {
         };
 
         fs::write(&path, content).context(format!("Failed to write file: {:?}", path))?;
+
+        // Format with rustfmt to match project style
+        let _result = std::process::Command::new("rustfmt").arg(&path).output();
 
         Ok(())
     }
