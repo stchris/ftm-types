@@ -225,12 +225,13 @@ impl FtmEntity {
     /// This function flattens the structure to match the generated Rust types.
     pub fn from_ftm_json(json_str: &str) -> Result<Self, serde_json::Error> {
         let mut value: Value = serde_json::from_str(json_str)?;
-        if let Some(obj) = value.as_object_mut()
-            && let Some(properties) = obj.remove("properties")
-            && let Some(props_obj) = properties.as_object()
-        {
-            for (key, val) in props_obj {
-                obj.insert(key.clone(), val.clone());
+        if let Some(obj) = value.as_object_mut() {
+            if let Some(properties) = obj.remove("properties") {
+                if let Some(props_obj) = properties.as_object() {
+                    for (key, val) in props_obj {
+                        obj.insert(key.clone(), val.clone());
+                    }
+                }
             }
         }
         serde_json::from_value(value)

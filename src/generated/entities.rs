@@ -15,6 +15,7 @@ use bon::Builder;
 #[serde(rename_all = "camelCase")]
 pub struct Address {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Address".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -119,6 +120,7 @@ impl Address {
 #[serde(rename_all = "camelCase")]
 pub struct Airplane {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Airplane".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -241,6 +243,7 @@ impl Airplane {
 #[serde(rename_all = "camelCase")]
 pub struct Article {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Article".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -405,6 +408,7 @@ impl Article {
 #[serde(rename_all = "camelCase")]
 pub struct Asset {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Asset".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -503,6 +507,7 @@ impl Asset {
 #[serde(rename_all = "camelCase")]
 pub struct Associate {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Associate".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -571,6 +576,7 @@ impl Associate {
 #[serde(rename_all = "camelCase")]
 pub struct Audio {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Audio".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -741,6 +747,7 @@ impl Audio {
 #[serde(rename_all = "camelCase")]
 pub struct BankAccount {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "BankAccount".to_string()))]
     pub schema: String,
     ///Property: Account number
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -869,6 +876,7 @@ impl BankAccount {
 #[serde(rename_all = "camelCase")]
 pub struct Call {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Call".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -946,6 +954,7 @@ impl Call {
 #[serde(rename_all = "camelCase")]
 pub struct CallForTenders {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "CallForTenders".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1095,6 +1104,7 @@ impl CallForTenders {
 #[serde(rename_all = "camelCase")]
 pub struct Company {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Company".to_string()))]
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1331,6 +1341,7 @@ impl Company {
 #[serde(rename_all = "camelCase")]
 pub struct Contract {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Contract".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1444,6 +1455,7 @@ impl Contract {
 #[serde(rename_all = "camelCase")]
 pub struct ContractAward {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "ContractAward".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1533,6 +1545,7 @@ impl ContractAward {
 #[serde(rename_all = "camelCase")]
 pub struct CourtCase {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "CourtCase".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1631,6 +1644,7 @@ impl CourtCase {
 #[serde(rename_all = "camelCase")]
 pub struct CourtCaseParty {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "CourtCaseParty".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1699,6 +1713,7 @@ impl CourtCaseParty {
 #[serde(rename_all = "camelCase")]
 pub struct CryptoWallet {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "CryptoWallet".to_string()))]
     pub schema: String,
     ///Property: Account ID
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1815,6 +1830,7 @@ impl CryptoWallet {
 #[serde(rename_all = "camelCase")]
 pub struct Debt {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Debt".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1892,6 +1908,7 @@ impl Debt {
 #[serde(rename_all = "camelCase")]
 pub struct Directorship {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Directorship".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1960,6 +1977,7 @@ impl Directorship {
 #[serde(rename_all = "camelCase")]
 pub struct Document {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Document".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2124,6 +2142,7 @@ impl Document {
 #[serde(rename_all = "camelCase")]
 pub struct EconomicActivity {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "EconomicActivity".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2234,6 +2253,7 @@ impl EconomicActivity {
 #[serde(rename_all = "camelCase")]
 pub struct Email {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Email".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2435,6 +2455,7 @@ impl Email {
 #[serde(rename_all = "camelCase")]
 pub struct Employment {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Employment".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2503,6 +2524,7 @@ impl Employment {
 #[serde(rename_all = "camelCase")]
 pub struct Event {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Event".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2640,6 +2662,7 @@ impl Event {
 #[serde(rename_all = "camelCase")]
 pub struct Family {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Family".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2708,6 +2731,7 @@ impl Family {
 #[serde(rename_all = "camelCase")]
 pub struct Folder {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Folder".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2872,6 +2896,7 @@ impl Folder {
 #[serde(rename_all = "camelCase")]
 pub struct HyperText {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "HyperText".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3039,6 +3064,7 @@ impl HyperText {
 #[serde(rename_all = "camelCase")]
 pub struct Identification {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Identification".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3110,6 +3136,7 @@ impl Identification {
 #[serde(rename_all = "camelCase")]
 pub struct Image {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Image".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3280,6 +3307,7 @@ impl Image {
 #[serde(rename_all = "camelCase")]
 pub struct LegalEntity {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "LegalEntity".to_string()))]
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3453,6 +3481,7 @@ impl LegalEntity {
 #[serde(rename_all = "camelCase")]
 pub struct License {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "License".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3569,6 +3598,7 @@ impl License {
 #[serde(rename_all = "camelCase")]
 pub struct Membership {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Membership".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3637,6 +3667,7 @@ impl Membership {
 #[serde(rename_all = "camelCase")]
 pub struct Mention {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Mention".to_string()))]
     pub schema: String,
     ///Property: Co-occurring countries
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3678,6 +3709,7 @@ impl Mention {
 #[serde(rename_all = "camelCase")]
 pub struct Message {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Message".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3876,6 +3908,7 @@ impl Message {
 #[serde(rename_all = "camelCase")]
 pub struct Note {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Note".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3998,6 +4031,7 @@ impl Note {
 #[serde(rename_all = "camelCase")]
 pub struct Occupancy {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Occupancy".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4072,6 +4106,7 @@ impl Occupancy {
 #[serde(rename_all = "camelCase")]
 pub struct Organization {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Organization".to_string()))]
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4257,6 +4292,7 @@ impl Organization {
 #[serde(rename_all = "camelCase")]
 pub struct Ownership {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Ownership".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4325,6 +4361,7 @@ impl Ownership {
 #[serde(rename_all = "camelCase")]
 pub struct Package {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Package".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4489,6 +4526,7 @@ impl Package {
 #[serde(rename_all = "camelCase")]
 pub struct Page {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Page".to_string()))]
     pub schema: String,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4530,6 +4568,7 @@ impl Page {
 #[serde(rename_all = "camelCase")]
 pub struct Pages {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Pages".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4697,6 +4736,7 @@ impl Pages {
 #[serde(rename_all = "camelCase")]
 pub struct Passport {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Passport".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4780,6 +4820,7 @@ impl Passport {
 #[serde(rename_all = "camelCase")]
 pub struct Payment {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Payment".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4872,6 +4913,7 @@ impl Payment {
 #[serde(rename_all = "camelCase")]
 pub struct Person {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Person".to_string()))]
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5078,6 +5120,7 @@ impl Person {
 #[serde(rename_all = "camelCase")]
 pub struct PlainText {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "PlainText".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5242,6 +5285,7 @@ impl PlainText {
 #[serde(rename_all = "camelCase")]
 pub struct Position {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Position".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5346,6 +5390,7 @@ impl Position {
 #[serde(rename_all = "camelCase")]
 pub struct Project {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Project".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5459,6 +5504,7 @@ impl Project {
 #[serde(rename_all = "camelCase")]
 pub struct ProjectParticipant {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "ProjectParticipant".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5527,6 +5573,7 @@ impl ProjectParticipant {
 #[serde(rename_all = "camelCase")]
 pub struct PublicBody {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "PublicBody".to_string()))]
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5712,6 +5759,7 @@ impl PublicBody {
 #[serde(rename_all = "camelCase")]
 pub struct RealEstate {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "RealEstate".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5834,6 +5882,7 @@ impl RealEstate {
 #[serde(rename_all = "camelCase")]
 pub struct Representation {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Representation".to_string()))]
     pub schema: String,
     ///Property: Agent
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5902,6 +5951,7 @@ impl Representation {
 #[serde(rename_all = "camelCase")]
 pub struct Risk {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Risk".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5982,6 +6032,7 @@ impl Risk {
 #[serde(rename_all = "camelCase")]
 pub struct Sanction {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Sanction".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6071,6 +6122,7 @@ impl Sanction {
 #[serde(rename_all = "camelCase")]
 pub struct Security {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Security".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6190,6 +6242,7 @@ impl Security {
 #[serde(rename_all = "camelCase")]
 pub struct Similar {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Similar".to_string()))]
     pub schema: String,
     ///Property: Candidate
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6222,6 +6275,7 @@ impl Similar {
 #[serde(rename_all = "camelCase")]
 pub struct Succession {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Succession".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6290,6 +6344,7 @@ impl Succession {
 #[serde(rename_all = "camelCase")]
 pub struct Table {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Table".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6464,6 +6519,7 @@ impl Table {
 #[serde(rename_all = "camelCase")]
 pub struct TaxRoll {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "TaxRoll".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6535,6 +6591,7 @@ impl TaxRoll {
 #[serde(rename_all = "camelCase")]
 pub struct Trip {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Trip".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6681,6 +6738,7 @@ impl Trip {
 #[serde(rename_all = "camelCase")]
 pub struct UnknownLink {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "UnknownLink".to_string()))]
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6749,6 +6807,7 @@ impl UnknownLink {
 #[serde(rename_all = "camelCase")]
 pub struct UserAccount {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "UserAccount".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6859,6 +6918,7 @@ impl UserAccount {
 #[serde(rename_all = "camelCase")]
 pub struct Vehicle {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Vehicle".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6975,6 +7035,7 @@ impl Vehicle {
 #[serde(rename_all = "camelCase")]
 pub struct Vessel {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Vessel".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7121,6 +7182,7 @@ impl Vessel {
 #[serde(rename_all = "camelCase")]
 pub struct Video {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Video".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7288,6 +7350,7 @@ impl Video {
 #[serde(rename_all = "camelCase")]
 pub struct Workbook {
     pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Workbook".to_string()))]
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]

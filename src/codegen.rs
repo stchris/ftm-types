@@ -113,7 +113,11 @@ impl CodeGenerator {
         });
 
         // Add schema field (always the schema name)
+        // For builder: automatically set to the schema name
+        // Use LitStr to create a proper string literal token
+        let schema_lit = proc_macro2::Literal::string(schema_name_str);
         fields.push(quote! {
+            #[cfg_attr(feature = "builder", builder(default = #schema_lit.to_string()))]
             pub schema: String
         });
 
@@ -272,14 +276,16 @@ impl CodeGenerator {
                     let mut value: Value = serde_json::from_str(json_str)?;
 
                     // Extract the nested properties and flatten them
-                    if let Some(obj) = value.as_object_mut() &&
-                        if let Some(properties) = obj.remove("properties") &&
+                    if let Some(obj) = value.as_object_mut() {
+                        if let Some(properties) = obj.remove("properties") {
                             if let Some(props_obj) = properties.as_object() {
                                 // Flatten properties into the root object
                                 for (key, val) in props_obj {
                                     obj.insert(key.clone(), val.clone());
                                 }
                             }
+                        }
+                    }
 
                     // Now deserialize into FtmEntity
                     // Note: The FtmEntity enum uses #[serde(tag = "schema")] which expects
@@ -648,10 +654,28 @@ impl CodeGenerator {
         let path = self.output_dir.join(filename);
 
         // Parse and format the generated code
-        let syntax_tree = syn::parse2(tokens).context("Failed to parse generated code")?;
-        let formatted = prettyplease::unparse(&syntax_tree);
+        // If parsing fails (e.g., due to attributes syn doesn't recognize),
+        // write the raw tokens and let rustfmt handle it later
+        let content = match syn::parse2(tokens.clone()) {
+            Ok(syntax_tree) => prettyplease::unparse(&syntax_tree),
+            Err(_) => {
+                // Fallback: write raw tokens and format with rustfmt
+                let raw = tokens.to_string();
+                fs::write(&path, &raw).context(format!("Failed to write file: {:?}", path))?;
 
-        fs::write(&path, formatted).context(format!("Failed to write file: {:?}", path))?;
+                // Try to format with rustfmt
+                let _result = std::process::Command::new("rustfmt")
+                    .arg(&path)
+                    .output();
+
+                // Read back the formatted content
+                return fs::read_to_string(&path)
+                    .context("Failed to read formatted file")
+                    .and_then(|_| Ok(()));
+            }
+        };
+
+        fs::write(&path, content).context(format!("Failed to write file: {:?}", path))?;
 
         Ok(())
     }
