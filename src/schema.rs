@@ -153,6 +153,9 @@ impl SchemaRegistry {
         let mut visited = HashSet::new();
         let all_properties = self.resolve_properties_recursive(schema_name, &mut visited)?;
 
+        let mut visited_required = HashSet::new();
+        let all_required = self.resolve_required_recursive(schema_name, &mut visited_required)?;
+
         let metadata = self
             .get(schema_name)
             .context(format!("Schema not found: {}", schema_name))?
@@ -161,6 +164,7 @@ impl SchemaRegistry {
         Ok(ResolvedSchema {
             name: schema_name.to_string(),
             all_properties,
+            all_required,
             metadata,
         })
     }
@@ -200,6 +204,43 @@ impl SchemaRegistry {
         Ok(properties)
     }
 
+    /// Recursively resolve required fields from parent schemas
+    fn resolve_required_recursive(
+        &self,
+        schema_name: &str,
+        visited: &mut HashSet<String>,
+    ) -> Result<HashSet<String>> {
+        // Check for circular inheritance
+        if visited.contains(schema_name) {
+            anyhow::bail!("Circular inheritance detected: {}", schema_name);
+        }
+        visited.insert(schema_name.to_string());
+
+        let schema = self
+            .get(schema_name)
+            .context(format!("Schema not found: {}", schema_name))?;
+
+        let mut required = HashSet::new();
+
+        // First, collect required fields from parent schemas
+        if let Some(extends) = &schema.extends {
+            for parent_name in extends {
+                let parent_required = self.resolve_required_recursive(parent_name, visited)?;
+                required.extend(parent_required);
+            }
+        }
+
+        // Then, add this schema's required fields
+        if let Some(schema_required) = &schema.required {
+            required.extend(schema_required.iter().cloned());
+        }
+
+        // Remove from visited set to allow diamond inheritance patterns
+        visited.remove(schema_name);
+
+        Ok(required)
+    }
+
     /// Get all concrete (non-abstract) schemas
     pub fn concrete_schemas(&self) -> Vec<String> {
         self.schemas
@@ -215,6 +256,7 @@ impl SchemaRegistry {
 pub struct ResolvedSchema {
     pub name: String,
     pub all_properties: HashMap<String, FtmProperty>,
+    pub all_required: HashSet<String>,
     pub metadata: FtmSchema,
 }
 

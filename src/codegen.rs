@@ -125,8 +125,8 @@ impl CodeGenerator {
         let mut property_names: Vec<_> = schema.all_properties.keys().collect();
         property_names.sort();
 
-        for prop_name in property_names {
-            let property = &schema.all_properties[prop_name];
+        for prop_name in &property_names {
+            let property = &schema.all_properties[*prop_name];
             let field_name = self.property_to_field_name(prop_name);
 
             // Skip properties without a type (shouldn't happen but be defensive)
@@ -135,7 +135,8 @@ impl CodeGenerator {
                 None => continue,
             };
 
-            let field_type = self.map_property_type(prop_type);
+            let is_required = schema.all_required.contains(*prop_name);
+            let field_type = self.map_property_type(prop_type, is_required);
 
             // Add custom_rand attribute for serde_json::Value fields
             let custom_rand_attr = if prop_type == "json" {
@@ -150,17 +151,57 @@ impl CodeGenerator {
                 format!("Property: {}", prop_name)
             };
 
+            // Required fields don't skip serializing if empty and are required in builder
+            // Note: Option<_> fields don't need builder(default) as they default to None automatically
+            let serde_attr = if is_required {
+                quote! {}
+            } else {
+                quote! { #[serde(skip_serializing_if = "Option::is_none")] }
+            };
+
             fields.push(quote! {
                 #[doc = #field_doc]
-                #[serde(skip_serializing_if = "Option::is_none")]
+                #serde_attr
                 #custom_rand_attr
                 pub #field_name: #field_type
             });
         }
 
+        // Generate field initializers for new() method
+        let mut field_inits = vec![
+            quote! { id: id.into() },
+            quote! { schema: #schema_name_str.to_string() }
+        ];
+
+        // Initialize all other fields
+        for prop_name in &property_names {
+            let property = &schema.all_properties[*prop_name];
+            let field_name = self.property_to_field_name(prop_name);
+
+            let prop_type = match &property.type_ {
+                Some(t) => t.as_str(),
+                None => continue,
+            };
+
+            let is_required = schema.all_required.contains(*prop_name);
+
+            let init_value = if is_required {
+                // Required fields get a default empty value
+                match prop_type {
+                    "json" => quote! { serde_json::Value::Object(serde_json::Map::new()) },
+                    _ => quote! { Vec::new() },
+                }
+            } else {
+                // Optional fields are None
+                quote! { None }
+            };
+
+            field_inits.push(quote! { #field_name: #init_value });
+        }
+
         Ok(quote! {
             #[doc = #doc_comment]
-            #[derive(Debug, Clone, Serialize, Deserialize, Default)]
+            #[derive(Debug, Clone, Serialize, Deserialize)]
             #[cfg_attr(feature = "rand", derive(Rand))]
             #[cfg_attr(feature = "builder", derive(Builder))]
             #[serde(rename_all = "camelCase")]
@@ -170,11 +211,10 @@ impl CodeGenerator {
 
             impl #struct_name {
                 /// Create a new entity with the given ID
+                #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
                 pub fn new(id: impl Into<String>) -> Self {
                     Self {
-                        id: id.into(),
-                        schema: #schema_name_str.to_string(),
-                        ..Default::default()
+                        #(#field_inits),*
                     }
                 }
 
@@ -526,22 +566,47 @@ impl CodeGenerator {
                     None => continue,
                 };
 
-                let method_impl = match prop_type {
-                    "number" => quote! {
-                        fn #method_name(&self) -> Option<&[f64]> {
-                            self.#field_name.as_deref()
-                        }
-                    },
-                    "json" => quote! {
-                        fn #method_name(&self) -> Option<&serde_json::Value> {
-                            self.#field_name.as_ref()
-                        }
-                    },
-                    _ => quote! {
-                        fn #method_name(&self) -> Option<&[String]> {
-                            self.#field_name.as_deref()
-                        }
-                    },
+                // Check if this property is required in the concrete schema
+                let is_required = schema.all_required.contains(prop_name);
+
+                let method_impl = if is_required {
+                    // Required fields return a direct reference
+                    match prop_type {
+                        "number" => quote! {
+                            fn #method_name(&self) -> Option<&[f64]> {
+                                Some(&self.#field_name)
+                            }
+                        },
+                        "json" => quote! {
+                            fn #method_name(&self) -> Option<&serde_json::Value> {
+                                Some(&self.#field_name)
+                            }
+                        },
+                        _ => quote! {
+                            fn #method_name(&self) -> Option<&[String]> {
+                                Some(&self.#field_name)
+                            }
+                        },
+                    }
+                } else {
+                    // Optional fields use as_deref/as_ref
+                    match prop_type {
+                        "number" => quote! {
+                            fn #method_name(&self) -> Option<&[f64]> {
+                                self.#field_name.as_deref()
+                            }
+                        },
+                        "json" => quote! {
+                            fn #method_name(&self) -> Option<&serde_json::Value> {
+                                self.#field_name.as_ref()
+                            }
+                        },
+                        _ => quote! {
+                            fn #method_name(&self) -> Option<&[String]> {
+                                self.#field_name.as_deref()
+                            }
+                        },
+                    }
                 };
 
                 methods.push(method_impl);
@@ -597,12 +662,23 @@ impl CodeGenerator {
     }
 
     /// Map FTM property types to Rust types
-    fn map_property_type(&self, ftm_type: &str) -> TokenStream {
-        match ftm_type {
-            "number" => quote! { Option<Vec<f64>> },
-            "date" => quote! { Option<Vec<String>> },
-            "json" => quote! { Option<serde_json::Value> },
-            _ => quote! { Option<Vec<String>> },
+    fn map_property_type(&self, ftm_type: &str, is_required: bool) -> TokenStream {
+        if is_required {
+            // Required fields are not wrapped in Option
+            match ftm_type {
+                "number" => quote! { Vec<f64> },
+                "date" => quote! { Vec<String> },
+                "json" => quote! { serde_json::Value },
+                _ => quote! { Vec<String> },
+            }
+        } else {
+            // Optional fields are wrapped in Option
+            match ftm_type {
+                "number" => quote! { Option<Vec<f64>> },
+                "date" => quote! { Option<Vec<String>> },
+                "json" => quote! { Option<serde_json::Value> },
+                _ => quote! { Option<Vec<String>> },
+            }
         }
     }
 
@@ -664,9 +740,7 @@ impl CodeGenerator {
                 fs::write(&path, &raw).context(format!("Failed to write file: {:?}", path))?;
 
                 // Try to format with rustfmt
-                let _result = std::process::Command::new("rustfmt")
-                    .arg(&path)
-                    .output();
+                let _result = std::process::Command::new("rustfmt").arg(&path).output();
 
                 // Read back the formatted content
                 return fs::read_to_string(&path)

@@ -9,7 +9,7 @@ fn default_json_value() -> Option<serde_json::Value> {
 #[cfg(feature = "builder")]
 use bon::Builder;
 ///FTM Schema: Address
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -57,8 +57,7 @@ pub struct Address {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -101,11 +100,40 @@ pub struct Address {
 }
 impl Address {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Address".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            country: None,
+            created_at: None,
+            description: None,
+            full: None,
+            google_place_id: None,
+            index_text: None,
+            latitude: None,
+            longitude: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            osm_id: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -114,7 +142,7 @@ impl Address {
     }
 }
 ///FTM Schema: Airplane
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -168,8 +196,7 @@ pub struct Airplane {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -224,11 +251,46 @@ pub struct Airplane {
 }
 impl Airplane {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Airplane".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            build_date: None,
+            country: None,
+            created_at: None,
+            deregistration_date: None,
+            description: None,
+            icao_code: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            operator: None,
+            owner: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_date: None,
+            registration_number: None,
+            retrieved_at: None,
+            serial_number: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -237,7 +299,7 @@ impl Airplane {
     }
 }
 ///FTM Schema: Article
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -318,8 +380,7 @@ pub struct Article {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -389,11 +450,60 @@ pub struct Article {
 }
 impl Article {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Article".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -402,7 +512,7 @@ impl Article {
     }
 }
 ///FTM Schema: Asset
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -447,8 +557,7 @@ pub struct Asset {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -488,11 +597,38 @@ pub struct Asset {
 }
 impl Asset {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Asset".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            country: None,
+            created_at: None,
+            description: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -501,7 +637,7 @@ impl Asset {
     }
 }
 ///FTM Schema: Associate
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -513,8 +649,7 @@ pub struct Associate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Associate
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub associate: Option<Vec<String>>,
+    pub associate: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -534,8 +669,7 @@ pub struct Associate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Person
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub person: Option<Vec<String>>,
+    pub person: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -557,11 +691,28 @@ pub struct Associate {
 }
 impl Associate {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Associate".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            associate: Vec::new(),
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            person: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -570,7 +721,7 @@ impl Associate {
     }
 }
 ///FTM Schema: Audio
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -654,8 +805,7 @@ pub struct Audio {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -728,11 +878,62 @@ pub struct Audio {
 }
 impl Audio {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Audio".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            duration: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            sampling_rate: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -741,7 +942,7 @@ impl Audio {
     }
 }
 ///FTM Schema: Bank account
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -813,8 +1014,7 @@ pub struct BankAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -857,11 +1057,48 @@ pub struct BankAccount {
 }
 impl BankAccount {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "BankAccount".to_string(),
-            ..Default::default()
+            account_number: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            balance: None,
+            balance_date: None,
+            bank: None,
+            bic: None,
+            closing_date: None,
+            country: None,
+            created_at: None,
+            description: None,
+            iban: None,
+            index_text: None,
+            max_balance: None,
+            max_balance_date: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            opening_date: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -870,7 +1107,7 @@ impl BankAccount {
     }
 }
 ///FTM Schema: Call
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -935,11 +1172,31 @@ pub struct Call {
 }
 impl Call {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Call".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            caller: None,
+            caller_number: None,
+            date: None,
+            description: None,
+            duration: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            receiver: None,
+            receiver_number: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -948,7 +1205,7 @@ impl Call {
     }
 }
 ///FTM Schema: Call for tenders
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -969,8 +1226,7 @@ pub struct CallForTenders {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Name of contracting authority
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub authority: Option<Vec<String>>,
+    pub authority: Vec<String>,
     ///Property: Contracting authority reference ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authority_reference_id: Option<Vec<String>>,
@@ -1017,8 +1273,7 @@ pub struct CallForTenders {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -1085,11 +1340,55 @@ pub struct CallForTenders {
 }
 impl CallForTenders {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "CallForTenders".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            authority: Vec::new(),
+            authority_reference_id: None,
+            award_notice_date: None,
+            awarding_date: None,
+            call_id: None,
+            clarification_deadline: None,
+            contract_notice_date: None,
+            country: None,
+            cpv_code: None,
+            created_at: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            maximum_number_of_lots: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            number_of_lots: None,
+            nuts_code: None,
+            on_behalf_of: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publication_date: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            submission_deadline: None,
+            summary: None,
+            ted_url: None,
+            tenderers: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -1098,7 +1397,7 @@ impl CallForTenders {
     }
 }
 ///FTM Schema: Company
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1224,8 +1523,7 @@ pub struct Company {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -1322,11 +1620,84 @@ pub struct Company {
 }
 impl Company {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Company".to_string(),
-            ..Default::default()
+            abbreviation: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            bik_code: None,
+            bright_query_id: None,
+            bright_query_org_id: None,
+            bvd_id: None,
+            cage_code: None,
+            cik_code: None,
+            coato_code: None,
+            country: None,
+            created_at: None,
+            description: None,
+            dissolution_date: None,
+            duns_code: None,
+            email: None,
+            fns_code: None,
+            gii_number: None,
+            id_number: None,
+            imo_number: None,
+            incorporation_date: None,
+            index_text: None,
+            inn_code: None,
+            ipo_code: None,
+            irs_code: None,
+            isin_code: None,
+            jib_code: None,
+            jurisdiction: None,
+            kpp_code: None,
+            lei_code: None,
+            license_number: None,
+            main_country: None,
+            mbs_code: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            npi_code: None,
+            ogrn_code: None,
+            okpo_code: None,
+            opencorporates_url: None,
+            parent: None,
+            perm_id: None,
+            pfr_number: None,
+            phone: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            ric_code: None,
+            sayari_id: None,
+            source_url: None,
+            summary: None,
+            swift_bic: None,
+            tax_number: None,
+            ticker: None,
+            topics: None,
+            unique_entity_id: None,
+            usc_code: None,
+            vat_code: None,
+            voen_code: None,
+            weak_alias: None,
+            website: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -1335,7 +1706,7 @@ impl Company {
     }
 }
 ///FTM Schema: Contract
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1389,8 +1760,7 @@ pub struct Contract {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -1419,8 +1789,7 @@ pub struct Contract {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Title
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub title: Option<Vec<String>>,
+    pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -1436,11 +1805,43 @@ pub struct Contract {
 }
 impl Contract {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Contract".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            authority: None,
+            contract_date: None,
+            country: None,
+            created_at: None,
+            description: None,
+            index_text: None,
+            language: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            project: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: Vec::new(),
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -1449,7 +1850,7 @@ impl Contract {
     }
 }
 ///FTM Schema: Contract award
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1473,8 +1874,7 @@ pub struct ContractAward {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub call_for_tenders: Option<Vec<String>>,
     ///Property: Contract
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub contract: Option<Vec<String>>,
+    pub contract: Vec<String>,
     ///Property: CPV code
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cpv_code: Option<Vec<String>>,
@@ -1521,16 +1921,39 @@ pub struct ContractAward {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Supplier
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub supplier: Option<Vec<String>>,
+    pub supplier: Vec<String>,
 }
 impl ContractAward {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "ContractAward".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            call_for_tenders: None,
+            contract: Vec::new(),
+            cpv_code: None,
+            date: None,
+            decision_reason: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            nuts_code: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            supplier: Vec::new(),
         }
     }
     /// Get the schema name
@@ -1539,7 +1962,7 @@ impl ContractAward {
     }
 }
 ///FTM Schema: Court case
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1584,8 +2007,7 @@ pub struct CourtCase {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -1625,11 +2047,38 @@ pub struct CourtCase {
 }
 impl CourtCase {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "CourtCase".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            case_number: None,
+            close_date: None,
+            country: None,
+            created_at: None,
+            description: None,
+            file_date: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -1638,7 +2087,7 @@ impl CourtCase {
     }
 }
 ///FTM Schema: Case party
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1650,8 +2099,7 @@ pub struct CourtCaseParty {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Case
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub case: Option<Vec<String>>,
+    pub case: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -1671,8 +2119,7 @@ pub struct CourtCaseParty {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Party
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub party: Option<Vec<String>>,
+    pub party: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -1694,11 +2141,28 @@ pub struct CourtCaseParty {
 }
 impl CourtCaseParty {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "CourtCaseParty".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            case: Vec::new(),
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            party: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -1707,7 +2171,7 @@ impl CourtCaseParty {
     }
 }
 ///FTM Schema: Cryptocurrency wallet
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1767,8 +2231,7 @@ pub struct CryptoWallet {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -1811,11 +2274,44 @@ pub struct CryptoWallet {
 }
 impl CryptoWallet {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "CryptoWallet".to_string(),
-            ..Default::default()
+            account_id: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            balance: None,
+            balance_date: None,
+            country: None,
+            created_at: None,
+            creation_date: None,
+            description: None,
+            holder: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            public_key: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -1824,7 +2320,7 @@ impl CryptoWallet {
     }
 }
 ///FTM Schema: Debt
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1851,8 +2347,7 @@ pub struct Debt {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
     ///Property: Debtor
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub debtor: Option<Vec<String>>,
+    pub debtor: Vec<String>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
@@ -1889,11 +2384,31 @@ pub struct Debt {
 }
 impl Debt {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Debt".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            creditor: None,
+            date: None,
+            debtor: Vec::new(),
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -1902,7 +2417,7 @@ impl Debt {
     }
 }
 ///FTM Schema: Directorship
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -1920,8 +2435,7 @@ pub struct Directorship {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Director
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub director: Option<Vec<String>>,
+    pub director: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
@@ -1935,8 +2449,7 @@ pub struct Directorship {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Organization
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub organization: Option<Vec<String>>,
+    pub organization: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -1958,11 +2471,28 @@ pub struct Directorship {
 }
 impl Directorship {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Directorship".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            director: Vec::new(),
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            organization: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -1971,7 +2501,7 @@ impl Directorship {
     }
 }
 ///FTM Schema: File
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2052,8 +2582,7 @@ pub struct Document {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -2123,11 +2652,60 @@ pub struct Document {
 }
 impl Document {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Document".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -2136,7 +2714,7 @@ impl Document {
     }
 }
 ///FTM Schema: Customs declaration
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2234,11 +2812,42 @@ pub struct EconomicActivity {
 }
 impl EconomicActivity {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "EconomicActivity".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            bank_account: None,
+            bank_foreign: None,
+            bank_rub: None,
+            ccd_number: None,
+            contract: None,
+            contract_holder: None,
+            date: None,
+            declarant: None,
+            departure_country: None,
+            description: None,
+            destination_country: None,
+            end_date: None,
+            goods_description: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            origin_country: None,
+            proof: None,
+            publisher_url: None,
+            receiver: None,
+            retrieved_at: None,
+            sender: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            trading_country: None,
+            transport: None,
+            ved_code: None,
         }
     }
     /// Get the schema name
@@ -2247,7 +2856,7 @@ impl EconomicActivity {
     }
 }
 ///FTM Schema: E-Mail
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2350,8 +2959,7 @@ pub struct Email {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -2436,11 +3044,72 @@ pub struct Email {
 }
 impl Email {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Email".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            bcc: None,
+            body_html: None,
+            body_text: None,
+            cc: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            emitters: None,
+            file_size: None,
+            from: None,
+            headers: None,
+            iban_mentioned: None,
+            in_reply_to_email: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            recipients: None,
+            retrieved_at: None,
+            sender: None,
+            source_url: None,
+            subject: None,
+            summary: None,
+            thread_topic: None,
+            title: None,
+            to: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -2449,7 +3118,7 @@ impl Email {
     }
 }
 ///FTM Schema: Employment
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2467,11 +3136,9 @@ pub struct Employment {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Employee
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub employee: Option<Vec<String>>,
+    pub employee: Vec<String>,
     ///Property: Employer
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub employer: Option<Vec<String>>,
+    pub employer: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
@@ -2505,11 +3172,28 @@ pub struct Employment {
 }
 impl Employment {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Employment".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            employee: Vec::new(),
+            employer: Vec::new(),
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -2518,7 +3202,7 @@ impl Employment {
     }
 }
 ///FTM Schema: Event
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2587,8 +3271,7 @@ pub struct Event {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -2643,11 +3326,51 @@ pub struct Event {
 }
 impl Event {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Event".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            companies_mentioned: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            end_date: None,
+            iban_mentioned: None,
+            index_text: None,
+            involved: None,
+            ip_mentioned: None,
+            location: None,
+            location_mentioned: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            organizer: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -2656,7 +3379,7 @@ impl Event {
     }
 }
 ///FTM Schema: Family
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2686,8 +3409,7 @@ pub struct Family {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Person
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub person: Option<Vec<String>>,
+    pub person: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -2695,8 +3417,7 @@ pub struct Family {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Relative
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub relative: Option<Vec<String>>,
+    pub relative: Vec<String>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -2712,11 +3433,28 @@ pub struct Family {
 }
 impl Family {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Family".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            person: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            relative: Vec::new(),
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -2725,7 +3463,7 @@ impl Family {
     }
 }
 ///FTM Schema: Folder
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2806,8 +3544,7 @@ pub struct Folder {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -2877,11 +3614,60 @@ pub struct Folder {
 }
 impl Folder {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Folder".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -2890,7 +3676,7 @@ impl Folder {
     }
 }
 ///FTM Schema: Web page
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -2974,8 +3760,7 @@ pub struct HyperText {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -3045,11 +3830,61 @@ pub struct HyperText {
 }
 impl HyperText {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "HyperText".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_html: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -3058,7 +3893,7 @@ impl HyperText {
     }
 }
 ///FTM Schema: Identification
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3082,8 +3917,7 @@ pub struct Identification {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Identification holder
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub holder: Option<Vec<String>>,
+    pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -3094,8 +3928,7 @@ pub struct Identification {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Document number
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub number: Option<Vec<String>>,
+    pub number: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -3117,11 +3950,29 @@ pub struct Identification {
 }
 impl Identification {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Identification".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            country: None,
+            date: None,
+            description: None,
+            end_date: None,
+            holder: Vec::new(),
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            number: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -3130,7 +3981,7 @@ impl Identification {
     }
 }
 ///FTM Schema: Image
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3214,8 +4065,7 @@ pub struct Image {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -3288,11 +4138,62 @@ pub struct Image {
 }
 impl Image {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Image".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            credit: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            pictured: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -3301,7 +4202,7 @@ impl Image {
     }
 }
 ///FTM Schema: Legal entity
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3379,8 +4280,7 @@ pub struct LegalEntity {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -3462,11 +4362,63 @@ pub struct LegalEntity {
 }
 impl LegalEntity {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "LegalEntity".to_string(),
-            ..Default::default()
+            abbreviation: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            bright_query_id: None,
+            bright_query_org_id: None,
+            bvd_id: None,
+            country: None,
+            created_at: None,
+            description: None,
+            dissolution_date: None,
+            duns_code: None,
+            email: None,
+            id_number: None,
+            incorporation_date: None,
+            index_text: None,
+            inn_code: None,
+            jurisdiction: None,
+            lei_code: None,
+            license_number: None,
+            main_country: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            npi_code: None,
+            ogrn_code: None,
+            okpo_code: None,
+            opencorporates_url: None,
+            parent: None,
+            phone: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            sayari_id: None,
+            source_url: None,
+            summary: None,
+            swift_bic: None,
+            tax_number: None,
+            topics: None,
+            unique_entity_id: None,
+            usc_code: None,
+            vat_code: None,
+            weak_alias: None,
+            website: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -3475,7 +4427,7 @@ impl LegalEntity {
     }
 }
 ///FTM Schema: License
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3508,8 +4460,7 @@ pub struct License {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub area: Option<Vec<f64>>,
     ///Property: Contract authority
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub authority: Option<Vec<String>>,
+    pub authority: Vec<String>,
     ///Property: Contract date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contract_date: Option<Vec<String>>,
@@ -3532,8 +4483,7 @@ pub struct License {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -3562,8 +4512,7 @@ pub struct License {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Title
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub title: Option<Vec<String>>,
+    pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -3579,11 +4528,44 @@ pub struct License {
 }
 impl License {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "License".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            area: None,
+            authority: Vec::new(),
+            contract_date: None,
+            country: None,
+            created_at: None,
+            description: None,
+            index_text: None,
+            language: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            project: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: Vec::new(),
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -3592,7 +4574,7 @@ impl License {
     }
 }
 ///FTM Schema: Membership
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3616,8 +4598,7 @@ pub struct Membership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
     ///Property: Member
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub member: Option<Vec<String>>,
+    pub member: Vec<String>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -3625,8 +4606,7 @@ pub struct Membership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Organization
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub organization: Option<Vec<String>>,
+    pub organization: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -3648,11 +4628,28 @@ pub struct Membership {
 }
 impl Membership {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Membership".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            member: Vec::new(),
+            modified_at: None,
+            names_mentioned: None,
+            organization: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -3661,7 +4658,7 @@ impl Membership {
     }
 }
 ///FTM Schema: Mention
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3679,22 +4676,28 @@ pub struct Mention {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub context_phone: Option<Vec<String>>,
     ///Property: Document
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub document: Option<Vec<String>>,
+    pub document: Vec<String>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Entity
     #[serde(skip_serializing_if = "Option::is_none")]
     pub resolved: Option<Vec<String>>,
 }
 impl Mention {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Mention".to_string(),
-            ..Default::default()
+            context_country: None,
+            context_email: None,
+            context_phone: None,
+            document: Vec::new(),
+            name: Vec::new(),
+            resolved: None,
         }
     }
     /// Get the schema name
@@ -3703,7 +4706,7 @@ impl Mention {
     }
 }
 ///FTM Schema: Message
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3733,8 +4736,7 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub body_html: Option<Vec<String>>,
     ///Property: Text
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub body_text: Option<Vec<String>>,
+    pub body_text: Vec<String>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
     pub companies_mentioned: Option<Vec<String>>,
@@ -3797,8 +4799,7 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -3845,8 +4846,7 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sender
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub sender: Option<Vec<String>>,
+    pub sender: Vec<String>,
     ///Property: Sender Account
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sender_account: Option<Vec<String>>,
@@ -3889,11 +4889,71 @@ pub struct Message {
 }
 impl Message {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Message".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_html: None,
+            body_text: Vec::new(),
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            end_date: None,
+            file_size: None,
+            iban_mentioned: None,
+            in_reply_to_message: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            metadata: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            recipient_account: None,
+            recipients: None,
+            retrieved_at: None,
+            sender: Vec::new(),
+            sender_account: None,
+            source_url: None,
+            start_date: None,
+            subject: None,
+            summary: None,
+            thread_topic: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -3902,7 +4962,7 @@ impl Message {
     }
 }
 ///FTM Schema: Note
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -3962,8 +5022,7 @@ pub struct Note {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -4012,11 +5071,46 @@ pub struct Note {
 }
 impl Note {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Note".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            companies_mentioned: None,
+            country: None,
+            created_at: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            entity: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            location_mentioned: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -4025,7 +5119,7 @@ impl Note {
     }
 }
 ///FTM Schema: Occupancy
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4049,8 +5143,7 @@ pub struct Occupancy {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Holder
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub holder: Option<Vec<String>>,
+    pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -4061,8 +5154,7 @@ pub struct Occupancy {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Position occupied
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub post: Option<Vec<String>>,
+    pub post: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -4087,11 +5179,30 @@ pub struct Occupancy {
 }
 impl Occupancy {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Occupancy".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            declaration_date: None,
+            description: None,
+            end_date: None,
+            holder: Vec::new(),
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            post: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            status: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -4100,7 +5211,7 @@ impl Occupancy {
     }
 }
 ///FTM Schema: Organization
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4187,8 +5298,7 @@ pub struct Organization {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -4273,11 +5383,67 @@ pub struct Organization {
 }
 impl Organization {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Organization".to_string(),
-            ..Default::default()
+            abbreviation: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            bright_query_id: None,
+            bright_query_org_id: None,
+            bvd_id: None,
+            cage_code: None,
+            country: None,
+            created_at: None,
+            description: None,
+            dissolution_date: None,
+            duns_code: None,
+            email: None,
+            gii_number: None,
+            id_number: None,
+            imo_number: None,
+            incorporation_date: None,
+            index_text: None,
+            inn_code: None,
+            jurisdiction: None,
+            lei_code: None,
+            license_number: None,
+            main_country: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            npi_code: None,
+            ogrn_code: None,
+            okpo_code: None,
+            opencorporates_url: None,
+            parent: None,
+            perm_id: None,
+            phone: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            sayari_id: None,
+            source_url: None,
+            summary: None,
+            swift_bic: None,
+            tax_number: None,
+            topics: None,
+            unique_entity_id: None,
+            usc_code: None,
+            vat_code: None,
+            weak_alias: None,
+            website: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -4286,7 +5452,7 @@ impl Organization {
     }
 }
 ///FTM Schema: Ownership
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4298,8 +5464,7 @@ pub struct Ownership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Asset
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub asset: Option<Vec<String>>,
+    pub asset: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -4319,8 +5484,7 @@ pub struct Ownership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Owner
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub owner: Option<Vec<String>>,
+    pub owner: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -4342,11 +5506,28 @@ pub struct Ownership {
 }
 impl Ownership {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Ownership".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            asset: Vec::new(),
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            owner: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -4355,7 +5536,7 @@ impl Ownership {
     }
 }
 ///FTM Schema: Package
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4436,8 +5617,7 @@ pub struct Package {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -4507,11 +5687,60 @@ pub struct Package {
 }
 impl Package {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Package".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -4520,7 +5749,7 @@ impl Package {
     }
 }
 ///FTM Schema: Page
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4549,11 +5778,19 @@ pub struct Page {
 }
 impl Page {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Page".to_string(),
-            ..Default::default()
+            body_text: None,
+            detected_language: None,
+            document: None,
+            index: None,
+            index_text: None,
+            translated_text: None,
         }
     }
     /// Get the schema name
@@ -4562,7 +5799,7 @@ impl Page {
     }
 }
 ///FTM Schema: Document
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4643,8 +5880,7 @@ pub struct Pages {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -4717,11 +5953,61 @@ pub struct Pages {
 }
 impl Pages {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Pages".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            pdf_hash: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -4730,7 +6016,7 @@ impl Pages {
     }
 }
 ///FTM Schema: Passport
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4760,8 +6046,7 @@ pub struct Passport {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gender: Option<Vec<String>>,
     ///Property: Identification holder
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub holder: Option<Vec<String>>,
+    pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -4772,8 +6057,7 @@ pub struct Passport {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Document number
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub number: Option<Vec<String>>,
+    pub number: Vec<String>,
     ///Property: Passport number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub passport_number: Option<Vec<String>>,
@@ -4801,11 +6085,33 @@ pub struct Passport {
 }
 impl Passport {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Passport".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            birth_date: None,
+            country: None,
+            date: None,
+            description: None,
+            end_date: None,
+            gender: None,
+            holder: Vec::new(),
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            number: Vec::new(),
+            passport_number: None,
+            personal_number: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -4814,7 +6120,7 @@ impl Passport {
     }
 }
 ///FTM Schema: Payment
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -4835,8 +6141,7 @@ pub struct Payment {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Beneficiary
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub beneficiary: Option<Vec<String>>,
+    pub beneficiary: Vec<String>,
     ///Property: Beneficiary bank account
     #[serde(skip_serializing_if = "Option::is_none")]
     pub beneficiary_account: Option<Vec<String>>,
@@ -4862,8 +6167,7 @@ pub struct Payment {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Payer
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub payer: Option<Vec<String>>,
+    pub payer: Vec<String>,
     ///Property: Payer bank account
     #[serde(skip_serializing_if = "Option::is_none")]
     pub payer_account: Option<Vec<String>>,
@@ -4894,11 +6198,36 @@ pub struct Payment {
 }
 impl Payment {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Payment".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            beneficiary: Vec::new(),
+            beneficiary_account: None,
+            contract: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            payer: Vec::new(),
+            payer_account: None,
+            project: None,
+            proof: None,
+            publisher_url: None,
+            purpose: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -4907,7 +6236,7 @@ impl Payment {
     }
 }
 ///FTM Schema: Person
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5003,8 +6332,7 @@ pub struct Person {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Nationality
     #[serde(skip_serializing_if = "Option::is_none")]
     pub nationality: Option<Vec<String>>,
@@ -5101,11 +6429,74 @@ pub struct Person {
 }
 impl Person {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Person".to_string(),
-            ..Default::default()
+            abbreviation: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            birth_country: None,
+            birth_date: None,
+            bright_query_id: None,
+            bright_query_org_id: None,
+            bvd_id: None,
+            citizenship: None,
+            country: None,
+            created_at: None,
+            death_date: None,
+            description: None,
+            dissolution_date: None,
+            duns_code: None,
+            email: None,
+            gender: None,
+            height: None,
+            id_number: None,
+            incorporation_date: None,
+            index_text: None,
+            inn_code: None,
+            jurisdiction: None,
+            lei_code: None,
+            license_number: None,
+            main_country: None,
+            modified_at: None,
+            name: Vec::new(),
+            nationality: None,
+            notes: None,
+            npi_code: None,
+            ogrn_code: None,
+            okpo_code: None,
+            opencorporates_url: None,
+            parent: None,
+            passport_number: None,
+            phone: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            sayari_id: None,
+            social_security_number: None,
+            source_url: None,
+            spoken_language: None,
+            summary: None,
+            swift_bic: None,
+            tax_number: None,
+            topics: None,
+            unique_entity_id: None,
+            usc_code: None,
+            vat_code: None,
+            weak_alias: None,
+            website: None,
+            weight: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -5114,7 +6505,7 @@ impl Person {
     }
 }
 ///FTM Schema: Text file
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5195,8 +6586,7 @@ pub struct PlainText {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -5266,11 +6656,60 @@ pub struct PlainText {
 }
 impl PlainText {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "PlainText".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -5279,7 +6718,7 @@ impl PlainText {
     }
 }
 ///FTM Schema: Position
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5321,8 +6760,7 @@ pub struct Position {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -5371,11 +6809,40 @@ pub struct Position {
 }
 impl Position {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Position".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            country: None,
+            created_at: None,
+            description: None,
+            dissolution_date: None,
+            inception_date: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            number_of_seats: None,
+            organization: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            subnational_area: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -5384,7 +6851,7 @@ impl Position {
     }
 }
 ///FTM Schema: Project
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5435,8 +6902,7 @@ pub struct Project {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -5485,11 +6951,43 @@ pub struct Project {
 }
 impl Project {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Project".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            project_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -5498,7 +6996,7 @@ impl Project {
     }
 }
 ///FTM Schema: Project participant
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5554,11 +7052,28 @@ pub struct ProjectParticipant {
 }
 impl ProjectParticipant {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "ProjectParticipant".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            participant: None,
+            project: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -5567,7 +7082,7 @@ impl ProjectParticipant {
     }
 }
 ///FTM Schema: Public body
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5654,8 +7169,7 @@ pub struct PublicBody {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -5740,11 +7254,67 @@ pub struct PublicBody {
 }
 impl PublicBody {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "PublicBody".to_string(),
-            ..Default::default()
+            abbreviation: None,
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            bright_query_id: None,
+            bright_query_org_id: None,
+            bvd_id: None,
+            cage_code: None,
+            country: None,
+            created_at: None,
+            description: None,
+            dissolution_date: None,
+            duns_code: None,
+            email: None,
+            gii_number: None,
+            id_number: None,
+            imo_number: None,
+            incorporation_date: None,
+            index_text: None,
+            inn_code: None,
+            jurisdiction: None,
+            lei_code: None,
+            license_number: None,
+            main_country: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            npi_code: None,
+            ogrn_code: None,
+            okpo_code: None,
+            opencorporates_url: None,
+            parent: None,
+            perm_id: None,
+            phone: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            sayari_id: None,
+            source_url: None,
+            summary: None,
+            swift_bic: None,
+            tax_number: None,
+            topics: None,
+            unique_entity_id: None,
+            usc_code: None,
+            vat_code: None,
+            weak_alias: None,
+            website: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -5753,7 +7323,7 @@ impl PublicBody {
     }
 }
 ///FTM Schema: Real estate
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5813,8 +7383,7 @@ pub struct RealEstate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -5863,11 +7432,46 @@ pub struct RealEstate {
 }
 impl RealEstate {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "RealEstate".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            area: None,
+            cadastral_code: None,
+            country: None,
+            create_date: None,
+            created_at: None,
+            description: None,
+            index_text: None,
+            latitude: None,
+            longitude: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            parent: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title_number: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -5876,7 +7480,7 @@ impl RealEstate {
     }
 }
 ///FTM Schema: Representation
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5885,14 +7489,12 @@ pub struct Representation {
     #[cfg_attr(feature = "builder", builder(default = "Representation".to_string()))]
     pub schema: String,
     ///Property: Agent
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub agent: Option<Vec<String>>,
+    pub agent: Vec<String>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Client
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub client: Option<Vec<String>>,
+    pub client: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -5932,11 +7534,28 @@ pub struct Representation {
 }
 impl Representation {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Representation".to_string(),
-            ..Default::default()
+            agent: Vec::new(),
+            aleph_url: None,
+            client: Vec::new(),
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
         }
     }
     /// Get the schema name
@@ -5945,7 +7564,7 @@ impl Representation {
     }
 }
 ///FTM Schema: Risk
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -5972,8 +7591,7 @@ pub struct Risk {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub entity: Option<Vec<String>>,
+    pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -6013,11 +7631,32 @@ pub struct Risk {
 }
 impl Risk {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Risk".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            country: None,
+            date: None,
+            description: None,
+            duration: None,
+            end_date: None,
+            entity: Vec::new(),
+            index_text: None,
+            listing_date: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            reason: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            topics: None,
         }
     }
     /// Get the schema name
@@ -6026,7 +7665,7 @@ impl Risk {
     }
 }
 ///FTM Schema: Sanction
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6056,8 +7695,7 @@ pub struct Sanction {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub entity: Option<Vec<String>>,
+    pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -6103,11 +7741,35 @@ pub struct Sanction {
 }
 impl Sanction {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Sanction".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            authority_id: None,
+            country: None,
+            date: None,
+            description: None,
+            duration: None,
+            end_date: None,
+            entity: Vec::new(),
+            index_text: None,
+            listing_date: None,
+            modified_at: None,
+            names_mentioned: None,
+            program_id: None,
+            program_url: None,
+            proof: None,
+            publisher_url: None,
+            reason: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            unsc_id: None,
         }
     }
     /// Get the schema name
@@ -6116,7 +7778,7 @@ impl Sanction {
     }
 }
 ///FTM Schema: Security
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6176,8 +7838,7 @@ pub struct Security {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -6223,11 +7884,45 @@ pub struct Security {
 }
 impl Security {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Security".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            country: None,
+            created_at: None,
+            description: None,
+            figi_code: None,
+            index_text: None,
+            isin: None,
+            issue_date: None,
+            issuer: None,
+            maturity_date: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_number: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            ticker: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -6236,7 +7931,7 @@ impl Security {
     }
 }
 ///FTM Schema: Similar
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6256,11 +7951,16 @@ pub struct Similar {
 }
 impl Similar {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Similar".to_string(),
-            ..Default::default()
+            candidate: None,
+            confidence_score: None,
+            match_: None,
         }
     }
     /// Get the schema name
@@ -6269,7 +7969,7 @@ impl Similar {
     }
 }
 ///FTM Schema: Succession
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6299,8 +7999,7 @@ pub struct Succession {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Predecessor
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub predecessor: Option<Vec<String>>,
+    pub predecessor: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -6317,19 +8016,35 @@ pub struct Succession {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
     ///Property: Successor
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub successor: Option<Vec<String>>,
+    pub successor: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
 }
 impl Succession {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Succession".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            predecessor: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            successor: Vec::new(),
+            summary: None,
         }
     }
     /// Get the schema name
@@ -6338,7 +8053,7 @@ impl Succession {
     }
 }
 ///FTM Schema: Table
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6426,8 +8141,7 @@ pub struct Table {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -6500,11 +8214,63 @@ pub struct Table {
 }
 impl Table {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Table".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            columns: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            csv_hash: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            row_count: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -6513,7 +8279,7 @@ impl Table {
     }
 }
 ///FTM Schema: Tax roll
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6567,16 +8333,33 @@ pub struct TaxRoll {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Taxee
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub taxee: Option<Vec<String>>,
+    pub taxee: Vec<String>,
 }
 impl TaxRoll {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "TaxRoll".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            birth_date: None,
+            country: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+            taxee: Vec::new(),
         }
     }
     /// Get the schema name
@@ -6585,7 +8368,7 @@ impl TaxRoll {
     }
 }
 ///FTM Schema: Trip
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6633,8 +8416,7 @@ pub struct Trip {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: End location
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub end_location: Option<Vec<String>>,
+    pub end_location: Vec<String>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -6657,8 +8439,7 @@ pub struct Trip {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -6696,8 +8477,7 @@ pub struct Trip {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
     ///Property: Start location
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub start_location: Option<Vec<String>>,
+    pub start_location: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -6719,11 +8499,54 @@ pub struct Trip {
 }
 impl Trip {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Trip".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            companies_mentioned: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            end_date: None,
+            end_location: Vec::new(),
+            iban_mentioned: None,
+            index_text: None,
+            involved: None,
+            ip_mentioned: None,
+            location: None,
+            location_mentioned: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            organizer: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            start_location: Vec::new(),
+            summary: None,
+            topics: None,
+            vehicle: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -6732,7 +8555,7 @@ impl Trip {
     }
 }
 ///FTM Schema: Other link
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6762,8 +8585,7 @@ pub struct UnknownLink {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Object
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub object: Option<Vec<String>>,
+    pub object: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
@@ -6780,19 +8602,35 @@ pub struct UnknownLink {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
     ///Property: Subject
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub subject: Option<Vec<String>>,
+    pub subject: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
 }
 impl UnknownLink {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "UnknownLink".to_string(),
-            ..Default::default()
+            aleph_url: None,
+            date: None,
+            description: None,
+            end_date: None,
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            object: Vec::new(),
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            subject: Vec::new(),
+            summary: None,
         }
     }
     /// Get the schema name
@@ -6801,7 +8639,7 @@ impl UnknownLink {
     }
 }
 ///FTM Schema: User account
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6843,8 +8681,7 @@ pub struct UserAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -6885,8 +8722,7 @@ pub struct UserAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
     ///Property: Username
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub username: Option<Vec<String>>,
+    pub username: Vec<String>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -6899,11 +8735,42 @@ pub struct UserAccount {
 }
 impl UserAccount {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "UserAccount".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            country: None,
+            created_at: None,
+            description: None,
+            email: None,
+            index_text: None,
+            ip_address: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            owner: None,
+            password: None,
+            phone: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            service: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            username: Vec::new(),
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -6912,7 +8779,7 @@ impl UserAccount {
     }
 }
 ///FTM Schema: Vehicle
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -6963,8 +8830,7 @@ pub struct Vehicle {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -7016,11 +8882,44 @@ pub struct Vehicle {
 }
 impl Vehicle {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Vehicle".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            build_date: None,
+            country: None,
+            created_at: None,
+            deregistration_date: None,
+            description: None,
+            index_text: None,
+            modified_at: None,
+            name: Vec::new(),
+            notes: None,
+            operator: None,
+            owner: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_date: None,
+            registration_number: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -7029,7 +8928,7 @@ impl Vehicle {
     }
 }
 ///FTM Schema: Vessel
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -7101,8 +9000,7 @@ pub struct Vessel {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Date of Name Change
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name_change_date: Option<Vec<String>>,
@@ -7163,11 +9061,54 @@ pub struct Vessel {
 }
 impl Vessel {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Vessel".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            amount: None,
+            amount_eur: None,
+            amount_usd: None,
+            build_date: None,
+            call_sign: None,
+            country: None,
+            created_at: None,
+            crs_number: None,
+            deadweight_tonnage: None,
+            deregistration_date: None,
+            description: None,
+            flag: None,
+            gross_registered_tonnage: None,
+            imo_number: None,
+            index_text: None,
+            mmsi: None,
+            modified_at: None,
+            name: Vec::new(),
+            name_change_date: None,
+            notes: None,
+            operator: None,
+            owner: None,
+            past_flags: None,
+            previous_name: None,
+            program_id: None,
+            proof: None,
+            publisher_url: None,
+            registration_date: None,
+            registration_number: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            tonnage: None,
+            topics: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -7176,7 +9117,7 @@ impl Vessel {
     }
 }
 ///FTM Schema: Video
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -7260,8 +9201,7 @@ pub struct Video {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -7331,11 +9271,61 @@ pub struct Video {
 }
 impl Video {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Video".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            duration: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name
@@ -7344,7 +9334,7 @@ impl Video {
     }
 }
 ///FTM Schema: Workbook
-#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
@@ -7425,8 +9415,7 @@ pub struct Workbook {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<Vec<String>>,
+    pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
@@ -7496,11 +9485,60 @@ pub struct Workbook {
 }
 impl Workbook {
     /// Create a new entity with the given ID
+    #[deprecated(
+        note = "Use the builder() method instead to ensure required fields are set"
+    )]
     pub fn new(id: impl Into<String>) -> Self {
         Self {
             id: id.into(),
             schema: "Workbook".to_string(),
-            ..Default::default()
+            address: None,
+            address_entity: None,
+            aleph_url: None,
+            alias: None,
+            ancestors: None,
+            authored_at: None,
+            body_text: None,
+            companies_mentioned: None,
+            content_hash: None,
+            country: None,
+            created_at: None,
+            date: None,
+            description: None,
+            detected_country: None,
+            detected_language: None,
+            email_mentioned: None,
+            file_size: None,
+            iban_mentioned: None,
+            index_text: None,
+            ip_mentioned: None,
+            language: None,
+            location_mentioned: None,
+            mime_type: None,
+            modified_at: None,
+            name: Vec::new(),
+            names_mentioned: None,
+            notes: None,
+            parent: None,
+            people_mentioned: None,
+            phone_mentioned: None,
+            previous_name: None,
+            processed_at: None,
+            processing_agent: None,
+            program_id: None,
+            proof: None,
+            published_at: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            summary: None,
+            title: None,
+            topics: None,
+            translated_language: None,
+            translated_text: None,
+            weak_alias: None,
+            wikidata_id: None,
+            wikipedia_url: None,
         }
     }
     /// Get the schema name

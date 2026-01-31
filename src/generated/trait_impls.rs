@@ -36,7 +36,7 @@ impl Thing for Address {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -110,7 +110,7 @@ impl Thing for Airplane {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -239,7 +239,7 @@ impl Thing for Article {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -313,7 +313,7 @@ impl Thing for Asset {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -489,7 +489,7 @@ impl Thing for Audio {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -563,7 +563,7 @@ impl Thing for BankAccount {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -748,7 +748,7 @@ impl Thing for CallForTenders {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -822,7 +822,7 @@ impl Thing for Company {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -913,7 +913,7 @@ impl Thing for Contract {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -1076,7 +1076,7 @@ impl Thing for CourtCase {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -1205,7 +1205,7 @@ impl Thing for CryptoWallet {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -1453,7 +1453,7 @@ impl Thing for Document {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -1612,7 +1612,7 @@ impl Thing for Email {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -1826,7 +1826,7 @@ impl Thing for Event {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -1985,7 +1985,7 @@ impl Thing for Folder {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2097,7 +2097,7 @@ impl Thing for HyperText {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2256,7 +2256,7 @@ impl Thing for Image {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2330,7 +2330,7 @@ impl Thing for LegalEntity {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2404,7 +2404,7 @@ impl Thing for License {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2635,7 +2635,7 @@ impl Thing for Message {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2747,7 +2747,7 @@ impl Thing for Note {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -2868,7 +2868,7 @@ impl Thing for Organization {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3035,7 +3035,7 @@ impl Thing for Package {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3147,7 +3147,7 @@ impl Thing for Pages {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3332,7 +3332,7 @@ impl Thing for Person {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3444,7 +3444,7 @@ impl Thing for PlainText {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3518,7 +3518,7 @@ impl Thing for Position {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3639,7 +3639,7 @@ impl Thing for Project {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3785,7 +3785,7 @@ impl Thing for PublicBody {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -3859,7 +3859,7 @@ impl Thing for RealEstate {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4099,7 +4099,7 @@ impl Thing for Security {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4283,7 +4283,7 @@ impl Thing for Table {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4489,7 +4489,7 @@ impl Thing for Trip {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4618,7 +4618,7 @@ impl Thing for UserAccount {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4692,7 +4692,7 @@ impl Thing for Vehicle {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4783,7 +4783,7 @@ impl Thing for Vessel {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -4912,7 +4912,7 @@ impl Thing for Video {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
@@ -5024,7 +5024,7 @@ impl Thing for Workbook {
         self.modified_at.as_deref()
     }
     fn name(&self) -> Option<&[String]> {
-        self.name.as_deref()
+        Some(&self.name)
     }
     fn notes(&self) -> Option<&[String]> {
         self.notes.as_deref()
