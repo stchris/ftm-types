@@ -14,6 +14,4 @@ fn main() {
         .build();
 
     dbg!(passport);
-    let fe: FtmEntity = FtmEntity::Person;
-    fe.name;
 }
