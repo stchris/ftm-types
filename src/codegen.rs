@@ -232,6 +232,7 @@ impl CodeGenerator {
             /// FTM Entity enum for runtime polymorphism
             #[derive(Debug, Clone, Serialize, Deserialize)]
             #[serde(untagged)]
+            #[allow(clippy::large_enum_variant)]
             pub enum FtmEntity {
                 #(#variants),*
             }
@@ -271,16 +272,14 @@ impl CodeGenerator {
                     let mut value: Value = serde_json::from_str(json_str)?;
 
                     // Extract the nested properties and flatten them
-                    if let Some(obj) = value.as_object_mut() {
-                        if let Some(properties) = obj.remove("properties") {
+                    if let Some(obj) = value.as_object_mut() &&
+                        if let Some(properties) = obj.remove("properties") &&
                             if let Some(props_obj) = properties.as_object() {
                                 // Flatten properties into the root object
                                 for (key, val) in props_obj {
                                     obj.insert(key.clone(), val.clone());
                                 }
                             }
-                        }
-                    }
 
                     // Now deserialize into FtmEntity
                     // Note: The FtmEntity enum uses #[serde(tag = "schema")] which expects
