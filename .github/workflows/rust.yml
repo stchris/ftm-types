@@ -29,7 +29,8 @@ jobs:
             ~/.cargo/git
             target
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-    - run: rustup component add clippy
+    - name: add clippy
+      run: rustup component add clippy
     - name: Build
       run: cargo build --verbose
     - name: Run tests
