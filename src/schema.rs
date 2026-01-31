@@ -907,6 +907,7 @@ properties:
     }
 
     #[test]
+    #[ignore = "TODO download data"]
     fn test_sample_sponsoring() {
         // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sponsoring/
         let test_file = "sample/de_abgeordnetenwatch_sponsoring.ftm.json";
@@ -921,6 +922,7 @@ properties:
     }
 
     #[test]
+    #[ignore = "TODO download data"]
     fn test_sample_sidejobs() {
         // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sidejobs/
         let test_file = "sample/de_abgeordnetenwatch_sidejobs.ftm.json";
