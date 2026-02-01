@@ -25,6 +25,7 @@ thiserror = "1.0"
 
 bon = {version = "3.8", optional = true}
 enum-derived = {version = "0.9", optional = true}
+zstd = "0.13.3"
 
 [dev-dependencies]
 tempfile = "3.8"

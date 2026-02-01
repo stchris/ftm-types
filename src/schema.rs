@@ -907,12 +907,12 @@ properties:
     }
 
     #[test]
-    #[ignore = "TODO download data"]
     fn test_sample_sponsoring() {
         // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sponsoring/
-        let test_file = "sample/de_abgeordnetenwatch_sponsoring.ftm.json";
+        let test_file = "sample/de_abgeordnetenwatch_sponsoring.ftm.json.zst";
         let test_file = BufReader::new(File::open(test_file).unwrap());
-        for line in test_file.lines() {
+        let test_data = zstd::decode_all(test_file).unwrap();
+        for line in test_data.lines() {
             let line = line.unwrap();
             let entity = FtmEntity::from_ftm_json(&line).unwrap();
             // Verify we can access basic properties
@@ -922,12 +922,12 @@ properties:
     }
 
     #[test]
-    #[ignore = "TODO download data"]
     fn test_sample_sidejobs() {
         // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sidejobs/
-        let test_file = "sample/de_abgeordnetenwatch_sidejobs.ftm.json";
+        let test_file = "sample/de_abgeordnetenwatch_sidejobs.ftm.json.zst";
         let test_file = BufReader::new(File::open(test_file).unwrap());
-        for line in test_file.lines() {
+        let test_data = zstd::decode_all(test_file).unwrap();
+        for line in test_data.lines() {
             let line = line.unwrap();
             let entity = FtmEntity::from_ftm_json(&line).unwrap();
             // Verify we can access basic properties
