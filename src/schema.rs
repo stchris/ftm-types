@@ -931,12 +931,18 @@ properties:
 
         let entity = FtmEntity::from_ftm_json(json).unwrap();
 
-        assert_eq!(entity.schema(), "Person", "expected Person schema, got {} — likely matched Address due to untagged enum ordering", entity.schema());
+        assert_eq!(
+            entity.schema(),
+            "Person",
+            "expected Person schema, got {} — likely matched Address due to untagged enum ordering",
+            entity.schema()
+        );
         assert_eq!(entity.id(), "e571b2b8ccfae7329036251acc47d0e833b280f5");
 
         assert!(
             matches!(entity, FtmEntity::Person(_)),
-            "entity should be FtmEntity::Person, got FtmEntity::{}", entity.schema()
+            "entity should be FtmEntity::Person, got FtmEntity::{}",
+            entity.schema()
         );
     }
 
