@@ -223,6 +223,8 @@ impl FtmEntity {
     /// ```
     ///
     /// This function flattens the structure to match the generated Rust types.
+    /// Dispatch is done on the `"schema"` field, so the correct variant is always
+    /// selected regardless of declaration order in the enum.
     pub fn from_ftm_json(json_str: &str) -> Result<Self, serde_json::Error> {
         let mut value: Value = serde_json::from_str(json_str)?;
         if let Some(obj) = value.as_object_mut()
@@ -233,7 +235,87 @@ impl FtmEntity {
                 obj.insert(key.clone(), val.clone());
             }
         }
-        serde_json::from_value(value)
+        let schema = value.get("schema").and_then(|v| v.as_str()).unwrap_or("");
+        match schema {
+            "Address" => Ok(FtmEntity::Address(serde_json::from_value(value)?)),
+            "Airplane" => Ok(FtmEntity::Airplane(serde_json::from_value(value)?)),
+            "Article" => Ok(FtmEntity::Article(serde_json::from_value(value)?)),
+            "Asset" => Ok(FtmEntity::Asset(serde_json::from_value(value)?)),
+            "Associate" => Ok(FtmEntity::Associate(serde_json::from_value(value)?)),
+            "Audio" => Ok(FtmEntity::Audio(serde_json::from_value(value)?)),
+            "BankAccount" => Ok(FtmEntity::BankAccount(serde_json::from_value(value)?)),
+            "Call" => Ok(FtmEntity::Call(serde_json::from_value(value)?)),
+            "CallForTenders" => {
+                Ok(FtmEntity::CallForTenders(serde_json::from_value(value)?))
+            }
+            "Company" => Ok(FtmEntity::Company(serde_json::from_value(value)?)),
+            "Contract" => Ok(FtmEntity::Contract(serde_json::from_value(value)?)),
+            "ContractAward" => {
+                Ok(FtmEntity::ContractAward(serde_json::from_value(value)?))
+            }
+            "CourtCase" => Ok(FtmEntity::CourtCase(serde_json::from_value(value)?)),
+            "CourtCaseParty" => {
+                Ok(FtmEntity::CourtCaseParty(serde_json::from_value(value)?))
+            }
+            "CryptoWallet" => Ok(FtmEntity::CryptoWallet(serde_json::from_value(value)?)),
+            "Debt" => Ok(FtmEntity::Debt(serde_json::from_value(value)?)),
+            "Directorship" => Ok(FtmEntity::Directorship(serde_json::from_value(value)?)),
+            "Document" => Ok(FtmEntity::Document(serde_json::from_value(value)?)),
+            "EconomicActivity" => {
+                Ok(FtmEntity::EconomicActivity(serde_json::from_value(value)?))
+            }
+            "Email" => Ok(FtmEntity::Email(serde_json::from_value(value)?)),
+            "Employment" => Ok(FtmEntity::Employment(serde_json::from_value(value)?)),
+            "Event" => Ok(FtmEntity::Event(serde_json::from_value(value)?)),
+            "Family" => Ok(FtmEntity::Family(serde_json::from_value(value)?)),
+            "Folder" => Ok(FtmEntity::Folder(serde_json::from_value(value)?)),
+            "HyperText" => Ok(FtmEntity::HyperText(serde_json::from_value(value)?)),
+            "Identification" => {
+                Ok(FtmEntity::Identification(serde_json::from_value(value)?))
+            }
+            "Image" => Ok(FtmEntity::Image(serde_json::from_value(value)?)),
+            "LegalEntity" => Ok(FtmEntity::LegalEntity(serde_json::from_value(value)?)),
+            "License" => Ok(FtmEntity::License(serde_json::from_value(value)?)),
+            "Membership" => Ok(FtmEntity::Membership(serde_json::from_value(value)?)),
+            "Mention" => Ok(FtmEntity::Mention(serde_json::from_value(value)?)),
+            "Message" => Ok(FtmEntity::Message(serde_json::from_value(value)?)),
+            "Note" => Ok(FtmEntity::Note(serde_json::from_value(value)?)),
+            "Occupancy" => Ok(FtmEntity::Occupancy(serde_json::from_value(value)?)),
+            "Organization" => Ok(FtmEntity::Organization(serde_json::from_value(value)?)),
+            "Ownership" => Ok(FtmEntity::Ownership(serde_json::from_value(value)?)),
+            "Package" => Ok(FtmEntity::Package(serde_json::from_value(value)?)),
+            "Page" => Ok(FtmEntity::Page(serde_json::from_value(value)?)),
+            "Pages" => Ok(FtmEntity::Pages(serde_json::from_value(value)?)),
+            "Passport" => Ok(FtmEntity::Passport(serde_json::from_value(value)?)),
+            "Payment" => Ok(FtmEntity::Payment(serde_json::from_value(value)?)),
+            "Person" => Ok(FtmEntity::Person(serde_json::from_value(value)?)),
+            "PlainText" => Ok(FtmEntity::PlainText(serde_json::from_value(value)?)),
+            "Position" => Ok(FtmEntity::Position(serde_json::from_value(value)?)),
+            "Project" => Ok(FtmEntity::Project(serde_json::from_value(value)?)),
+            "ProjectParticipant" => {
+                Ok(FtmEntity::ProjectParticipant(serde_json::from_value(value)?))
+            }
+            "PublicBody" => Ok(FtmEntity::PublicBody(serde_json::from_value(value)?)),
+            "RealEstate" => Ok(FtmEntity::RealEstate(serde_json::from_value(value)?)),
+            "Representation" => {
+                Ok(FtmEntity::Representation(serde_json::from_value(value)?))
+            }
+            "Risk" => Ok(FtmEntity::Risk(serde_json::from_value(value)?)),
+            "Sanction" => Ok(FtmEntity::Sanction(serde_json::from_value(value)?)),
+            "Security" => Ok(FtmEntity::Security(serde_json::from_value(value)?)),
+            "Similar" => Ok(FtmEntity::Similar(serde_json::from_value(value)?)),
+            "Succession" => Ok(FtmEntity::Succession(serde_json::from_value(value)?)),
+            "Table" => Ok(FtmEntity::Table(serde_json::from_value(value)?)),
+            "TaxRoll" => Ok(FtmEntity::TaxRoll(serde_json::from_value(value)?)),
+            "Trip" => Ok(FtmEntity::Trip(serde_json::from_value(value)?)),
+            "UnknownLink" => Ok(FtmEntity::UnknownLink(serde_json::from_value(value)?)),
+            "UserAccount" => Ok(FtmEntity::UserAccount(serde_json::from_value(value)?)),
+            "Vehicle" => Ok(FtmEntity::Vehicle(serde_json::from_value(value)?)),
+            "Vessel" => Ok(FtmEntity::Vessel(serde_json::from_value(value)?)),
+            "Video" => Ok(FtmEntity::Video(serde_json::from_value(value)?)),
+            "Workbook" => Ok(FtmEntity::Workbook(serde_json::from_value(value)?)),
+            _ => Err(serde::de::Error::custom(format!("unknown FTM schema: {schema:?}"))),
+        }
     }
 }
 impl TryFrom<String> for FtmEntity {

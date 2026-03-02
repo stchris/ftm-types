@@ -94,6 +94,38 @@ impl CodeGenerator {
 
             #[cfg(feature = "builder")] use bon::Builder;
 
+            /// Deserialize a `Vec<f64>` whose elements may arrive as JSON strings
+            /// (e.g. `["6000.00"]`) or as JSON numbers (e.g. `[6000.0]`).
+            fn deserialize_f64_vec<'de, D>(deserializer: D) -> Result<Vec<f64>, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                Vec::<serde_json::Value>::deserialize(deserializer)?
+                    .into_iter()
+                    .map(|v| match v {
+                        serde_json::Value::Number(n) => {
+                            n.as_f64().ok_or_else(|| serde::de::Error::custom("number out of f64 range"))
+                        }
+                        serde_json::Value::String(s) => {
+                            s.parse::<f64>().map_err(serde::de::Error::custom)
+                        }
+                        other => Err(serde::de::Error::custom(
+                            format!("expected number or numeric string, got {other}")
+                        )),
+                    })
+                    .collect()
+            }
+
+            /// Same as [`deserialize_f64_vec`] but wrapped in `Some`.
+            /// Used for optional number fields so the field can still be absent (`None`)
+            /// while a present value tolerates string-encoded numbers.
+            fn deserialize_opt_f64_vec<'de, D>(deserializer: D) -> Result<Option<Vec<f64>>, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                deserialize_f64_vec(deserializer).map(Some)
+            }
+
             #(#structs)*
         })
     }
@@ -154,10 +186,20 @@ impl CodeGenerator {
 
             // Required fields don't skip serializing if empty and are required in builder
             // Note: Option<_> fields don't need builder(default) as they default to None automatically
-            let serde_attr = if is_required {
-                quote! {}
-            } else {
-                quote! { #[serde(skip_serializing_if = "Option::is_none")] }
+            let serde_attr = match (prop_type, is_required) {
+                // Required number fields: tolerate string-encoded values and absent fields.
+                ("number", true) => {
+                    quote! { #[serde(deserialize_with = "deserialize_f64_vec", default)] }
+                }
+                // Optional number fields: same tolerance; `default` makes absent → None.
+                ("number", false) => {
+                    quote! { #[serde(skip_serializing_if = "Option::is_none", deserialize_with = "deserialize_opt_f64_vec", default)] }
+                }
+                // Required Vec<String> / Vec<date> fields: default to empty vec when absent.
+                // Real-world FTM data often omits fields that the schema marks required (e.g.
+                // `name` on Payment entities), so we tolerate the absence rather than hard-error.
+                (_, true) => quote! { #[serde(default)] },
+                (_, false) => quote! { #[serde(skip_serializing_if = "Option::is_none")] },
             };
 
             fields.push(quote! {
@@ -232,6 +274,7 @@ impl CodeGenerator {
         let mut variants = Vec::new();
         let mut match_schema_arms = Vec::new();
         let mut match_id_arms = Vec::new();
+        let mut dispatch_arms = Vec::new();
         let mut from_impls = Vec::new();
 
         for schema_name in self.registry.schema_names() {
@@ -255,6 +298,10 @@ impl CodeGenerator {
 
             match_id_arms.push(quote! {
                 FtmEntity::#variant_name(entity) => &entity.id
+            });
+
+            dispatch_arms.push(quote! {
+                #schema_name => Ok(FtmEntity::#variant_name(serde_json::from_value(value)?))
             });
 
             from_impls.push(quote! {
@@ -312,24 +359,31 @@ impl CodeGenerator {
                 /// ```
                 ///
                 /// This function flattens the structure to match the generated Rust types.
+                /// Dispatch is done on the `"schema"` field, so the correct variant is always
+                /// selected regardless of declaration order in the enum.
                 pub fn from_ftm_json(json_str: &str) -> Result<Self, serde_json::Error> {
-                    // First parse as generic JSON
                     let mut value: Value = serde_json::from_str(json_str)?;
 
-                    // Extract the nested properties and flatten them
                     if let Some(obj) = value.as_object_mut()
                         && let Some(properties) = obj.remove("properties")
-                        && let Some(props_obj) = properties.as_object() {
-                        // Flatten properties into the root object
+                        && let Some(props_obj) = properties.as_object()
+                    {
                         for (key, val) in props_obj {
                             obj.insert(key.clone(), val.clone());
                         }
                     }
 
-                    // Now deserialize into FtmEntity
-                    // Note: The FtmEntity enum uses #[serde(tag = "schema")] which expects
-                    // the JSON to have a "schema" field that determines the variant
-                    serde_json::from_value(value)
+                    let schema = value
+                        .get("schema")
+                        .and_then(|v| v.as_str())
+                        .unwrap_or("");
+
+                    match schema {
+                        #(#dispatch_arms,)*
+                        _ => Err(serde::de::Error::custom(
+                            format!("unknown FTM schema: {schema:?}")
+                        )),
+                    }
                 }
             }
 

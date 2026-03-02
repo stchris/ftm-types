@@ -922,6 +922,25 @@ properties:
     }
 
     #[test]
+    fn test_from_ftm_json_person_schema() {
+        // Regression test: with #[serde(untagged)], Address (alphabetically first) was
+        // matching Person entities because both structs share the same required fields
+        // (id, schema) and all property fields are Option<Vec<String>>.
+        // height omitted: the generated struct uses Vec<f64> but FTM encodes it as a string
+        let json = r#"{"id": "e571b2b8ccfae7329036251acc47d0e833b280f5", "schema": "Person", "properties": {"motherName": ["nor"], "lastName": ["mention"], "nameSuffix": ["herself"], "birthDate": ["1961-05-20"], "birthPlace": ["data"], "nationality": ["et"], "appearance": ["to"], "religion": ["boy"], "profession": ["example"], "spokenLanguage": ["deu"], "abbreviation": ["Jamie Patterson"], "email": ["jamespalmer@example.com"], "incorporationDate": ["1959-11-10"], "taxStatus": ["eye"], "sector": ["democratic"], "registrationNumber": ["KKe-99272009"], "licenseNumber": ["rCG-26589103"], "opencorporatesUrl": ["http://www.avila-williams.biz/"], "bvdId": ["YFB-72857745"], "sayariId": ["kLt-25015135"], "brightQueryOrgId": ["DVr-24775349"], "icijId": ["real"], "name": ["Joseph Brown"], "description": ["Grow she future debate analysis much determine."], "alias": ["Jennifer Black"], "previousName": ["Anthony Davies"], "weakAlias": ["Nicole Smith"], "sourceUrl": ["http://www.wilson.com/"], "alephUrl": ["http://gilbert.com/"], "keywords": ["worker"], "createdAt": ["1998-05-22"], "retrievedAt": ["1998-11-28"]}}"#;
+
+        let entity = FtmEntity::from_ftm_json(json).unwrap();
+
+        assert_eq!(entity.schema(), "Person", "expected Person schema, got {} — likely matched Address due to untagged enum ordering", entity.schema());
+        assert_eq!(entity.id(), "e571b2b8ccfae7329036251acc47d0e833b280f5");
+
+        assert!(
+            matches!(entity, FtmEntity::Person(_)),
+            "entity should be FtmEntity::Person, got FtmEntity::{}", entity.schema()
+        );
+    }
+
+    #[test]
     fn test_sample_sidejobs() {
         // from https://dataresearchcenter.org/library/de_abgeordnetenwatch_sidejobs/
         let test_file = "sample/de_abgeordnetenwatch_sidejobs.ftm.json.zst";

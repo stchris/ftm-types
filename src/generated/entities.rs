@@ -8,6 +8,34 @@ fn default_json_value() -> Option<serde_json::Value> {
 }
 #[cfg(feature = "builder")]
 use bon::Builder;
+/// Deserialize a `Vec<f64>` whose elements may arrive as JSON strings
+/// (e.g. `["6000.00"]`) or as JSON numbers (e.g. `[6000.0]`).
+fn deserialize_f64_vec<'de, D>(deserializer: D) -> Result<Vec<f64>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    Vec::<serde_json::Value>::deserialize(deserializer)?
+        .into_iter()
+        .map(|v| match v {
+            serde_json::Value::Number(n) => n
+                .as_f64()
+                .ok_or_else(|| serde::de::Error::custom("number out of f64 range")),
+            serde_json::Value::String(s) => s.parse::<f64>().map_err(serde::de::Error::custom),
+            other => Err(serde::de::Error::custom(format!(
+                "expected number or numeric string, got {other}"
+            ))),
+        })
+        .collect()
+}
+/// Same as [`deserialize_f64_vec`] but wrapped in `Some`.
+/// Used for optional number fields so the field can still be absent (`None`)
+/// while a present value tolerates string-encoded numbers.
+fn deserialize_opt_f64_vec<'de, D>(deserializer: D) -> Result<Option<Vec<f64>>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    deserialize_f64_vec(deserializer).map(Some)
+}
 ///FTM Schema: Address
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]
@@ -48,15 +76,24 @@ pub struct Address {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
     ///Property: Latitude
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub latitude: Option<Vec<f64>>,
     ///Property: Longitude
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub longitude: Option<Vec<f64>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -161,13 +198,25 @@ pub struct Airplane {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Build Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -194,6 +243,7 @@ pub struct Airplane {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -352,7 +402,11 @@ pub struct Article {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -376,6 +430,7 @@ pub struct Article {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -527,13 +582,25 @@ pub struct Asset {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -551,6 +618,7 @@ pub struct Asset {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -641,6 +709,7 @@ pub struct Associate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Associate
+    #[serde(default)]
     pub associate: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -661,6 +730,7 @@ pub struct Associate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Person
+    #[serde(default)]
     pub person: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -765,13 +835,21 @@ pub struct Audio {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub detected_language: Option<Vec<String>>,
     ///Property: Duration
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub duration: Option<Vec<f64>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -795,6 +873,7 @@ pub struct Audio {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -836,7 +915,11 @@ pub struct Audio {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sampling Rate
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub sampling_rate: Option<Vec<f64>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -954,16 +1037,32 @@ pub struct BankAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Balance
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub balance: Option<Vec<f64>>,
     ///Property: Balance date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -993,7 +1092,11 @@ pub struct BankAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
     ///Property: Maximum balance
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub max_balance: Option<Vec<f64>>,
     ///Property: Maximum balance date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1002,6 +1105,7 @@ pub struct BankAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1117,7 +1221,11 @@ pub struct Call {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Duration
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub duration: Option<Vec<f64>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1210,6 +1318,7 @@ pub struct CallForTenders {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Name of contracting authority
+    #[serde(default)]
     pub authority: Vec<String>,
     ///Property: Contracting authority reference ID
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1251,12 +1360,17 @@ pub struct CallForTenders {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
     ///Property: Maximum number of lots
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub maximum_number_of_lots: Option<Vec<f64>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1265,7 +1379,11 @@ pub struct CallForTenders {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
     ///Property: Number of lots
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub number_of_lots: Option<Vec<f64>>,
     ///Property: NUTS code
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1403,13 +1521,25 @@ pub struct Company {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: BIK
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1505,6 +1635,7 @@ pub struct Company {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1707,13 +1838,25 @@ pub struct Contract {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Contract authority
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1740,6 +1883,7 @@ pub struct Contract {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1769,6 +1913,7 @@ pub struct Contract {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Title
+    #[serde(default)]
     pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1840,18 +1985,31 @@ pub struct ContractAward {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Call For Tenders
     #[serde(skip_serializing_if = "Option::is_none")]
     pub call_for_tenders: Option<Vec<String>>,
     ///Property: Contract
+    #[serde(default)]
     pub contract: Vec<String>,
     ///Property: CPV code
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1899,6 +2057,7 @@ pub struct ContractAward {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Supplier
+    #[serde(default)]
     pub supplier: Vec<String>,
 }
 impl ContractAward {
@@ -1983,6 +2142,7 @@ pub struct CourtCase {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2073,6 +2233,7 @@ pub struct CourtCaseParty {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Case
+    #[serde(default)]
     pub case: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2093,6 +2254,7 @@ pub struct CourtCaseParty {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Party
+    #[serde(default)]
     pub party: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2167,16 +2329,32 @@ pub struct CryptoWallet {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Balance
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub balance: Option<Vec<f64>>,
     ///Property: Balance date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2203,6 +2381,7 @@ pub struct CryptoWallet {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2302,13 +2481,25 @@ pub struct Debt {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Creditor
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2317,6 +2508,7 @@ pub struct Debt {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
     ///Property: Debtor
+    #[serde(default)]
     pub debtor: Vec<String>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2403,6 +2595,7 @@ pub struct Directorship {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Director
+    #[serde(default)]
     pub director: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2417,6 +2610,7 @@ pub struct Directorship {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Organization
+    #[serde(default)]
     pub organization: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2524,7 +2718,11 @@ pub struct Document {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2548,6 +2746,7 @@ pub struct Document {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2887,7 +3086,11 @@ pub struct Email {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub emitters: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: From
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2921,6 +3124,7 @@ pub struct Email {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3096,8 +3300,10 @@ pub struct Employment {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Employee
+    #[serde(default)]
     pub employee: Vec<String>,
     ///Property: Employer
+    #[serde(default)]
     pub employer: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3229,6 +3435,7 @@ pub struct Event {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3365,6 +3572,7 @@ pub struct Family {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Person
+    #[serde(default)]
     pub person: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3373,6 +3581,7 @@ pub struct Family {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Relative
+    #[serde(default)]
     pub relative: Vec<String>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3474,7 +3683,11 @@ pub struct Folder {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3498,6 +3711,7 @@ pub struct Folder {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3688,7 +3902,11 @@ pub struct HyperText {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3712,6 +3930,7 @@ pub struct HyperText {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3867,6 +4086,7 @@ pub struct Identification {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Identification holder
+    #[serde(default)]
     pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3878,6 +4098,7 @@ pub struct Identification {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Document number
+    #[serde(default)]
     pub number: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3989,7 +4210,11 @@ pub struct Image {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4013,6 +4238,7 @@ pub struct Image {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4226,6 +4452,7 @@ pub struct LegalEntity {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4392,18 +4619,35 @@ pub struct License {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Area
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub area: Option<Vec<f64>>,
     ///Property: Contract authority
+    #[serde(default)]
     pub authority: Vec<String>,
     ///Property: Contract date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4427,6 +4671,7 @@ pub struct License {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4456,6 +4701,7 @@ pub struct License {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Title
+    #[serde(default)]
     pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4540,6 +4786,7 @@ pub struct Membership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
     ///Property: Member
+    #[serde(default)]
     pub member: Vec<String>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4548,6 +4795,7 @@ pub struct Membership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Organization
+    #[serde(default)]
     pub organization: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4616,8 +4864,10 @@ pub struct Mention {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub context_phone: Option<Vec<String>>,
     ///Property: Document
+    #[serde(default)]
     pub document: Vec<String>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Entity
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4674,6 +4924,7 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub body_html: Option<Vec<String>>,
     ///Property: Text
+    #[serde(default)]
     pub body_text: Vec<String>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4706,7 +4957,11 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4737,6 +4992,7 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4784,6 +5040,7 @@ pub struct Message {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sender
+    #[serde(default)]
     pub sender: Vec<String>,
     ///Property: Sender Account
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4958,6 +5215,7 @@ pub struct Note {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5077,6 +5335,7 @@ pub struct Occupancy {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Holder
+    #[serde(default)]
     pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5088,6 +5347,7 @@ pub struct Occupancy {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Position occupied
+    #[serde(default)]
     pub post: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5230,6 +5490,7 @@ pub struct Organization {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5394,6 +5655,7 @@ pub struct Ownership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Asset
+    #[serde(default)]
     pub asset: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5414,6 +5676,7 @@ pub struct Ownership {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Owner
+    #[serde(default)]
     pub owner: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5521,7 +5784,11 @@ pub struct Package {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5545,6 +5812,7 @@ pub struct Package {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5693,7 +5961,11 @@ pub struct Page {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub document: Option<Vec<String>>,
     ///Property: Index
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub index: Option<Vec<f64>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5780,7 +6052,11 @@ pub struct Pages {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5804,6 +6080,7 @@ pub struct Pages {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5968,6 +6245,7 @@ pub struct Passport {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gender: Option<Vec<String>>,
     ///Property: Identification holder
+    #[serde(default)]
     pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -5979,6 +6257,7 @@ pub struct Passport {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Document number
+    #[serde(default)]
     pub number: Vec<String>,
     ///Property: Passport number
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6052,15 +6331,28 @@ pub struct Payment {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Beneficiary
+    #[serde(default)]
     pub beneficiary: Vec<String>,
     ///Property: Beneficiary bank account
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6087,6 +6379,7 @@ pub struct Payment {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Payer
+    #[serde(default)]
     pub payer: Vec<String>,
     ///Property: Payer bank account
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6220,7 +6513,11 @@ pub struct Person {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gender: Option<Vec<String>>,
     ///Property: Height
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub height: Option<Vec<f64>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6250,6 +6547,7 @@ pub struct Person {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Nationality
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6336,7 +6634,11 @@ pub struct Person {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub website: Option<Vec<String>>,
     ///Property: Weight
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub weight: Option<Vec<f64>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6478,7 +6780,11 @@ pub struct PlainText {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6502,6 +6808,7 @@ pub struct PlainText {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6674,12 +6981,17 @@ pub struct Position {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
     ///Property: Total number of seats
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub number_of_seats: Option<Vec<f64>>,
     ///Property: Organization
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6784,13 +7096,25 @@ pub struct Project {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6814,6 +7138,7 @@ pub struct Project {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7077,6 +7402,7 @@ pub struct PublicBody {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7250,16 +7576,32 @@ pub struct RealEstate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Area
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub area: Option<Vec<f64>>,
     ///Property: Cadastral code
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7280,15 +7622,24 @@ pub struct RealEstate {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
     ///Property: Latitude
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub latitude: Option<Vec<f64>>,
     ///Property: Longitude
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub longitude: Option<Vec<f64>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7393,11 +7744,13 @@ pub struct Representation {
     #[cfg_attr(feature = "builder", builder(default = "Representation".to_string()))]
     pub schema: String,
     ///Property: Agent
+    #[serde(default)]
     pub agent: Vec<String>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Client
+    #[serde(default)]
     pub client: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7487,12 +7840,17 @@ pub struct Risk {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Duration
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub duration: Option<Vec<f64>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
+    #[serde(default)]
     pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7589,12 +7947,17 @@ pub struct Sanction {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Duration
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub duration: Option<Vec<f64>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
+    #[serde(default)]
     pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7697,13 +8060,25 @@ pub struct Security {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7736,6 +8111,7 @@ pub struct Security {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7839,7 +8215,11 @@ pub struct Similar {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub candidate: Option<Vec<String>>,
     ///Property: Confidence score
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub confidence_score: Option<Vec<f64>>,
     ///Property: Match
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7893,6 +8273,7 @@ pub struct Succession {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Predecessor
+    #[serde(default)]
     pub predecessor: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -7910,6 +8291,7 @@ pub struct Succession {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
     ///Property: Successor
+    #[serde(default)]
     pub successor: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8009,7 +8391,11 @@ pub struct Table {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8033,6 +8419,7 @@ pub struct Table {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8074,7 +8461,11 @@ pub struct Table {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Number of rows
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub row_count: Option<Vec<f64>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8223,6 +8614,7 @@ pub struct TaxRoll {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Taxee
+    #[serde(default)]
     pub taxee: Vec<String>,
 }
 impl TaxRoll {
@@ -8304,6 +8696,7 @@ pub struct Trip {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: End location
+    #[serde(default)]
     pub end_location: Vec<String>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8327,6 +8720,7 @@ pub struct Trip {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8365,6 +8759,7 @@ pub struct Trip {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
     ///Property: Start location
+    #[serde(default)]
     pub start_location: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8471,6 +8866,7 @@ pub struct UnknownLink {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Object
+    #[serde(default)]
     pub object: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8488,6 +8884,7 @@ pub struct UnknownLink {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
     ///Property: Subject
+    #[serde(default)]
     pub subject: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8565,6 +8962,7 @@ pub struct UserAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8606,6 +9004,7 @@ pub struct UserAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
     ///Property: Username
+    #[serde(default)]
     pub username: Vec<String>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8682,13 +9081,25 @@ pub struct Vehicle {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Build Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8712,6 +9123,7 @@ pub struct Vehicle {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8829,13 +9241,25 @@ pub struct Vessel {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Build Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8853,7 +9277,11 @@ pub struct Vessel {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub crs_number: Option<Vec<String>>,
     ///Property: Deadweight Tonnage
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub deadweight_tonnage: Option<Vec<f64>>,
     ///Property: De-registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8865,7 +9293,11 @@ pub struct Vessel {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub flag: Option<Vec<String>>,
     ///Property: Gross Registered Tonnage
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub gross_registered_tonnage: Option<Vec<f64>>,
     ///Property: IMO Number
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8880,6 +9312,7 @@ pub struct Vessel {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Date of Name Change
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -8924,7 +9357,11 @@ pub struct Vessel {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Tonnage
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub tonnage: Option<Vec<f64>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -9049,13 +9486,21 @@ pub struct Video {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub detected_language: Option<Vec<String>>,
     ///Property: Duration
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub duration: Option<Vec<f64>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -9079,6 +9524,7 @@ pub struct Video {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -9267,7 +9713,11 @@ pub struct Workbook {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File size
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
+    )]
     pub file_size: Option<Vec<f64>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -9291,6 +9741,7 @@ pub struct Workbook {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
+    #[serde(default)]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
