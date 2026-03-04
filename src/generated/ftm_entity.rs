@@ -25,6 +25,7 @@ pub enum FtmEntity {
     Debt(Debt),
     Directorship(Directorship),
     Document(Document),
+    Documentation(Documentation),
     EconomicActivity(EconomicActivity),
     Email(Email),
     Employment(Employment),
@@ -93,6 +94,7 @@ impl FtmEntity {
             FtmEntity::Debt(_) => "Debt",
             FtmEntity::Directorship(_) => "Directorship",
             FtmEntity::Document(_) => "Document",
+            FtmEntity::Documentation(_) => "Documentation",
             FtmEntity::EconomicActivity(_) => "EconomicActivity",
             FtmEntity::Email(_) => "Email",
             FtmEntity::Employment(_) => "Employment",
@@ -161,6 +163,7 @@ impl FtmEntity {
             FtmEntity::Debt(entity) => &entity.id,
             FtmEntity::Directorship(entity) => &entity.id,
             FtmEntity::Document(entity) => &entity.id,
+            FtmEntity::Documentation(entity) => &entity.id,
             FtmEntity::EconomicActivity(entity) => &entity.id,
             FtmEntity::Email(entity) => &entity.id,
             FtmEntity::Employment(entity) => &entity.id,
@@ -255,6 +258,7 @@ impl FtmEntity {
             "Debt" => Ok(FtmEntity::Debt(serde_json::from_value(value)?)),
             "Directorship" => Ok(FtmEntity::Directorship(serde_json::from_value(value)?)),
             "Document" => Ok(FtmEntity::Document(serde_json::from_value(value)?)),
+            "Documentation" => Ok(FtmEntity::Documentation(serde_json::from_value(value)?)),
             "EconomicActivity" => Ok(FtmEntity::EconomicActivity(serde_json::from_value(value)?)),
             "Email" => Ok(FtmEntity::Email(serde_json::from_value(value)?)),
             "Employment" => Ok(FtmEntity::Employment(serde_json::from_value(value)?)),
@@ -408,6 +412,11 @@ impl From<Directorship> for FtmEntity {
 impl From<Document> for FtmEntity {
     fn from(entity: Document) -> Self {
         FtmEntity::Document(entity)
+    }
+}
+impl From<Documentation> for FtmEntity {
+    fn from(entity: Documentation) -> Self {
+        FtmEntity::Documentation(entity)
     }
 }
 impl From<EconomicActivity> for FtmEntity {
