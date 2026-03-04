@@ -31,6 +31,7 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
+      - uses: astral-sh/setup-uv@v5
       - uses: actions-rs/cargo@v1
         with:
           command: test
