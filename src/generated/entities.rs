@@ -2876,6 +2876,90 @@ impl Document {
         "Document"
     }
 }
+///FTM Schema: Documentation
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[cfg_attr(feature = "rand", derive(Rand))]
+#[cfg_attr(feature = "builder", derive(Builder))]
+#[serde(rename_all = "camelCase")]
+pub struct Documentation {
+    pub id: String,
+    #[cfg_attr(feature = "builder", builder(default = "Documentation".to_string()))]
+    pub schema: String,
+    ///Property: Aleph URL
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub aleph_url: Option<Vec<String>>,
+    ///Property: Date
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub date: Option<Vec<String>>,
+    ///Property: Description
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Vec<String>>,
+    ///Property: Document
+    #[serde(default)]
+    pub document: Vec<String>,
+    ///Property: End date
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub end_date: Option<Vec<String>>,
+    ///Property: Entity
+    #[serde(default)]
+    pub entity: Vec<String>,
+    ///Property: Index text
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub index_text: Option<Vec<String>>,
+    ///Property: Modified on
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub modified_at: Option<Vec<String>>,
+    ///Property: Detected names
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub names_mentioned: Option<Vec<String>>,
+    ///Property: Source document
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub proof: Option<Vec<String>>,
+    ///Property: Publishing source URL
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher_url: Option<Vec<String>>,
+    ///Property: Retrieved on
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub retrieved_at: Option<Vec<String>>,
+    ///Property: Source link
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub source_url: Option<Vec<String>>,
+    ///Property: Start date
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub start_date: Option<Vec<String>>,
+    ///Property: Summary
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Vec<String>>,
+}
+impl Documentation {
+    /// Create a new entity with the given ID
+    #[deprecated(note = "Use the builder() method instead to ensure required fields are set")]
+    pub fn new(id: impl Into<String>) -> Self {
+        Self {
+            id: id.into(),
+            schema: "Documentation".to_string(),
+            aleph_url: None,
+            date: None,
+            description: None,
+            document: Vec::new(),
+            end_date: None,
+            entity: Vec::new(),
+            index_text: None,
+            modified_at: None,
+            names_mentioned: None,
+            proof: None,
+            publisher_url: None,
+            retrieved_at: None,
+            source_url: None,
+            start_date: None,
+            summary: None,
+        }
+    }
+    /// Get the schema name
+    pub fn schema_name() -> &'static str {
+        "Documentation"
+    }
+}
 ///FTM Schema: Customs declaration
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "rand", derive(Rand))]

@@ -35,7 +35,13 @@ fn schema_from_json(json: &str) -> &str {
 /// non-zero.
 fn run_ftm_random(extra_args: &[&str]) -> Vec<String> {
     let mut cmd = Command::new("uvx");
-    cmd.args(["--refresh-package", "ftm-random", "--from", "ftm-random>=0.4.0", "ftm-random"]);
+    cmd.args([
+        "--refresh-package",
+        "ftm-random",
+        "--from",
+        "ftm-random>=0.4.0",
+        "ftm-random",
+    ]);
     for arg in extra_args {
         cmd.arg(arg);
     }
@@ -80,9 +86,8 @@ fn test_parse_random_entities() {
     );
 
     for (i, line) in lines.iter().enumerate() {
-        let entity = FtmEntity::from_ftm_json(line).unwrap_or_else(|err| {
-            panic!("parse failed on line {i}: {err}\n  json: {line}")
-        });
+        let entity = FtmEntity::from_ftm_json(line)
+            .unwrap_or_else(|err| panic!("parse failed on line {i}: {err}\n  json: {line}"));
 
         assert!(
             !entity.id().is_empty(),
@@ -151,6 +156,7 @@ fn test_all_schemas_parse() {
         "Debt",
         "Directorship",
         "Document",
+        "Documentation",
         "EconomicActivity",
         "Email",
         "Employment",

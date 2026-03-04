@@ -1492,6 +1492,61 @@ impl Thing for Document {
         self.wikipedia_url.as_deref()
     }
 }
+impl Interest for Documentation {
+    fn id(&self) -> &str {
+        &self.id
+    }
+    fn schema(&self) -> &str {
+        &self.schema
+    }
+}
+impl Interval for Documentation {
+    fn id(&self) -> &str {
+        &self.id
+    }
+    fn schema(&self) -> &str {
+        &self.schema
+    }
+    fn aleph_url(&self) -> Option<&[String]> {
+        self.aleph_url.as_deref()
+    }
+    fn date(&self) -> Option<&[String]> {
+        self.date.as_deref()
+    }
+    fn description(&self) -> Option<&[String]> {
+        self.description.as_deref()
+    }
+    fn end_date(&self) -> Option<&[String]> {
+        self.end_date.as_deref()
+    }
+    fn index_text(&self) -> Option<&[String]> {
+        self.index_text.as_deref()
+    }
+    fn modified_at(&self) -> Option<&[String]> {
+        self.modified_at.as_deref()
+    }
+    fn names_mentioned(&self) -> Option<&[String]> {
+        self.names_mentioned.as_deref()
+    }
+    fn proof(&self) -> Option<&[String]> {
+        self.proof.as_deref()
+    }
+    fn publisher_url(&self) -> Option<&[String]> {
+        self.publisher_url.as_deref()
+    }
+    fn retrieved_at(&self) -> Option<&[String]> {
+        self.retrieved_at.as_deref()
+    }
+    fn source_url(&self) -> Option<&[String]> {
+        self.source_url.as_deref()
+    }
+    fn start_date(&self) -> Option<&[String]> {
+        self.start_date.as_deref()
+    }
+    fn summary(&self) -> Option<&[String]> {
+        self.summary.as_deref()
+    }
+}
 impl Interval for EconomicActivity {
     fn id(&self) -> &str {
         &self.id
