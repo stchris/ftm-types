@@ -39,7 +39,7 @@ fn run_ftm_random(extra_args: &[&str]) -> Vec<String> {
         "--refresh-package",
         "ftm-random",
         "--from",
-        "ftm-random>=0.4.0",
+        "ftm-random>=0.5.0",
         "ftm-random",
     ]);
     for arg in extra_args {
@@ -204,32 +204,52 @@ fn test_all_schemas_parse() {
         "Workbook",
     ];
 
-    for schema in concrete_schemas {
-        let lines = run_ftm_random(&["--schema", schema, "--count", "3"]);
-        assert_eq!(
-            lines.len(),
-            3,
-            "expected 3 lines for schema {schema}, got {}",
-            lines.len()
-        );
+    let mut args: Vec<&str> = Vec::new();
+    for schema in &concrete_schemas {
+        args.push("--schema");
+        args.push(schema);
+    }
+    args.extend_from_slice(&["--count-per-schema", "3"]);
 
-        for (i, line) in lines.iter().enumerate() {
-            let entity = FtmEntity::from_ftm_json(line).unwrap_or_else(|err| {
-                panic!("parse failed for schema {schema} entity {i}: {err}\n{line}")
-            });
+    let lines = run_ftm_random(&args);
+    let expected_total = concrete_schemas.len() * 3;
+    assert_eq!(
+        lines.len(),
+        expected_total,
+        "expected {expected_total} lines, got {}",
+        lines.len()
+    );
 
-            assert_eq!(
-                entity.schema(),
-                schema,
-                "wrong variant for schema {schema} on entity {i}: got {:?}\n{line}",
-                entity.schema()
-            );
-            assert!(
-                !entity.id().is_empty(),
-                "empty id for schema {schema} on entity {i}\n{line}"
-            );
+    let mut failures: Vec<String> = Vec::new();
+
+    for (i, line) in lines.iter().enumerate() {
+        let json_schema = schema_from_json(line);
+        match FtmEntity::from_ftm_json(line) {
+            Err(err) => failures.push(format!(
+                "parse failed for schema {json_schema} entity {i}: {err}\n{line}"
+            )),
+            Ok(entity) => {
+                if entity.schema() != json_schema {
+                    failures.push(format!(
+                        "wrong variant for schema {json_schema} on entity {i}: got {:?}\n{line}",
+                        entity.schema()
+                    ));
+                }
+                if entity.id().is_empty() {
+                    failures.push(format!(
+                        "empty id for schema {json_schema} on entity {i}\n{line}"
+                    ));
+                }
+            }
         }
     }
+
+    assert!(
+        failures.is_empty(),
+        "{} failure(s):\n{}",
+        failures.len(),
+        failures.join("\n")
+    );
 }
 
 /// Parse a larger batch of random entities and collect all failures at once
