@@ -2,19 +2,26 @@
 /// and verify that `FtmEntity::from_ftm_json` can parse them correctly.
 use ftm_types::FtmEntity;
 use std::process::Command;
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::sync::LazyLock;
+
+// ── shared entity pools (generated once for the whole test run) ───────────────
+
+/// 200 random-schema entities shared across tests that don't need specific schemas.
+static RANDOM_ENTITIES: LazyLock<Vec<String>> =
+    LazyLock::new(|| run_ftm_random(&["--random-schema", "--count", "200"]));
+
+/// 3 entities per every concrete schema, shared by `test_all_schemas_parse`.
+static ALL_SCHEMA_ENTITIES: LazyLock<Vec<String>> = LazyLock::new(|| {
+    let mut args: Vec<&str> = Vec::new();
+    for schema in CONCRETE_SCHEMAS {
+        args.push("--schema");
+        args.push(schema);
+    }
+    args.extend_from_slice(&["--count-per-schema", "3"]);
+    run_ftm_random(&args)
+});
 
 // ── helpers ───────────────────────────────────────────────────────────────────
-
-/// Derive a pseudo-random count in [min, max] from the current time.
-/// This avoids adding the `rand` crate as a dev-dependency.
-fn random_count(min: u64, max: u64) -> usize {
-    let nanos = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap()
-        .subsec_nanos() as u64;
-    (min + nanos % (max - min + 1)) as usize
-}
 
 /// Extract the `"schema"` field value directly from a raw JSON line without a
 /// full parse — the field is always near the start of the object.
@@ -28,11 +35,6 @@ fn schema_from_json(json: &str) -> &str {
     &inner[..end]
 }
 
-/// Run `uvx --refresh-package ftm-random ftm-random` (v0.4.0+, which only
-/// emits concrete schemas with `--random-schema`) with the given extra
-/// arguments and return the stdout lines (one JSON entity per line).
-/// Panics with a descriptive message if the tool is unavailable or exits
-/// non-zero.
 fn run_ftm_random(extra_args: &[&str]) -> Vec<String> {
     let mut cmd = Command::new("uvx");
     cmd.args(["ftm-random"]);
@@ -61,23 +63,81 @@ fn run_ftm_random(extra_args: &[&str]) -> Vec<String> {
         .collect()
 }
 
+const CONCRETE_SCHEMAS: &[&str] = &[
+    "Address",
+    "Airplane",
+    "Article",
+    "Asset",
+    "Associate",
+    "Audio",
+    "BankAccount",
+    "Call",
+    "CallForTenders",
+    "Company",
+    "Contract",
+    "ContractAward",
+    "CourtCase",
+    "CourtCaseParty",
+    "CryptoWallet",
+    "Debt",
+    "Directorship",
+    "Document",
+    "Documentation",
+    "EconomicActivity",
+    "Email",
+    "Employment",
+    "Event",
+    "Family",
+    "Folder",
+    "HyperText",
+    "Identification",
+    "Image",
+    "LegalEntity",
+    "License",
+    "Membership",
+    "Mention",
+    "Message",
+    "Note",
+    "Occupancy",
+    "Organization",
+    "Ownership",
+    "Package",
+    "Page",
+    "Pages",
+    "Passport",
+    "Payment",
+    "Person",
+    "PlainText",
+    "Position",
+    "Project",
+    "ProjectParticipant",
+    "PublicBody",
+    "RealEstate",
+    "Representation",
+    "Risk",
+    "Sanction",
+    "Security",
+    "Similar",
+    "Succession",
+    "Table",
+    "TaxRoll",
+    "Trip",
+    "UnknownLink",
+    "UserAccount",
+    "Vehicle",
+    "Vessel",
+    "Video",
+    "Workbook",
+];
+
 // ── tests ─────────────────────────────────────────────────────────────────────
 
-/// Parse a random number of random-schema entities and verify basic invariants:
+/// Parse a batch of random-schema entities and verify basic invariants:
 /// every entity must parse without error, `id()` must be non-empty, and
 /// `entity.schema()` must match the `"schema"` field in the original JSON.
 #[test]
 fn test_parse_random_entities() {
-    let count = random_count(20, 100);
-    let count_str = count.to_string();
-
-    let lines = run_ftm_random(&["--random-schema", "--count", &count_str]);
-    assert_eq!(
-        lines.len(),
-        count,
-        "expected {count} lines from ftm-random, got {}",
-        lines.len()
-    );
+    let lines = &*RANDOM_ENTITIES;
 
     for (i, line) in lines.iter().enumerate() {
         let entity = FtmEntity::from_ftm_json(line)
@@ -103,10 +163,7 @@ fn test_parse_random_entities() {
 /// produces the same `id` and `schema` as calling `from_ftm_json` directly.
 #[test]
 fn test_try_from_str_matches_from_ftm_json() {
-    let count = random_count(10, 40);
-    let count_str = count.to_string();
-
-    let lines = run_ftm_random(&["--random-schema", "--count", &count_str]);
+    let lines = &*RANDOM_ENTITIES;
 
     for (i, line) in lines.iter().enumerate() {
         let via_method = FtmEntity::from_ftm_json(line)
@@ -131,82 +188,8 @@ fn test_try_from_str_matches_from_ftm_json() {
 /// entity parses without error and is matched to the correct variant.
 #[test]
 fn test_all_schemas_parse() {
-    let concrete_schemas = [
-        "Address",
-        "Airplane",
-        "Article",
-        "Asset",
-        "Associate",
-        "Audio",
-        "BankAccount",
-        "Call",
-        "CallForTenders",
-        "Company",
-        "Contract",
-        "ContractAward",
-        "CourtCase",
-        "CourtCaseParty",
-        "CryptoWallet",
-        "Debt",
-        "Directorship",
-        "Document",
-        "Documentation",
-        "EconomicActivity",
-        "Email",
-        "Employment",
-        "Event",
-        "Family",
-        "Folder",
-        "HyperText",
-        "Identification",
-        "Image",
-        "LegalEntity",
-        "License",
-        "Membership",
-        "Mention",
-        "Message",
-        "Note",
-        "Occupancy",
-        "Organization",
-        "Ownership",
-        "Package",
-        "Page",
-        "Pages",
-        "Passport",
-        "Payment",
-        "Person",
-        "PlainText",
-        "Position",
-        "Project",
-        "ProjectParticipant",
-        "PublicBody",
-        "RealEstate",
-        "Representation",
-        "Risk",
-        "Sanction",
-        "Security",
-        "Similar",
-        "Succession",
-        "Table",
-        "TaxRoll",
-        "Trip",
-        "UnknownLink",
-        "UserAccount",
-        "Vehicle",
-        "Vessel",
-        "Video",
-        "Workbook",
-    ];
-
-    let mut args: Vec<&str> = Vec::new();
-    for schema in &concrete_schemas {
-        args.push("--schema");
-        args.push(schema);
-    }
-    args.extend_from_slice(&["--count-per-schema", "3"]);
-
-    let lines = run_ftm_random(&args);
-    let expected_total = concrete_schemas.len() * 3;
+    let lines = &*ALL_SCHEMA_ENTITIES;
+    let expected_total = CONCRETE_SCHEMAS.len() * 3;
     assert_eq!(
         lines.len(),
         expected_total,
@@ -250,10 +233,7 @@ fn test_all_schemas_parse() {
 /// rather than stopping at the first, giving a full picture of any breakage.
 #[test]
 fn test_bulk_random_entities_no_failures() {
-    let count = random_count(50, 150);
-    let count_str = count.to_string();
-
-    let lines = run_ftm_random(&["--random-schema", "--count", &count_str]);
+    let lines = &*RANDOM_ENTITIES;
 
     let failures: Vec<String> = lines
         .iter()
@@ -268,7 +248,7 @@ fn test_bulk_random_entities_no_failures() {
         failures.is_empty(),
         "{} out of {} entities failed to parse:\n{}",
         failures.len(),
-        count,
+        lines.len(),
         failures.join("\n")
     );
 }

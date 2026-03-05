@@ -23,11 +23,14 @@ proc-macro2 = "1.0"
 anyhow = "1.0"
 thiserror = "1.0"
 
-bon = {version = "3.8", optional = true}
+bon = { version = "3.8", optional = true }
 zstd = "0.13.3"
 
 [dev-dependencies]
 tempfile = "3.8"
+
+[lib]
+doctest = false
 
 [[bin]]
 name = "ftm-types"
@@ -36,3 +39,4 @@ path = "src/main.rs"
 [features]
 default = ["builder"]
 builder = ["bon"]
+
