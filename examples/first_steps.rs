@@ -1,5 +1,7 @@
 use ftm_types::generated::*;
 
+// cargo run --example first_steps
+
 fn main() {
     let entity = Person::builder()
         .id("john-smith".to_string())

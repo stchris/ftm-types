@@ -212,6 +212,25 @@ impl Address {
     pub fn schema_name() -> &'static str {
         "Address"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Airplane
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -406,6 +425,25 @@ impl Airplane {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Airplane"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Article
@@ -670,6 +708,25 @@ impl Article {
     pub fn schema_name() -> &'static str {
         "Article"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Asset
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -821,6 +878,25 @@ impl Asset {
     pub fn schema_name() -> &'static str {
         "Asset"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Associate
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -915,6 +991,25 @@ impl Associate {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Associate"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Audio
@@ -1195,6 +1290,25 @@ impl Audio {
     pub fn schema_name() -> &'static str {
         "Audio"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Bank account
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -1406,6 +1520,25 @@ impl BankAccount {
     pub fn schema_name() -> &'static str {
         "BankAccount"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Call
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -1512,6 +1645,25 @@ impl Call {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Call"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Call for tenders
@@ -1791,6 +1943,25 @@ impl CallForTenders {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "CallForTenders"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Company
@@ -2175,6 +2346,25 @@ impl Company {
     pub fn schema_name() -> &'static str {
         "Company"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Contract
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -2386,6 +2576,25 @@ impl Contract {
     pub fn schema_name() -> &'static str {
         "Contract"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Contract award
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -2545,6 +2754,25 @@ impl ContractAward {
     pub fn schema_name() -> &'static str {
         "ContractAward"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Court case
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -2696,6 +2924,25 @@ impl CourtCase {
     pub fn schema_name() -> &'static str {
         "CourtCase"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Case party
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -2794,6 +3041,25 @@ impl CourtCaseParty {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "CourtCaseParty"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Cryptocurrency wallet
@@ -2986,6 +3252,25 @@ impl CryptoWallet {
     pub fn schema_name() -> &'static str {
         "CryptoWallet"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Debt
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -3105,6 +3390,25 @@ impl Debt {
     pub fn schema_name() -> &'static str {
         "Debt"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Directorship
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -3207,6 +3511,25 @@ impl Directorship {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Directorship"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: File
@@ -3471,6 +3794,25 @@ impl Document {
     pub fn schema_name() -> &'static str {
         "Document"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Documentation
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -3569,6 +3911,25 @@ impl Documentation {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Documentation"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Customs declaration
@@ -3744,6 +4105,25 @@ impl EconomicActivity {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "EconomicActivity"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: E-Mail
@@ -4060,6 +4440,25 @@ impl Email {
     pub fn schema_name() -> &'static str {
         "Email"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Employment
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -4158,6 +4557,25 @@ impl Employment {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Employment"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Event
@@ -4354,6 +4772,25 @@ impl Event {
     pub fn schema_name() -> &'static str {
         "Event"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Family
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -4448,6 +4885,25 @@ impl Family {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Family"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Folder
@@ -4711,6 +5167,25 @@ impl Folder {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Folder"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Web page
@@ -4979,6 +5454,25 @@ impl HyperText {
     pub fn schema_name() -> &'static str {
         "HyperText"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Identification
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -5081,6 +5575,25 @@ impl Identification {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Identification"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Image
@@ -5353,6 +5866,25 @@ impl Image {
     pub fn schema_name() -> &'static str {
         "Image"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Legal entity
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -5612,6 +6144,25 @@ impl LegalEntity {
     pub fn schema_name() -> &'static str {
         "LegalEntity"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: License
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -5839,6 +6390,25 @@ impl License {
     pub fn schema_name() -> &'static str {
         "License"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Membership
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -5938,6 +6508,25 @@ impl Membership {
     pub fn schema_name() -> &'static str {
         "Membership"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Mention
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -5988,6 +6577,25 @@ impl Mention {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Mention"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Message
@@ -6304,6 +6912,25 @@ impl Message {
     pub fn schema_name() -> &'static str {
         "Message"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Note
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -6471,6 +7098,25 @@ impl Note {
     pub fn schema_name() -> &'static str {
         "Note"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Occupancy
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -6569,6 +7215,25 @@ impl Occupancy {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Occupancy"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Organization
@@ -6845,6 +7510,25 @@ impl Organization {
     pub fn schema_name() -> &'static str {
         "Organization"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Ownership
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -6971,6 +7655,25 @@ impl Ownership {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Ownership"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Package
@@ -7235,6 +7938,25 @@ impl Package {
     pub fn schema_name() -> &'static str {
         "Package"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Page
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -7289,6 +8011,25 @@ impl Page {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Page"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Document
@@ -7557,6 +8298,25 @@ impl Pages {
     pub fn schema_name() -> &'static str {
         "Pages"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Passport
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -7687,6 +8447,25 @@ impl Passport {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Passport"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Payment
@@ -7838,6 +8617,25 @@ impl Payment {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Payment"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Person
@@ -8222,6 +9020,25 @@ impl Person {
     pub fn schema_name() -> &'static str {
         "Person"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Text file
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -8485,6 +9302,25 @@ impl PlainText {
     pub fn schema_name() -> &'static str {
         "PlainText"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Position
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -8631,6 +9467,25 @@ impl Position {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Position"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Project
@@ -8819,6 +9674,25 @@ impl Project {
     pub fn schema_name() -> &'static str {
         "Project"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Project participant
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -8917,6 +9791,25 @@ impl ProjectParticipant {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "ProjectParticipant"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Public body
@@ -9193,6 +10086,25 @@ impl PublicBody {
     pub fn schema_name() -> &'static str {
         "PublicBody"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Real estate
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -9408,6 +10320,25 @@ impl RealEstate {
     pub fn schema_name() -> &'static str {
         "RealEstate"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Representation
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -9506,6 +10437,25 @@ impl Representation {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Representation"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Risk
@@ -9621,6 +10571,25 @@ impl Risk {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Risk"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Sanction
@@ -9760,6 +10729,25 @@ impl Sanction {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Sanction"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Security
@@ -9952,6 +10940,25 @@ impl Security {
     pub fn schema_name() -> &'static str {
         "Security"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Similar
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -9998,6 +11005,25 @@ impl Similar {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Similar"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Succession
@@ -10097,6 +11123,25 @@ impl Succession {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Succession"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Table
@@ -10377,6 +11422,25 @@ impl Table {
     pub fn schema_name() -> &'static str {
         "Table"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Tax roll
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -10491,6 +11555,25 @@ impl TaxRoll {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "TaxRoll"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Trip
@@ -10699,6 +11782,25 @@ impl Trip {
     pub fn schema_name() -> &'static str {
         "Trip"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Other link
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -10797,6 +11899,25 @@ impl UnknownLink {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "UnknownLink"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: User account
@@ -10948,6 +12069,25 @@ impl UserAccount {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "UserAccount"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Vehicle
@@ -11131,6 +12271,25 @@ impl Vehicle {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Vehicle"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Vessel
@@ -11378,6 +12537,25 @@ impl Vessel {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Vessel"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }
 ///FTM Schema: Video
@@ -11650,6 +12828,25 @@ impl Video {
     pub fn schema_name() -> &'static str {
         "Video"
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 ///FTM Schema: Workbook
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -11912,5 +13109,24 @@ impl Workbook {
     /// Get the schema name
     pub fn schema_name() -> &'static str {
         "Workbook"
+    }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
     }
 }

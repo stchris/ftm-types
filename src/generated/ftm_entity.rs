@@ -311,6 +311,25 @@ impl FtmEntity {
             ))),
         }
     }
+    /// Serialize to standard FTM nested JSON format
+    ///
+    /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+    pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+        let mut value = serde_json::to_value(self)?;
+        if let Some(obj) = value.as_object_mut() {
+            let id = obj.remove("id");
+            let schema = obj.remove("schema");
+            let properties = serde_json::Value::Object(std::mem::take(obj));
+            if let Some(id) = id {
+                obj.insert("id".into(), id);
+            }
+            if let Some(schema) = schema {
+                obj.insert("schema".into(), schema);
+            }
+            obj.insert("properties".into(), properties);
+        }
+        serde_json::to_string(&value)
+    }
 }
 impl TryFrom<String> for FtmEntity {
     type Error = serde_json::Error;

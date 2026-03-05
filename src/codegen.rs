@@ -243,6 +243,22 @@ impl CodeGenerator {
                 pub fn schema_name() -> &'static str {
                     #schema_name_str
                 }
+
+                /// Serialize to standard FTM nested JSON format
+                ///
+                /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+                pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+                    let mut value = serde_json::to_value(self)?;
+                    if let Some(obj) = value.as_object_mut() {
+                        let id = obj.remove("id");
+                        let schema = obj.remove("schema");
+                        let properties = serde_json::Value::Object(std::mem::take(obj));
+                        if let Some(id) = id { obj.insert("id".into(), id); }
+                        if let Some(schema) = schema { obj.insert("schema".into(), schema); }
+                        obj.insert("properties".into(), properties);
+                    }
+                    serde_json::to_string(&value)
+                }
             }
         })
     }
@@ -362,6 +378,22 @@ impl CodeGenerator {
                             format!("unknown FTM schema: {schema:?}")
                         )),
                     }
+                }
+
+                /// Serialize to standard FTM nested JSON format
+                ///
+                /// Produces `{"id": "...", "schema": "...", "properties": {...}}`
+                pub fn to_ftm_json(&self) -> Result<String, serde_json::Error> {
+                    let mut value = serde_json::to_value(self)?;
+                    if let Some(obj) = value.as_object_mut() {
+                        let id = obj.remove("id");
+                        let schema = obj.remove("schema");
+                        let properties = serde_json::Value::Object(std::mem::take(obj));
+                        if let Some(id) = id { obj.insert("id".into(), id); }
+                        if let Some(schema) = schema { obj.insert("schema".into(), schema); }
+                        obj.insert("properties".into(), properties);
+                    }
+                    serde_json::to_string(&value)
                 }
             }
 
@@ -963,5 +995,17 @@ properties:
         let _person = Person::builder()
             .name(vec!["Huh".to_string()])
             .height(vec![123.45]);
+    }
+
+    #[test]
+    fn test_to_ftm_json() {
+        let person = Person::builder()
+            .name(vec!["Hello Sir".into()])
+            .id("123".into())
+            .build();
+        let v: serde_json::Value = serde_json::from_str(&person.to_ftm_json().unwrap()).unwrap();
+        let v = v.as_object().unwrap();
+        let keys: Vec<_> = Vec::from_iter(v.keys());
+        assert_eq!(keys, vec!["id", "properties", "schema"]);
     }
 }

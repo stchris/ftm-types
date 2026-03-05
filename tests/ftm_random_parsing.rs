@@ -229,6 +229,46 @@ fn test_all_schemas_parse() {
     );
 }
 
+/// Verify that `to_ftm_json` produces valid FTM JSON that can be re-parsed,
+/// and that the roundtrip preserves id and schema.
+#[test]
+fn test_to_ftm_json_roundtrip() {
+    let lines = &*RANDOM_ENTITIES;
+
+    for (i, line) in lines.iter().enumerate() {
+        let entity = FtmEntity::from_ftm_json(line)
+            .unwrap_or_else(|err| panic!("parse failed on line {i}: {err}\n  json: {line}"));
+
+        let ftm_json = entity
+            .to_ftm_json()
+            .unwrap_or_else(|err| panic!("to_ftm_json failed on line {i}: {err}"));
+
+        // Verify the output has the nested "properties" structure
+        let value: serde_json::Value = serde_json::from_str(&ftm_json)
+            .unwrap_or_else(|err| panic!("re-parse as Value failed on line {i}: {err}"));
+        assert!(
+            value.get("properties").is_some(),
+            "to_ftm_json output missing 'properties' key on line {i}: {ftm_json}"
+        );
+
+        // Verify roundtrip: parse the FTM JSON back and check id/schema match
+        let roundtrip = FtmEntity::from_ftm_json(&ftm_json).unwrap_or_else(|err| {
+            panic!("roundtrip parse failed on line {i}: {err}\n  json: {ftm_json}")
+        });
+
+        assert_eq!(
+            entity.id(),
+            roundtrip.id(),
+            "id mismatch on roundtrip line {i}"
+        );
+        assert_eq!(
+            entity.schema(),
+            roundtrip.schema(),
+            "schema mismatch on roundtrip line {i}"
+        );
+    }
+}
+
 /// Parse a larger batch of random entities and collect all failures at once
 /// rather than stopping at the first, giving a full picture of any breakage.
 #[test]
