@@ -57,6 +57,9 @@ pub struct Address {
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
+    ///Property: City
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub city: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -75,6 +78,9 @@ pub struct Address {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Latitude
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -101,24 +107,51 @@ pub struct Address {
     ///Property: OpenStreetmap Place ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub osm_id: Option<Vec<String>>,
+    ///Property: PO Box
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub post_office_box: Option<Vec<String>>,
+    ///Property: Postal code
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub postal_code: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Region
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub region: Option<Vec<String>>,
+    ///Property: Remarks
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub remarks: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: State
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub state: Option<Vec<String>>,
+    ///Property: Street address
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub street: Option<Vec<String>>,
+    ///Property: Street address (ctd.)
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub street2: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -146,24 +179,35 @@ impl Address {
             address_entity: None,
             aleph_url: None,
             alias: None,
+            city: None,
             country: None,
             created_at: None,
             description: None,
             full: None,
             google_place_id: None,
             index_text: None,
+            keywords: None,
             latitude: None,
             longitude: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             osm_id: None,
+            post_office_box: None,
+            postal_code: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            region: None,
+            remarks: None,
             retrieved_at: None,
             source_url: None,
+            state: None,
+            street: None,
+            street2: None,
             summary: None,
             topics: None,
             weak_alias: None,
@@ -227,6 +271,9 @@ pub struct Airplane {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: De-registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub deregistration_date: Option<Vec<String>>,
@@ -239,6 +286,15 @@ pub struct Airplane {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Manufacturer
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub manufacturer: Option<Vec<String>>,
+    ///Property: Model
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub model: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -257,12 +313,18 @@ pub struct Airplane {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -287,6 +349,9 @@ pub struct Airplane {
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -314,18 +379,24 @@ impl Airplane {
             build_date: None,
             country: None,
             created_at: None,
+            currency: None,
             deregistration_date: None,
             description: None,
             icao_code: None,
             index_text: None,
+            keywords: None,
+            manufacturer: None,
+            model: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             operator: None,
             owner: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_date: None,
             registration_number: None,
@@ -334,6 +405,7 @@ impl Airplane {
             source_url: None,
             summary: None,
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -368,6 +440,9 @@ pub struct Article {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -383,6 +458,9 @@ pub struct Article {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -401,6 +479,15 @@ pub struct Article {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -408,6 +495,9 @@ pub struct Article {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -417,12 +507,18 @@ pub struct Article {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -456,6 +552,15 @@ pub struct Article {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -465,6 +570,9 @@ pub struct Article {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -511,23 +619,31 @@ impl Article {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -539,9 +655,13 @@ impl Article {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -608,12 +728,18 @@ pub struct Asset {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -626,12 +752,18 @@ pub struct Asset {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -673,14 +805,18 @@ impl Asset {
             amount_usd: None,
             country: None,
             created_at: None,
+            currency: None,
             description: None,
             index_text: None,
+            keywords: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -735,9 +871,18 @@ pub struct Associate {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
+    ///Property: Relationship
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub relationship: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -768,7 +913,10 @@ impl Associate {
             names_mentioned: None,
             person: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
+            relationship: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
@@ -804,6 +952,9 @@ pub struct Audio {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -819,6 +970,9 @@ pub struct Audio {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -844,6 +998,15 @@ pub struct Audio {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -851,6 +1014,9 @@ pub struct Audio {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -860,12 +1026,18 @@ pub struct Audio {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -899,6 +1071,15 @@ pub struct Audio {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -908,6 +1089,9 @@ pub struct Audio {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -961,11 +1145,13 @@ impl Audio {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
@@ -973,12 +1159,18 @@ impl Audio {
             detected_language: None,
             duration: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -990,9 +1182,13 @@ impl Audio {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             sampling_rate: None,
@@ -1024,6 +1220,9 @@ pub struct BankAccount {
     ///Property: Account number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub account_number: Option<Vec<String>>,
+    ///Property: Account type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub account_type: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
     pub address: Option<Vec<String>>,
@@ -1070,6 +1269,12 @@ pub struct BankAccount {
     ///Property: Bank
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<Vec<String>>,
+    ///Property: Bank address
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub bank_address: Option<Vec<String>>,
+    ///Property: Bank name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub bank_name: Option<Vec<String>>,
     ///Property: Bank Identifier Code
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bic: Option<Vec<String>>,
@@ -1082,6 +1287,9 @@ pub struct BankAccount {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
@@ -1091,6 +1299,9 @@ pub struct BankAccount {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Maximum balance
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -1116,12 +1327,18 @@ pub struct BankAccount {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -1155,6 +1372,7 @@ impl BankAccount {
             id: id.into(),
             schema: "BankAccount".to_string(),
             account_number: None,
+            account_type: None,
             address: None,
             address_entity: None,
             aleph_url: None,
@@ -1165,13 +1383,17 @@ impl BankAccount {
             balance: None,
             balance_date: None,
             bank: None,
+            bank_address: None,
+            bank_name: None,
             bic: None,
             closing_date: None,
             country: None,
             created_at: None,
+            currency: None,
             description: None,
             iban: None,
             index_text: None,
+            keywords: None,
             max_balance: None,
             max_balance_date: None,
             modified_at: None,
@@ -1179,8 +1401,10 @@ impl BankAccount {
             notes: None,
             opening_date: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -1242,6 +1466,9 @@ pub struct Call {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -1251,6 +1478,9 @@ pub struct Call {
     ///Property: Receiver's Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub receiver_number: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -1282,9 +1512,11 @@ impl Call {
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             receiver: None,
             receiver_number: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
@@ -1326,12 +1558,18 @@ pub struct CallForTenders {
     ///Property: Award Notice Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub award_notice_date: Option<Vec<String>>,
+    ///Property: Contract awarded in Lots
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub awarded_in_lots: Option<Vec<String>>,
     ///Property: Date of awarding
     #[serde(skip_serializing_if = "Option::is_none")]
     pub awarding_date: Option<Vec<String>>,
     ///Property: CfT unique id
     #[serde(skip_serializing_if = "Option::is_none")]
     pub call_id: Option<Vec<String>>,
+    ///Property: Certification check
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub certification_check: Option<Vec<String>>,
     ///Property: End of clarification period
     #[serde(skip_serializing_if = "Option::is_none")]
     pub clarification_deadline: Option<Vec<String>>,
@@ -1353,12 +1591,33 @@ pub struct CallForTenders {
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
+    ///Property: Directive
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub directive: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
+    ///Property: EU funding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub eu_funding: Option<Vec<String>>,
+    ///Property: Evaluation mechanism
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub evaluation_mechanism: Option<Vec<String>>,
+    ///Property: Does this call fall under the scope of GPP?
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub falls_under_gppscope: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Call for tenders result
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub involves_outcome: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Lots names
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub lots_names: Option<Vec<String>>,
     ///Property: Maximum number of lots
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -1369,6 +1628,9 @@ pub struct CallForTenders {
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
+    ///Property: Multiple tenders will be accepted
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub multiple_tenders: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
     pub name: Vec<String>,
@@ -1391,9 +1653,21 @@ pub struct CallForTenders {
     ///Property: Published on behalf of
     #[serde(skip_serializing_if = "Option::is_none")]
     pub on_behalf_of: Option<Vec<String>>,
+    ///Property: Payment options
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub payment_options: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Procedure
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub procedure: Option<Vec<String>>,
+    ///Property: Procurement type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub procurement_type: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -1403,12 +1677,24 @@ pub struct CallForTenders {
     ///Property: Date of publication/invitation
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publication_date: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
+    ///Property: Above or below threshold
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub relation_to_threshold: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Inclusion of e-Auctions
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub reverse_auctions_included: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
@@ -1427,6 +1713,12 @@ pub struct CallForTenders {
     ///Property: Tenderers
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tenderers: Option<Vec<String>>,
+    ///Property: Tenders for lots
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tenders_for_lots: Option<Vec<String>>,
+    ///Property: Title
+    #[serde(default)]
+    pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -1454,8 +1746,10 @@ impl CallForTenders {
             authority: Vec::new(),
             authority_reference_id: None,
             award_notice_date: None,
+            awarded_in_lots: None,
             awarding_date: None,
             call_id: None,
+            certification_check: None,
             clarification_deadline: None,
             contract_notice_date: None,
             country: None,
@@ -1463,28 +1757,46 @@ impl CallForTenders {
             created_at: None,
             date: None,
             description: None,
+            directive: None,
             end_date: None,
+            eu_funding: None,
+            evaluation_mechanism: None,
+            falls_under_gppscope: None,
             index_text: None,
+            involves_outcome: None,
+            keywords: None,
+            lots_names: None,
             maximum_number_of_lots: None,
             modified_at: None,
+            multiple_tenders: None,
             name: Vec::new(),
             names_mentioned: None,
             notes: None,
             number_of_lots: None,
             nuts_code: None,
             on_behalf_of: None,
+            payment_options: None,
             previous_name: None,
+            procedure: None,
+            procurement_type: None,
+            program: None,
             program_id: None,
             proof: None,
             publication_date: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
+            relation_to_threshold: None,
             retrieved_at: None,
+            reverse_auctions_included: None,
             source_url: None,
             start_date: None,
             submission_deadline: None,
             summary: None,
             ted_url: None,
             tenderers: None,
+            tenders_for_lots: None,
+            title: Vec::new(),
             topics: None,
             weak_alias: None,
             wikidata_id: None,
@@ -1553,12 +1865,21 @@ pub struct Company {
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bvd_id: Option<Vec<String>>,
+    ///Property: COD CAEM
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub caem_code: Option<Vec<String>>,
     ///Property: CAGE
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cage_code: Option<Vec<String>>,
+    ///Property: Capital
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub capital: Option<Vec<String>>,
     ///Property: SEC Central Index Key
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cik_code: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
     ///Property: COATO / SOATO / OKATO
     #[serde(skip_serializing_if = "Option::is_none")]
     pub coato_code: Option<Vec<String>>,
@@ -1568,6 +1889,9 @@ pub struct Company {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
@@ -1583,9 +1907,15 @@ pub struct Company {
     ///Property: Federal tax service code
     #[serde(skip_serializing_if = "Option::is_none")]
     pub fns_code: Option<Vec<String>>,
+    ///Property: FSS
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub fss_code: Option<Vec<String>>,
     ///Property: GIIN
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gii_number: Option<Vec<String>>,
+    ///Property: ICIJ ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id_number: Option<Vec<String>>,
@@ -1616,9 +1946,15 @@ pub struct Company {
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
     pub jurisdiction: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: KPP
     #[serde(skip_serializing_if = "Option::is_none")]
     pub kpp_code: Option<Vec<String>>,
+    ///Property: Legal form
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lei_code: Option<Vec<String>>,
@@ -1646,9 +1982,18 @@ pub struct Company {
     ///Property: OGRN
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ogrn_code: Option<Vec<String>>,
+    ///Property: OKOPF
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub okopf_code: Option<Vec<String>>,
     ///Property: OKPO
     #[serde(skip_serializing_if = "Option::is_none")]
     pub okpo_code: Option<Vec<String>>,
+    ///Property: OKSM
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oksm_code: Option<Vec<String>>,
+    ///Property: OKVED(2) Classifier
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub okved_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub opencorporates_url: Option<Vec<String>>,
@@ -1667,12 +2012,18 @@ pub struct Company {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -1688,9 +2039,15 @@ pub struct Company {
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sayari_id: Option<Vec<String>>,
+    ///Property: Sector
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -1700,6 +2057,9 @@ pub struct Company {
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tax_number: Option<Vec<String>>,
+    ///Property: Tax status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tax_status: Option<Vec<String>>,
     ///Property: Stock ticker symbol
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ticker: Option<Vec<String>>,
@@ -1750,17 +2110,23 @@ impl Company {
             bright_query_id: None,
             bright_query_org_id: None,
             bvd_id: None,
+            caem_code: None,
             cage_code: None,
+            capital: None,
             cik_code: None,
+            classification: None,
             coato_code: None,
             country: None,
             created_at: None,
+            currency: None,
             description: None,
             dissolution_date: None,
             duns_code: None,
             email: None,
             fns_code: None,
+            fss_code: None,
             gii_number: None,
+            icij_id: None,
             id_number: None,
             imo_number: None,
             incorporation_date: None,
@@ -1771,7 +2137,9 @@ impl Company {
             isin_code: None,
             jib_code: None,
             jurisdiction: None,
+            keywords: None,
             kpp_code: None,
+            legal_form: None,
             lei_code: None,
             license_number: None,
             main_country: None,
@@ -1781,24 +2149,32 @@ impl Company {
             notes: None,
             npi_code: None,
             ogrn_code: None,
+            okopf_code: None,
             okpo_code: None,
+            oksm_code: None,
+            okved_code: None,
             opencorporates_url: None,
             parent: None,
             perm_id: None,
             pfr_number: None,
             phone: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
             ric_code: None,
             sayari_id: None,
+            sector: None,
             source_url: None,
+            status: None,
             summary: None,
             swift_bic: None,
             tax_number: None,
+            tax_status: None,
             ticker: None,
             topics: None,
             unique_entity_id: None,
@@ -1861,6 +2237,12 @@ pub struct Contract {
     ///Property: Contract authority
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authority: Option<Vec<String>>,
+    ///Property: Cancelled?
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub cancelled: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
     ///Property: Contract date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contract_date: Option<Vec<String>>,
@@ -1870,15 +2252,27 @@ pub struct Contract {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Contract award criteria
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub criteria: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
+    ///Property: Procurement method
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub method: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -1888,9 +2282,24 @@ pub struct Contract {
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
+    ///Property: Contract Award Notice ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub notice_id: Option<Vec<String>>,
+    ///Property: Number of awards
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub number_awards: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Contract procedure
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub procedure: Option<Vec<String>>,
+    ///Property: Procedure number
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub procedure_number: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -1900,6 +2309,9 @@ pub struct Contract {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -1909,6 +2321,9 @@ pub struct Contract {
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -1918,6 +2333,9 @@ pub struct Contract {
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -1943,25 +2361,39 @@ impl Contract {
             amount_eur: None,
             amount_usd: None,
             authority: None,
+            cancelled: None,
+            classification: None,
             contract_date: None,
             country: None,
             created_at: None,
+            criteria: None,
+            currency: None,
             description: None,
             index_text: None,
+            keywords: None,
             language: None,
+            method: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
+            notice_id: None,
+            number_awards: None,
             previous_name: None,
+            procedure: None,
+            procedure_number: None,
+            program: None,
             program_id: None,
             project: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
+            status: None,
             summary: None,
             title: Vec::new(),
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -1984,6 +2416,9 @@ pub struct ContractAward {
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
+    ///Property: Amended
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub amended: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -2014,6 +2449,9 @@ pub struct ContractAward {
     ///Property: CPV code
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cpv_code: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -2023,12 +2461,21 @@ pub struct ContractAward {
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
+    ///Property: Document number
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub document_number: Option<Vec<String>>,
+    ///Property: Document type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub document_type: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Lot number
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub lot_number: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -2041,18 +2488,30 @@ pub struct ContractAward {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -2068,25 +2527,34 @@ impl ContractAward {
             id: id.into(),
             schema: "ContractAward".to_string(),
             aleph_url: None,
+            amended: None,
             amount: None,
             amount_eur: None,
             amount_usd: None,
             call_for_tenders: None,
             contract: Vec::new(),
             cpv_code: None,
+            currency: None,
             date: None,
             decision_reason: None,
             description: None,
+            document_number: None,
+            document_type: None,
             end_date: None,
             index_text: None,
+            lot_number: None,
             modified_at: None,
             names_mentioned: None,
             nuts_code: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
             supplier: Vec::new(),
         }
@@ -2120,12 +2588,18 @@ pub struct CourtCase {
     ///Property: Case number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub case_number: Option<Vec<String>>,
+    ///Property: Category
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub category: Option<Vec<String>>,
     ///Property: Close date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub close_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Court
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub court: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -2138,6 +2612,9 @@ pub struct CourtCase {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -2150,12 +2627,18 @@ pub struct CourtCase {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -2165,12 +2648,18 @@ pub struct CourtCase {
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -2193,23 +2682,30 @@ impl CourtCase {
             aleph_url: None,
             alias: None,
             case_number: None,
+            category: None,
             close_date: None,
             country: None,
+            court: None,
             created_at: None,
             description: None,
             file_date: None,
             index_text: None,
+            keywords: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
+            status: None,
             summary: None,
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -2259,18 +2755,30 @@ pub struct CourtCaseParty {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -2292,10 +2800,14 @@ impl CourtCaseParty {
             names_mentioned: None,
             party: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -2368,6 +2880,12 @@ pub struct CryptoWallet {
     ///Property: Creation date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub creation_date: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
+    ///Property: Currency short code
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency_symbol: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
@@ -2377,6 +2895,12 @@ pub struct CryptoWallet {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Managing exchange
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub managing_exchange: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -2389,6 +2913,12 @@ pub struct CryptoWallet {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Private key
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub private_key: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -2398,6 +2928,9 @@ pub struct CryptoWallet {
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
     pub public_key: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -2443,16 +2976,23 @@ impl CryptoWallet {
             country: None,
             created_at: None,
             creation_date: None,
+            currency: None,
+            currency_symbol: None,
             description: None,
             holder: None,
             index_text: None,
+            keywords: None,
+            managing_exchange: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             previous_name: None,
+            private_key: None,
+            program: None,
             program_id: None,
             proof: None,
             public_key: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -2504,6 +3044,9 @@ pub struct Debt {
     ///Property: Creditor
     #[serde(skip_serializing_if = "Option::is_none")]
     pub creditor: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -2528,9 +3071,15 @@ pub struct Debt {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -2556,6 +3105,7 @@ impl Debt {
             amount_eur: None,
             amount_usd: None,
             creditor: None,
+            currency: None,
             date: None,
             debtor: Vec::new(),
             description: None,
@@ -2564,7 +3114,9 @@ impl Debt {
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
@@ -2615,18 +3167,33 @@ pub struct Directorship {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
+    ///Property: Secretary
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub secretary: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -2648,10 +3215,15 @@ impl Directorship {
             names_mentioned: None,
             organization: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
+            secretary: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -2684,6 +3256,9 @@ pub struct Document {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -2699,6 +3274,9 @@ pub struct Document {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -2717,6 +3295,15 @@ pub struct Document {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -2724,6 +3311,9 @@ pub struct Document {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -2733,12 +3323,18 @@ pub struct Document {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -2772,6 +3368,15 @@ pub struct Document {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -2781,6 +3386,9 @@ pub struct Document {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -2827,23 +3435,31 @@ impl Document {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -2855,9 +3471,13 @@ impl Document {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -2915,18 +3535,30 @@ pub struct Documentation {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -2948,10 +3580,14 @@ impl Documentation {
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -2984,12 +3620,21 @@ pub struct EconomicActivity {
     ///Property: Customs Cargo Declaration Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ccd_number: Option<Vec<String>>,
+    ///Property: CCD Value
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ccd_value: Option<Vec<String>>,
     ///Property: Contract
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contract: Option<Vec<String>>,
     ///Property: Contract holder
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contract_holder: Option<Vec<String>>,
+    ///Property: Customs Value Amount
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub customs_amount: Option<Vec<String>>,
+    ///Property: Customs Procedure
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub customs_procedure: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -3005,6 +3650,12 @@ pub struct EconomicActivity {
     ///Property: Country of destination
     #[serde(skip_serializing_if = "Option::is_none")]
     pub destination_country: Option<Vec<String>>,
+    ///Property: Direction of transportation
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub direction_of_transportation: Option<Vec<String>>,
+    ///Property: USD Exchange Rate
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub dollar_exch_rate: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
@@ -3014,6 +3665,9 @@ pub struct EconomicActivity {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Invoice Value Amount
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub invoice_amount: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -3026,12 +3680,18 @@ pub struct EconomicActivity {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Receiver
     #[serde(skip_serializing_if = "Option::is_none")]
     pub receiver: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -3056,6 +3716,9 @@ pub struct EconomicActivity {
     ///Property: FEAC Code
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ved_code: Option<Vec<String>>,
+    ///Property: FEAC Code description
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ved_code_description: Option<Vec<String>>,
 }
 impl EconomicActivity {
     /// Create a new entity with the given ID
@@ -3069,22 +3732,30 @@ impl EconomicActivity {
             bank_foreign: None,
             bank_rub: None,
             ccd_number: None,
+            ccd_value: None,
             contract: None,
             contract_holder: None,
+            customs_amount: None,
+            customs_procedure: None,
             date: None,
             declarant: None,
             departure_country: None,
             description: None,
             destination_country: None,
+            direction_of_transportation: None,
+            dollar_exch_rate: None,
             end_date: None,
             goods_description: None,
             index_text: None,
+            invoice_amount: None,
             modified_at: None,
             names_mentioned: None,
             origin_country: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             receiver: None,
+            record_id: None,
             retrieved_at: None,
             sender: None,
             source_url: None,
@@ -3093,6 +3764,7 @@ impl EconomicActivity {
             trading_country: None,
             transport: None,
             ved_code: None,
+            ved_code_description: None,
         }
     }
     /// Get the schema name
@@ -3124,6 +3796,9 @@ pub struct Email {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -3148,6 +3823,9 @@ pub struct Email {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -3169,6 +3847,15 @@ pub struct Email {
     ///Property: Emitter
     #[serde(skip_serializing_if = "Option::is_none")]
     pub emitters: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -3179,6 +3866,9 @@ pub struct Email {
     ///Property: From
     #[serde(skip_serializing_if = "Option::is_none")]
     pub from: Option<Vec<String>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Raw headers
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
@@ -3186,6 +3876,9 @@ pub struct Email {
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
+    ///Property: In Reply To
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub in_reply_to: Option<Vec<String>>,
     ///Property: Responding to
     #[serde(skip_serializing_if = "Option::is_none")]
     pub in_reply_to_email: Option<Vec<String>>,
@@ -3195,12 +3888,18 @@ pub struct Email {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -3234,6 +3933,15 @@ pub struct Email {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -3243,6 +3951,9 @@ pub struct Email {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -3304,6 +4015,7 @@ impl Email {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             bcc: None,
             body_html: None,
@@ -3312,6 +4024,7 @@ impl Email {
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
@@ -3319,15 +4032,22 @@ impl Email {
             detected_language: None,
             email_mentioned: None,
             emitters: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
             from: None,
+            generator: None,
             headers: None,
             iban_mentioned: None,
+            in_reply_to: None,
             in_reply_to_email: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -3339,9 +4059,13 @@ impl Email {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             recipients: None,
             retrieved_at: None,
@@ -3404,18 +4128,30 @@ pub struct Employment {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -3437,10 +4173,14 @@ impl Employment {
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -3500,6 +4240,9 @@ pub struct Event {
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
+    ///Property: Important
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub important: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -3509,6 +4252,9 @@ pub struct Event {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Location
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location: Option<Vec<String>>,
@@ -3539,15 +4285,24 @@ pub struct Event {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -3594,9 +4349,11 @@ impl Event {
             email_mentioned: None,
             end_date: None,
             iban_mentioned: None,
+            important: None,
             index_text: None,
             involved: None,
             ip_mentioned: None,
+            keywords: None,
             location: None,
             location_mentioned: None,
             modified_at: None,
@@ -3607,9 +4364,12 @@ impl Event {
             people_mentioned: None,
             phone_mentioned: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
@@ -3661,9 +4421,18 @@ pub struct Family {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
+    ///Property: Relationship
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub relationship: Option<Vec<String>>,
     ///Property: Relative
     #[serde(default)]
     pub relative: Vec<String>,
@@ -3696,7 +4465,10 @@ impl Family {
             names_mentioned: None,
             person: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
+            relationship: None,
             relative: Vec::new(),
             retrieved_at: None,
             source_url: None,
@@ -3733,6 +4505,9 @@ pub struct Folder {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -3748,6 +4523,9 @@ pub struct Folder {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -3766,6 +4544,15 @@ pub struct Folder {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -3773,6 +4560,9 @@ pub struct Folder {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -3782,12 +4572,18 @@ pub struct Folder {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -3821,6 +4617,15 @@ pub struct Folder {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -3830,6 +4635,9 @@ pub struct Folder {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -3876,23 +4684,31 @@ impl Folder {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -3904,9 +4720,13 @@ impl Folder {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -3949,6 +4769,9 @@ pub struct HyperText {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -3967,6 +4790,9 @@ pub struct HyperText {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -3985,6 +4811,15 @@ pub struct HyperText {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -3992,6 +4827,9 @@ pub struct HyperText {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -4001,12 +4839,18 @@ pub struct HyperText {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -4040,6 +4884,15 @@ pub struct HyperText {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -4049,6 +4902,9 @@ pub struct HyperText {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -4095,24 +4951,32 @@ impl HyperText {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_html: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -4124,9 +4988,13 @@ impl HyperText {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -4157,6 +5025,9 @@ pub struct Identification {
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
+    ///Property: Authority
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub authority: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -4187,9 +5058,15 @@ pub struct Identification {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -4202,6 +5079,9 @@ pub struct Identification {
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
 }
 impl Identification {
     /// Create a new entity with the given ID
@@ -4211,6 +5091,7 @@ impl Identification {
             id: id.into(),
             schema: "Identification".to_string(),
             aleph_url: None,
+            authority: None,
             country: None,
             date: None,
             description: None,
@@ -4221,11 +5102,14 @@ impl Identification {
             names_mentioned: None,
             number: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
             summary: None,
+            type_: None,
         }
     }
     /// Get the schema name
@@ -4257,6 +5141,9 @@ pub struct Image {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -4272,6 +5159,9 @@ pub struct Image {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -4293,6 +5183,15 @@ pub struct Image {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -4300,6 +5199,9 @@ pub struct Image {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -4309,12 +5211,18 @@ pub struct Image {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -4351,6 +5259,15 @@ pub struct Image {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -4360,6 +5277,9 @@ pub struct Image {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -4406,11 +5326,13 @@ impl Image {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             credit: None,
             date: None,
@@ -4418,12 +5340,18 @@ impl Image {
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -4436,9 +5364,13 @@ impl Image {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -4490,6 +5422,9 @@ pub struct LegalEntity {
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bvd_id: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -4508,6 +5443,9 @@ pub struct LegalEntity {
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email: Option<Vec<String>>,
+    ///Property: ICIJ ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id_number: Option<Vec<String>>,
@@ -4523,6 +5461,12 @@ pub struct LegalEntity {
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
     pub jurisdiction: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Legal form
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lei_code: Option<Vec<String>>,
@@ -4562,12 +5506,18 @@ pub struct LegalEntity {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -4580,9 +5530,15 @@ pub struct LegalEntity {
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sayari_id: Option<Vec<String>>,
+    ///Property: Sector
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -4592,6 +5548,9 @@ pub struct LegalEntity {
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tax_number: Option<Vec<String>>,
+    ///Property: Tax status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tax_status: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -4632,17 +5591,21 @@ impl LegalEntity {
             bright_query_id: None,
             bright_query_org_id: None,
             bvd_id: None,
+            classification: None,
             country: None,
             created_at: None,
             description: None,
             dissolution_date: None,
             duns_code: None,
             email: None,
+            icij_id: None,
             id_number: None,
             incorporation_date: None,
             index_text: None,
             inn_code: None,
             jurisdiction: None,
+            keywords: None,
+            legal_form: None,
             lei_code: None,
             license_number: None,
             main_country: None,
@@ -4656,16 +5619,21 @@ impl LegalEntity {
             parent: None,
             phone: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
             sayari_id: None,
+            sector: None,
             source_url: None,
+            status: None,
             summary: None,
             swift_bic: None,
             tax_number: None,
+            tax_status: None,
             topics: None,
             unique_entity_id: None,
             usc_code: None,
@@ -4733,6 +5701,15 @@ pub struct License {
     ///Property: Contract authority
     #[serde(default)]
     pub authority: Vec<String>,
+    ///Property: Cancelled?
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub cancelled: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
+    ///Property: Commodities
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub commodities: Option<Vec<String>>,
     ///Property: Contract date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contract_date: Option<Vec<String>>,
@@ -4742,15 +5719,27 @@ pub struct License {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Contract award criteria
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub criteria: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
+    ///Property: Procurement method
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub method: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -4760,9 +5749,24 @@ pub struct License {
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
+    ///Property: Contract Award Notice ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub notice_id: Option<Vec<String>>,
+    ///Property: Number of awards
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub number_awards: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Contract procedure
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub procedure: Option<Vec<String>>,
+    ///Property: Procedure number
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub procedure_number: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -4772,15 +5776,24 @@ pub struct License {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: License review date
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub review_date: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -4790,6 +5803,9 @@ pub struct License {
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -4816,25 +5832,41 @@ impl License {
             amount_usd: None,
             area: None,
             authority: Vec::new(),
+            cancelled: None,
+            classification: None,
+            commodities: None,
             contract_date: None,
             country: None,
             created_at: None,
+            criteria: None,
+            currency: None,
             description: None,
             index_text: None,
+            keywords: None,
             language: None,
+            method: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
+            notice_id: None,
+            number_awards: None,
             previous_name: None,
+            procedure: None,
+            procedure_number: None,
+            program: None,
             program_id: None,
             project: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            review_date: None,
             source_url: None,
+            status: None,
             summary: None,
             title: Vec::new(),
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -4884,18 +5916,30 @@ pub struct Membership {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -4917,10 +5961,14 @@ impl Membership {
             names_mentioned: None,
             organization: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -4947,6 +5995,9 @@ pub struct Mention {
     ///Property: Co-occurring phone numbers
     #[serde(skip_serializing_if = "Option::is_none")]
     pub context_phone: Option<Vec<String>>,
+    ///Property: Detected entity type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub detected_schema: Option<Vec<String>>,
     ///Property: Document
     #[serde(default)]
     pub document: Vec<String>,
@@ -4967,6 +6018,7 @@ impl Mention {
             context_country: None,
             context_email: None,
             context_phone: None,
+            detected_schema: None,
             document: Vec::new(),
             name: Vec::new(),
             resolved: None,
@@ -5001,6 +6053,9 @@ pub struct Message {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -5019,6 +6074,9 @@ pub struct Message {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -5037,9 +6095,18 @@ pub struct Message {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -5047,9 +6114,15 @@ pub struct Message {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
+    ///Property: In Reply To
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub in_reply_to: Option<Vec<String>>,
     ///Property: Responding to
     #[serde(skip_serializing_if = "Option::is_none")]
     pub in_reply_to_message: Option<Vec<String>>,
@@ -5059,12 +6132,18 @@ pub struct Message {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: Metadata
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
@@ -5102,6 +6181,15 @@ pub struct Message {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -5111,6 +6199,9 @@ pub struct Message {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -5120,6 +6211,9 @@ pub struct Message {
     ///Property: Recipients
     #[serde(skip_serializing_if = "Option::is_none")]
     pub recipients: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -5178,26 +6272,35 @@ impl Message {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_html: None,
             body_text: Vec::new(),
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
             end_date: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
+            in_reply_to: None,
             in_reply_to_message: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             metadata: None,
             mime_type: None,
             modified_at: None,
@@ -5210,12 +6313,17 @@ impl Message {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             recipient_account: None,
             recipients: None,
+            record_id: None,
             retrieved_at: None,
             sender: Vec::new(),
             sender_account: None,
@@ -5292,6 +6400,9 @@ pub struct Note {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
@@ -5316,12 +6427,18 @@ pub struct Note {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -5369,6 +6486,7 @@ impl Note {
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             location_mentioned: None,
             modified_at: None,
             name: Vec::new(),
@@ -5377,8 +6495,10 @@ impl Note {
             people_mentioned: None,
             phone_mentioned: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -5436,9 +6556,15 @@ pub struct Occupancy {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -5473,7 +6599,9 @@ impl Occupancy {
             names_mentioned: None,
             post: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
@@ -5522,6 +6650,9 @@ pub struct Organization {
     ///Property: CAGE
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cage_code: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -5543,6 +6674,9 @@ pub struct Organization {
     ///Property: GIIN
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gii_number: Option<Vec<String>>,
+    ///Property: ICIJ ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id_number: Option<Vec<String>>,
@@ -5561,6 +6695,12 @@ pub struct Organization {
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
     pub jurisdiction: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Legal form
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lei_code: Option<Vec<String>>,
@@ -5603,12 +6743,18 @@ pub struct Organization {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -5621,9 +6767,15 @@ pub struct Organization {
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sayari_id: Option<Vec<String>>,
+    ///Property: Sector
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -5633,6 +6785,9 @@ pub struct Organization {
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tax_number: Option<Vec<String>>,
+    ///Property: Tax status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tax_status: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -5674,6 +6829,7 @@ impl Organization {
             bright_query_org_id: None,
             bvd_id: None,
             cage_code: None,
+            classification: None,
             country: None,
             created_at: None,
             description: None,
@@ -5681,12 +6837,15 @@ impl Organization {
             duns_code: None,
             email: None,
             gii_number: None,
+            icij_id: None,
             id_number: None,
             imo_number: None,
             incorporation_date: None,
             index_text: None,
             inn_code: None,
             jurisdiction: None,
+            keywords: None,
+            legal_form: None,
             lei_code: None,
             license_number: None,
             main_country: None,
@@ -5701,16 +6860,21 @@ impl Organization {
             perm_id: None,
             phone: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
             sayari_id: None,
+            sector: None,
             source_url: None,
+            status: None,
             summary: None,
             swift_bic: None,
             tax_number: None,
+            tax_status: None,
             topics: None,
             unique_entity_id: None,
             usc_code: None,
@@ -5753,6 +6917,9 @@ pub struct Ownership {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Legal basis
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub legal_basis: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -5762,21 +6929,51 @@ pub struct Ownership {
     ///Property: Owner
     #[serde(default)]
     pub owner: Vec<String>,
+    ///Property: Type of ownership
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ownership_type: Option<Vec<String>>,
+    ///Property: Percentage held
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub percentage: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
+    ///Property: Number of shares
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub shares_count: Option<Vec<String>>,
+    ///Property: Currency of shares
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub shares_currency: Option<Vec<String>>,
+    ///Property: Type of shares
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub shares_type: Option<Vec<String>>,
+    ///Property: Value of shares
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub shares_value: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -5794,14 +6991,25 @@ impl Ownership {
             description: None,
             end_date: None,
             index_text: None,
+            legal_basis: None,
             modified_at: None,
             names_mentioned: None,
             owner: Vec::new(),
+            ownership_type: None,
+            percentage: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
+            shares_count: None,
+            shares_currency: None,
+            shares_type: None,
+            shares_value: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -5834,6 +7042,9 @@ pub struct Package {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -5849,6 +7060,9 @@ pub struct Package {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -5867,6 +7081,15 @@ pub struct Package {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -5874,6 +7097,9 @@ pub struct Package {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -5883,12 +7109,18 @@ pub struct Package {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -5922,6 +7154,15 @@ pub struct Package {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -5931,6 +7172,9 @@ pub struct Package {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -5977,23 +7221,31 @@ impl Package {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -6005,9 +7257,13 @@ impl Package {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -6057,6 +7313,9 @@ pub struct Page {
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub translated_text: Option<Vec<String>>,
+    ///Property: The language of the translated text
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub translated_text_language: Option<Vec<String>>,
 }
 impl Page {
     /// Create a new entity with the given ID
@@ -6071,6 +7330,7 @@ impl Page {
             index: None,
             index_text: None,
             translated_text: None,
+            translated_text_language: None,
         }
     }
     /// Get the schema name
@@ -6102,6 +7362,9 @@ pub struct Pages {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -6117,6 +7380,9 @@ pub struct Pages {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -6135,6 +7401,15 @@ pub struct Pages {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -6142,6 +7417,9 @@ pub struct Pages {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -6151,12 +7429,18 @@ pub struct Pages {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -6193,6 +7477,15 @@ pub struct Pages {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -6202,6 +7495,9 @@ pub struct Pages {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -6248,23 +7544,31 @@ impl Pages {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -6277,9 +7581,13 @@ impl Pages {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -6310,9 +7618,15 @@ pub struct Passport {
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
+    ///Property: Authority
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub authority: Option<Vec<String>>,
     ///Property: Birth date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub birth_date: Option<Vec<String>>,
+    ///Property: Place of birth
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub birth_place: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -6328,6 +7642,9 @@ pub struct Passport {
     ///Property: Gender
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gender: Option<Vec<String>>,
+    ///Property: Given name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub given_name: Option<Vec<String>>,
     ///Property: Identification holder
     #[serde(default)]
     pub holder: Vec<String>,
@@ -6352,9 +7669,15 @@ pub struct Passport {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -6367,6 +7690,12 @@ pub struct Passport {
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
+    ///Property: Surname
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub surname: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
 }
 impl Passport {
     /// Create a new entity with the given ID
@@ -6376,12 +7705,15 @@ impl Passport {
             id: id.into(),
             schema: "Passport".to_string(),
             aleph_url: None,
+            authority: None,
             birth_date: None,
+            birth_place: None,
             country: None,
             date: None,
             description: None,
             end_date: None,
             gender: None,
+            given_name: None,
             holder: Vec::new(),
             index_text: None,
             modified_at: None,
@@ -6390,11 +7722,15 @@ impl Passport {
             passport_number: None,
             personal_number: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
             summary: None,
+            surname: None,
+            type_: None,
         }
     }
     /// Get the schema name
@@ -6444,6 +7780,9 @@ pub struct Payment {
     ///Property: Contract
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contract: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -6468,21 +7807,33 @@ pub struct Payment {
     ///Property: Payer bank account
     #[serde(skip_serializing_if = "Option::is_none")]
     pub payer_account: Option<Vec<String>>,
+    ///Property: Payment programme
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub programme: Option<Vec<String>>,
     ///Property: Project
     #[serde(skip_serializing_if = "Option::is_none")]
     pub project: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Payment purpose
     #[serde(skip_serializing_if = "Option::is_none")]
     pub purpose: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Sequence number
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sequence_number: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
@@ -6492,6 +7843,9 @@ pub struct Payment {
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
+    ///Property: Transaction number
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub transaction_number: Option<Vec<String>>,
 }
 impl Payment {
     /// Create a new entity with the given ID
@@ -6507,6 +7861,7 @@ impl Payment {
             beneficiary: Vec::new(),
             beneficiary_account: None,
             contract: None,
+            currency: None,
             date: None,
             description: None,
             end_date: None,
@@ -6515,14 +7870,19 @@ impl Payment {
             names_mentioned: None,
             payer: Vec::new(),
             payer_account: None,
+            programme: None,
             project: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             purpose: None,
+            record_id: None,
             retrieved_at: None,
+            sequence_number: None,
             source_url: None,
             start_date: None,
             summary: None,
+            transaction_number: None,
         }
     }
     /// Get the schema name
@@ -6554,12 +7914,18 @@ pub struct Person {
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub alias: Option<Vec<String>>,
+    ///Property: Physical appearance
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub appearance: Option<Vec<String>>,
     ///Property: Country of birth
     #[serde(skip_serializing_if = "Option::is_none")]
     pub birth_country: Option<Vec<String>>,
     ///Property: Birth date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub birth_date: Option<Vec<String>>,
+    ///Property: Place of birth
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub birth_place: Option<Vec<String>>,
     ///Property: BrightQuery ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bright_query_id: Option<Vec<String>>,
@@ -6572,6 +7938,9 @@ pub struct Person {
     ///Property: Citizenship
     #[serde(skip_serializing_if = "Option::is_none")]
     pub citizenship: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -6590,12 +7959,30 @@ pub struct Person {
     ///Property: DUNS
     #[serde(skip_serializing_if = "Option::is_none")]
     pub duns_code: Option<Vec<String>>,
+    ///Property: Education
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub education: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email: Option<Vec<String>>,
+    ///Property: Ethnicity
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ethnicity: Option<Vec<String>>,
+    ///Property: Eye color
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub eye_color: Option<Vec<String>>,
+    ///Property: Patronymic
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub father_name: Option<Vec<String>>,
+    ///Property: First name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub first_name: Option<Vec<String>>,
     ///Property: Gender
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gender: Option<Vec<String>>,
+    ///Property: Hair color
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub hair_color: Option<Vec<String>>,
     ///Property: Height
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -6603,6 +7990,9 @@ pub struct Person {
         default
     )]
     pub height: Option<Vec<f64>>,
+    ///Property: ICIJ ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id_number: Option<Vec<String>>,
@@ -6618,6 +8008,15 @@ pub struct Person {
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
     pub jurisdiction: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Last name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub last_name: Option<Vec<String>>,
+    ///Property: Legal form
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lei_code: Option<Vec<String>>,
@@ -6627,12 +8026,21 @@ pub struct Person {
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
     pub main_country: Option<Vec<String>>,
+    ///Property: Middle name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub middle_name: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
+    ///Property: Matronymic
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub mother_name: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
     pub name: Vec<String>,
+    ///Property: Name suffix
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub name_suffix: Option<Vec<String>>,
     ///Property: Nationality
     #[serde(skip_serializing_if = "Option::is_none")]
     pub nationality: Option<Vec<String>>,
@@ -6660,27 +8068,51 @@ pub struct Person {
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
     pub phone: Option<Vec<String>>,
+    ///Property: Political association
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub political: Option<Vec<String>>,
+    ///Property: Position
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub position: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Profession
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub profession: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub registration_number: Option<Vec<String>>,
+    ///Property: Religion
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub religion: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sayari_id: Option<Vec<String>>,
+    ///Property: Second name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub second_name: Option<Vec<String>>,
+    ///Property: Sector
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sector: Option<Vec<String>>,
     ///Property: Social security number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub social_security_number: Option<Vec<String>>,
@@ -6690,6 +8122,9 @@ pub struct Person {
     ///Property: Spoken language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub spoken_language: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -6699,6 +8134,12 @@ pub struct Person {
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tax_number: Option<Vec<String>>,
+    ///Property: Tax status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tax_status: Option<Vec<String>>,
+    ///Property: Title
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -6743,31 +8184,47 @@ impl Person {
             address_entity: None,
             aleph_url: None,
             alias: None,
+            appearance: None,
             birth_country: None,
             birth_date: None,
+            birth_place: None,
             bright_query_id: None,
             bright_query_org_id: None,
             bvd_id: None,
             citizenship: None,
+            classification: None,
             country: None,
             created_at: None,
             death_date: None,
             description: None,
             dissolution_date: None,
             duns_code: None,
+            education: None,
             email: None,
+            ethnicity: None,
+            eye_color: None,
+            father_name: None,
+            first_name: None,
             gender: None,
+            hair_color: None,
             height: None,
+            icij_id: None,
             id_number: None,
             incorporation_date: None,
             index_text: None,
             inn_code: None,
             jurisdiction: None,
+            keywords: None,
+            last_name: None,
+            legal_form: None,
             lei_code: None,
             license_number: None,
             main_country: None,
+            middle_name: None,
             modified_at: None,
+            mother_name: None,
             name: Vec::new(),
+            name_suffix: None,
             nationality: None,
             notes: None,
             npi_code: None,
@@ -6777,19 +8234,30 @@ impl Person {
             parent: None,
             passport_number: None,
             phone: None,
+            political: None,
+            position: None,
             previous_name: None,
+            profession: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
+            religion: None,
             retrieved_at: None,
             sayari_id: None,
+            second_name: None,
+            sector: None,
             social_security_number: None,
             source_url: None,
             spoken_language: None,
+            status: None,
             summary: None,
             swift_bic: None,
             tax_number: None,
+            tax_status: None,
+            title: None,
             topics: None,
             unique_entity_id: None,
             usc_code: None,
@@ -6830,6 +8298,9 @@ pub struct PlainText {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -6845,6 +8316,9 @@ pub struct PlainText {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -6863,6 +8337,15 @@ pub struct PlainText {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -6870,6 +8353,9 @@ pub struct PlainText {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -6879,12 +8365,18 @@ pub struct PlainText {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -6918,6 +8410,15 @@ pub struct PlainText {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -6927,6 +8428,9 @@ pub struct PlainText {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -6973,23 +8477,31 @@ impl PlainText {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -7001,9 +8513,13 @@ impl PlainText {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -7061,6 +8577,9 @@ pub struct Position {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -7083,12 +8602,18 @@ pub struct Position {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -7134,14 +8659,17 @@ impl Position {
             dissolution_date: None,
             inception_date: None,
             index_text: None,
+            keywords: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             number_of_seats: None,
             organization: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -7206,6 +8734,9 @@ pub struct Project {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub date: Option<Vec<String>>,
@@ -7215,9 +8746,15 @@ pub struct Project {
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
+    ///Property: Project goal
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub goal: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -7230,9 +8767,15 @@ pub struct Project {
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
+    ///Property: Phase
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub phase: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -7242,9 +8785,15 @@ pub struct Project {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -7254,6 +8803,9 @@ pub struct Project {
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -7286,22 +8838,30 @@ impl Project {
             amount_usd: None,
             country: None,
             created_at: None,
+            currency: None,
             date: None,
             description: None,
             end_date: None,
+            goal: None,
             index_text: None,
+            keywords: None,
             modified_at: None,
             name: Vec::new(),
             names_mentioned: None,
             notes: None,
+            phase: None,
             previous_name: None,
+            program: None,
             program_id: None,
             project_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
             topics: None,
             weak_alias: None,
@@ -7353,18 +8913,30 @@ pub struct ProjectParticipant {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -7386,10 +8958,14 @@ impl ProjectParticipant {
             participant: None,
             project: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -7434,6 +9010,9 @@ pub struct PublicBody {
     ///Property: CAGE
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cage_code: Option<Vec<String>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -7455,6 +9034,9 @@ pub struct PublicBody {
     ///Property: GIIN
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gii_number: Option<Vec<String>>,
+    ///Property: ICIJ ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id_number: Option<Vec<String>>,
@@ -7473,6 +9055,12 @@ pub struct PublicBody {
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
     pub jurisdiction: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Legal form
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lei_code: Option<Vec<String>>,
@@ -7515,12 +9103,18 @@ pub struct PublicBody {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -7533,9 +9127,15 @@ pub struct PublicBody {
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sayari_id: Option<Vec<String>>,
+    ///Property: Sector
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -7545,6 +9145,9 @@ pub struct PublicBody {
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tax_number: Option<Vec<String>>,
+    ///Property: Tax status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tax_status: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
@@ -7586,6 +9189,7 @@ impl PublicBody {
             bright_query_org_id: None,
             bvd_id: None,
             cage_code: None,
+            classification: None,
             country: None,
             created_at: None,
             description: None,
@@ -7593,12 +9197,15 @@ impl PublicBody {
             duns_code: None,
             email: None,
             gii_number: None,
+            icij_id: None,
             id_number: None,
             imo_number: None,
             incorporation_date: None,
             index_text: None,
             inn_code: None,
             jurisdiction: None,
+            keywords: None,
+            legal_form: None,
             lei_code: None,
             license_number: None,
             main_country: None,
@@ -7613,16 +9220,21 @@ impl PublicBody {
             perm_id: None,
             phone: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
             sayari_id: None,
+            sector: None,
             source_url: None,
+            status: None,
             summary: None,
             swift_bic: None,
             tax_number: None,
+            tax_status: None,
             topics: None,
             unique_entity_id: None,
             usc_code: None,
@@ -7690,6 +9302,9 @@ pub struct RealEstate {
     ///Property: Cadastral code
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cadastral_code: Option<Vec<String>>,
+    ///Property: Census block
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub census_block: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
@@ -7699,12 +9314,24 @@ pub struct RealEstate {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
+    ///Property: Encumbrance
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encumbrance: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Land type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub land_type: Option<Vec<String>>,
     ///Property: Latitude
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -7734,12 +9361,21 @@ pub struct RealEstate {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Property type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub property_type: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -7755,6 +9391,9 @@ pub struct RealEstate {
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
+    ///Property: Tenure
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tenure: Option<Vec<String>>,
     ///Property: Title number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub title_number: Option<Vec<String>>,
@@ -7787,11 +9426,16 @@ impl RealEstate {
             amount_usd: None,
             area: None,
             cadastral_code: None,
+            census_block: None,
             country: None,
             create_date: None,
             created_at: None,
+            currency: None,
             description: None,
+            encumbrance: None,
             index_text: None,
+            keywords: None,
+            land_type: None,
             latitude: None,
             longitude: None,
             modified_at: None,
@@ -7799,13 +9443,17 @@ impl RealEstate {
             notes: None,
             parent: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            property_type: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
             source_url: None,
             summary: None,
+            tenure: None,
             title_number: None,
             topics: None,
             weak_alias: None,
@@ -7857,18 +9505,30 @@ pub struct Representation {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -7890,10 +9550,14 @@ impl Representation {
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
         }
     }
@@ -7951,12 +9615,18 @@ pub struct Risk {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Reason
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reason: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -7966,6 +9636,9 @@ pub struct Risk {
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -7992,11 +9665,14 @@ impl Risk {
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             reason: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
             topics: None,
         }
@@ -8018,6 +9694,9 @@ pub struct Sanction {
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aleph_url: Option<Vec<String>>,
+    ///Property: Authority
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub authority: Option<Vec<String>>,
     ///Property: Authority-issued identifier
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authority_id: Option<Vec<String>>,
@@ -8055,6 +9734,9 @@ pub struct Sanction {
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
     pub names_mentioned: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -8064,12 +9746,21 @@ pub struct Sanction {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Scope of sanctions
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub provisions: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Reason
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reason: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -8079,6 +9770,9 @@ pub struct Sanction {
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
@@ -8094,6 +9788,7 @@ impl Sanction {
             id: id.into(),
             schema: "Sanction".to_string(),
             aleph_url: None,
+            authority: None,
             authority_id: None,
             country: None,
             date: None,
@@ -8105,14 +9800,19 @@ impl Sanction {
             listing_date: None,
             modified_at: None,
             names_mentioned: None,
+            program: None,
             program_id: None,
             program_url: None,
             proof: None,
+            provisions: None,
+            publisher: None,
             publisher_url: None,
             reason: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
+            status: None,
             summary: None,
             unsc_id: None,
         }
@@ -8164,12 +9864,21 @@ pub struct Security {
         default
     )]
     pub amount_usd: Option<Vec<f64>>,
+    ///Property: Classification
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub classification: Option<Vec<String>>,
+    ///Property: Collateral
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub collateral: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Vec<String>>,
@@ -8188,6 +9897,9 @@ pub struct Security {
     ///Property: Issuer
     #[serde(skip_serializing_if = "Option::is_none")]
     pub issuer: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Maturity date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub maturity_date: Option<Vec<String>>,
@@ -8203,12 +9915,18 @@ pub struct Security {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -8230,6 +9948,9 @@ pub struct Security {
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -8254,21 +9975,27 @@ impl Security {
             amount: None,
             amount_eur: None,
             amount_usd: None,
+            classification: None,
+            collateral: None,
             country: None,
             created_at: None,
+            currency: None,
             description: None,
             figi_code: None,
             index_text: None,
             isin: None,
             issue_date: None,
             issuer: None,
+            keywords: None,
             maturity_date: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
@@ -8276,6 +10003,7 @@ impl Security {
             summary: None,
             ticker: None,
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -8305,9 +10033,15 @@ pub struct Similar {
         default
     )]
     pub confidence_score: Option<Vec<f64>>,
+    ///Property: Matching criteria
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub criteria: Option<Vec<String>>,
     ///Property: Match
     #[serde(skip_serializing_if = "Option::is_none")]
     pub match_: Option<Vec<String>>,
+    ///Property: Matcher
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub matcher: Option<Vec<String>>,
 }
 impl Similar {
     /// Create a new entity with the given ID
@@ -8318,7 +10052,9 @@ impl Similar {
             schema: "Similar".to_string(),
             candidate: None,
             confidence_score: None,
+            criteria: None,
             match_: None,
+            matcher: None,
         }
     }
     /// Get the schema name
@@ -8362,18 +10098,30 @@ pub struct Succession {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Successor
     #[serde(default)]
     pub successor: Vec<String>,
@@ -8397,10 +10145,14 @@ impl Succession {
             names_mentioned: None,
             predecessor: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             successor: Vec::new(),
             summary: None,
         }
@@ -8434,6 +10186,9 @@ pub struct Table {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -8453,6 +10208,9 @@ pub struct Table {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -8474,6 +10232,15 @@ pub struct Table {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -8481,6 +10248,9 @@ pub struct Table {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -8490,12 +10260,18 @@ pub struct Table {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -8529,6 +10305,15 @@ pub struct Table {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -8538,6 +10323,9 @@ pub struct Table {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -8591,12 +10379,14 @@ impl Table {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             columns: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             csv_hash: None,
             date: None,
@@ -8604,12 +10394,18 @@ impl Table {
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -8621,9 +10417,13 @@ impl Table {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             row_count: None,
@@ -8670,6 +10470,12 @@ pub struct TaxRoll {
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub end_date: Option<Vec<String>>,
+    ///Property: Given name
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub given_name: Option<Vec<String>>,
+    ///Property: Registered income
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub income: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -8682,9 +10488,15 @@ pub struct TaxRoll {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -8697,9 +10509,18 @@ pub struct TaxRoll {
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Vec<String>>,
+    ///Property: Surname
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub surname: Option<Vec<String>>,
+    ///Property: Amount of tax paid
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tax_paid: Option<Vec<String>>,
     ///Property: Taxee
     #[serde(default)]
     pub taxee: Vec<String>,
+    ///Property: Registered wealth
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub wealth: Option<Vec<String>>,
 }
 impl TaxRoll {
     /// Create a new entity with the given ID
@@ -8714,16 +10535,23 @@ impl TaxRoll {
             date: None,
             description: None,
             end_date: None,
+            given_name: None,
+            income: None,
             index_text: None,
             modified_at: None,
             names_mentioned: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
             summary: None,
+            surname: None,
+            tax_paid: None,
             taxee: Vec::new(),
+            wealth: None,
         }
     }
     /// Get the schema name
@@ -8785,6 +10613,9 @@ pub struct Trip {
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
+    ///Property: Important
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub important: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
@@ -8794,6 +10625,9 @@ pub struct Trip {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Location
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location: Option<Vec<String>>,
@@ -8824,15 +10658,24 @@ pub struct Trip {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -8886,9 +10729,11 @@ impl Trip {
             end_date: None,
             end_location: Vec::new(),
             iban_mentioned: None,
+            important: None,
             index_text: None,
             involved: None,
             ip_mentioned: None,
+            keywords: None,
             location: None,
             location_mentioned: None,
             modified_at: None,
@@ -8899,9 +10744,12 @@ impl Trip {
             people_mentioned: None,
             phone_mentioned: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
             source_url: None,
             start_date: None,
@@ -8955,18 +10803,30 @@ pub struct UnknownLink {
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
+    ///Property: Record ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Role
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub start_date: Option<Vec<String>>,
+    ///Property: Status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<Vec<String>>,
     ///Property: Subject
     #[serde(default)]
     pub subject: Vec<String>,
@@ -8990,10 +10850,14 @@ impl UnknownLink {
             names_mentioned: None,
             object: Vec::new(),
             proof: None,
+            publisher: None,
             publisher_url: None,
+            record_id: None,
             retrieved_at: None,
+            role: None,
             source_url: None,
             start_date: None,
+            status: None,
             subject: Vec::new(),
             summary: None,
         }
@@ -9042,6 +10906,9 @@ pub struct UserAccount {
     ///Property: IP address
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_address: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -9063,12 +10930,18 @@ pub struct UserAccount {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -9117,6 +10990,7 @@ impl UserAccount {
             email: None,
             index_text: None,
             ip_address: None,
+            keywords: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
@@ -9124,8 +10998,10 @@ impl UserAccount {
             password: None,
             phone: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             service: None,
@@ -9194,6 +11070,9 @@ pub struct Vehicle {
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: De-registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
     pub deregistration_date: Option<Vec<String>>,
@@ -9203,6 +11082,12 @@ pub struct Vehicle {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
+    ///Property: Model
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub model: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -9221,12 +11106,18 @@ pub struct Vehicle {
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -9248,6 +11139,9 @@ pub struct Vehicle {
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -9275,17 +11169,22 @@ impl Vehicle {
             build_date: None,
             country: None,
             created_at: None,
+            currency: None,
             deregistration_date: None,
             description: None,
             index_text: None,
+            keywords: None,
+            model: None,
             modified_at: None,
             name: Vec::new(),
             notes: None,
             operator: None,
             owner: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_date: None,
             registration_number: None,
@@ -9293,6 +11192,7 @@ impl Vehicle {
             source_url: None,
             summary: None,
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -9360,6 +11260,9 @@ pub struct Vessel {
     ///Property: CRS Number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub crs_number: Option<Vec<String>>,
+    ///Property: Currency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub currency: Option<Vec<String>>,
     ///Property: Deadweight Tonnage
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -9389,9 +11292,15 @@ pub struct Vessel {
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
     pub index_text: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: MMSI
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mmsi: Option<Vec<String>>,
+    ///Property: Model
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub model: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub modified_at: Option<Vec<String>>,
@@ -9401,6 +11310,9 @@ pub struct Vessel {
     ///Property: Date of Name Change
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name_change_date: Option<Vec<String>>,
+    ///Property: Navigation Area
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub navigation_area: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes: Option<Vec<String>>,
@@ -9413,15 +11325,24 @@ pub struct Vessel {
     ///Property: Past Flags
     #[serde(skip_serializing_if = "Option::is_none")]
     pub past_flags: Option<Vec<String>>,
+    ///Property: Past Types
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub past_types: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_name: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proof: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -9431,6 +11352,9 @@ pub struct Vessel {
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
     pub registration_number: Option<Vec<String>>,
+    ///Property: Port of Registration
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub registration_port: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retrieved_at: Option<Vec<String>>,
@@ -9450,6 +11374,9 @@ pub struct Vessel {
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
     pub topics: Option<Vec<String>>,
+    ///Property: Type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
     pub weak_alias: Option<Vec<String>>,
@@ -9479,6 +11406,7 @@ impl Vessel {
             country: None,
             created_at: None,
             crs_number: None,
+            currency: None,
             deadweight_tonnage: None,
             deregistration_date: None,
             description: None,
@@ -9486,25 +11414,33 @@ impl Vessel {
             gross_registered_tonnage: None,
             imo_number: None,
             index_text: None,
+            keywords: None,
             mmsi: None,
+            model: None,
             modified_at: None,
             name: Vec::new(),
             name_change_date: None,
+            navigation_area: None,
             notes: None,
             operator: None,
             owner: None,
             past_flags: None,
+            past_types: None,
             previous_name: None,
+            program: None,
             program_id: None,
             proof: None,
+            publisher: None,
             publisher_url: None,
             registration_date: None,
             registration_number: None,
+            registration_port: None,
             retrieved_at: None,
             source_url: None,
             summary: None,
             tonnage: None,
             topics: None,
+            type_: None,
             weak_alias: None,
             wikidata_id: None,
             wikipedia_url: None,
@@ -9539,6 +11475,9 @@ pub struct Video {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -9554,6 +11493,9 @@ pub struct Video {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -9579,6 +11521,15 @@ pub struct Video {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -9586,6 +11537,9 @@ pub struct Video {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -9595,12 +11549,18 @@ pub struct Video {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -9634,6 +11594,15 @@ pub struct Video {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -9643,6 +11612,9 @@ pub struct Video {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -9689,11 +11661,13 @@ impl Video {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
@@ -9701,12 +11675,18 @@ impl Video {
             detected_language: None,
             duration: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -9718,9 +11698,13 @@ impl Video {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,
@@ -9763,6 +11747,9 @@ pub struct Workbook {
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ancestors: Option<Vec<String>>,
+    ///Property: Author
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authored_at: Option<Vec<String>>,
@@ -9778,6 +11765,9 @@ pub struct Workbook {
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<Vec<String>>,
+    ///Property: Crawler
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<Vec<String>>,
@@ -9796,6 +11786,15 @@ pub struct Workbook {
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub email_mentioned: Option<Vec<String>>,
+    ///Property: File encoding
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub encoding: Option<Vec<String>>,
+    ///Property: File extension
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extension: Option<Vec<String>>,
+    ///Property: File name
+    #[serde(default)]
+    pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -9803,6 +11802,9 @@ pub struct Workbook {
         default
     )]
     pub file_size: Option<Vec<f64>>,
+    ///Property: Generator
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
     pub iban_mentioned: Option<Vec<String>>,
@@ -9812,12 +11814,18 @@ pub struct Workbook {
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ip_mentioned: Option<Vec<String>>,
+    ///Property: Keywords
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
     pub location_mentioned: Option<Vec<String>>,
+    ///Property: Message ID
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<Vec<String>>,
@@ -9851,6 +11859,15 @@ pub struct Workbook {
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
     pub processing_agent: Option<Vec<String>>,
+    ///Property: Processing error
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_error: Option<Vec<String>>,
+    ///Property: Processing status
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub processing_status: Option<Vec<String>>,
+    ///Property: Program
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
     pub program_id: Option<Vec<String>>,
@@ -9860,6 +11877,9 @@ pub struct Workbook {
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
     pub published_at: Option<Vec<String>>,
+    ///Property: Publishing source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
     pub publisher_url: Option<Vec<String>>,
@@ -9906,23 +11926,31 @@ impl Workbook {
             aleph_url: None,
             alias: None,
             ancestors: None,
+            author: None,
             authored_at: None,
             body_text: None,
             companies_mentioned: None,
             content_hash: None,
             country: None,
+            crawler: None,
             created_at: None,
             date: None,
             description: None,
             detected_country: None,
             detected_language: None,
             email_mentioned: None,
+            encoding: None,
+            extension: None,
+            file_name: Vec::new(),
             file_size: None,
+            generator: None,
             iban_mentioned: None,
             index_text: None,
             ip_mentioned: None,
+            keywords: None,
             language: None,
             location_mentioned: None,
+            message_id: None,
             mime_type: None,
             modified_at: None,
             name: Vec::new(),
@@ -9934,9 +11962,13 @@ impl Workbook {
             previous_name: None,
             processed_at: None,
             processing_agent: None,
+            processing_error: None,
+            processing_status: None,
+            program: None,
             program_id: None,
             proof: None,
             published_at: None,
+            publisher: None,
             publisher_url: None,
             retrieved_at: None,
             source_url: None,

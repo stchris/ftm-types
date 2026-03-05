@@ -162,11 +162,8 @@ impl CodeGenerator {
             let property = &schema.all_properties[*prop_name];
             let field_name = self.property_to_field_name(prop_name);
 
-            // Skip properties without a type (shouldn't happen but be defensive)
-            let prop_type = match &property.type_ {
-                Some(t) => t.as_str(),
-                None => continue,
-            };
+            // FTM default type for untyped properties is "string"
+            let prop_type = property.type_.as_deref().unwrap_or("string");
 
             let is_required = schema.all_required.contains(*prop_name);
             let field_type = self.map_property_type(prop_type, is_required);
@@ -221,10 +218,7 @@ impl CodeGenerator {
             let property = &schema.all_properties[*prop_name];
             let field_name = self.property_to_field_name(prop_name);
 
-            let prop_type = match &property.type_ {
-                Some(t) => t.as_str(),
-                None => continue,
-            };
+            let prop_type = property.type_.as_deref().unwrap_or("string");
 
             let is_required = schema.all_required.contains(*prop_name);
 
@@ -509,11 +503,7 @@ impl CodeGenerator {
             let property = &schema.properties[prop_name];
             let method_name = self.property_to_field_name(prop_name);
 
-            // Skip properties without a type
-            let prop_type = match &property.type_ {
-                Some(t) => t.as_str(),
-                None => continue,
-            };
+            let prop_type = property.type_.as_deref().unwrap_or("string");
 
             let return_type = match prop_type {
                 "number" => quote! { Option<&[f64]> },
@@ -613,11 +603,7 @@ impl CodeGenerator {
                 let method_name = self.property_to_field_name(prop_name);
                 let field_name = self.property_to_field_name(prop_name);
 
-                // Skip properties without a type
-                let prop_type = match &property.type_ {
-                    Some(t) => t.as_str(),
-                    None => continue,
-                };
+                let prop_type = property.type_.as_deref().unwrap_or("string");
 
                 // Check if this property is required in the concrete schema
                 let is_required = schema.all_required.contains(prop_name);

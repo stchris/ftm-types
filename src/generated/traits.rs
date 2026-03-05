@@ -36,6 +36,10 @@ pub trait Interest: Interval {
     fn id(&self) -> &str;
     /// Get the schema name
     fn schema(&self) -> &str;
+    ///Get Role property
+    fn role(&self) -> Option<&[String]>;
+    ///Get Status property
+    fn status(&self) -> Option<&[String]>;
 }
 ///Trait for FTM schema: Interval
 pub trait Interval {
@@ -59,8 +63,12 @@ pub trait Interval {
     fn names_mentioned(&self) -> Option<&[String]>;
     ///Get Source document property
     fn proof(&self) -> Option<&[String]>;
+    ///Get Publishing source property
+    fn publisher(&self) -> Option<&[String]>;
     ///Get Publishing source URL property
     fn publisher_url(&self) -> Option<&[String]>;
+    ///Get Record ID property
+    fn record_id(&self) -> Option<&[String]>;
     ///Get Retrieved on property
     fn retrieved_at(&self) -> Option<&[String]>;
     ///Get Source link property
@@ -92,6 +100,8 @@ pub trait Thing {
     fn description(&self) -> Option<&[String]>;
     ///Get Index text property
     fn index_text(&self) -> Option<&[String]>;
+    ///Get Keywords property
+    fn keywords(&self) -> Option<&[String]>;
     ///Get Modified on property
     fn modified_at(&self) -> Option<&[String]>;
     ///Get Name property
@@ -100,10 +110,14 @@ pub trait Thing {
     fn notes(&self) -> Option<&[String]>;
     ///Get Previous name property
     fn previous_name(&self) -> Option<&[String]>;
+    ///Get Program property
+    fn program(&self) -> Option<&[String]>;
     ///Get Program ID property
     fn program_id(&self) -> Option<&[String]>;
     ///Get Source document property
     fn proof(&self) -> Option<&[String]>;
+    ///Get Publishing source property
+    fn publisher(&self) -> Option<&[String]>;
     ///Get Publishing source URL property
     fn publisher_url(&self) -> Option<&[String]>;
     ///Get Retrieved on property
@@ -133,4 +147,6 @@ pub trait Value {
     fn amount_eur(&self) -> Option<&[f64]>;
     ///Get Amount in USD property
     fn amount_usd(&self) -> Option<&[f64]>;
+    ///Get Currency property
+    fn currency(&self) -> Option<&[String]>;
 }

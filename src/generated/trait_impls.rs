@@ -32,6 +32,9 @@ impl Thing for Address {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -44,11 +47,17 @@ impl Thing for Address {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -106,6 +115,9 @@ impl Thing for Airplane {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -118,11 +130,17 @@ impl Thing for Airplane {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -164,6 +182,9 @@ impl Value for Airplane {
     }
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
+    }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
     }
 }
 impl Analyzable for Article {
@@ -235,6 +256,9 @@ impl Thing for Article {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -247,11 +271,17 @@ impl Thing for Article {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -309,6 +339,9 @@ impl Thing for Asset {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -321,11 +354,17 @@ impl Thing for Asset {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -368,6 +407,9 @@ impl Value for Asset {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interval for Associate {
     fn id(&self) -> &str {
@@ -400,8 +442,14 @@ impl Interval for Associate {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -485,6 +533,9 @@ impl Thing for Audio {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -497,11 +548,17 @@ impl Thing for Audio {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -559,6 +616,9 @@ impl Thing for BankAccount {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -571,11 +631,17 @@ impl Thing for BankAccount {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -618,6 +684,9 @@ impl Value for BankAccount {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interval for Call {
     fn id(&self) -> &str {
@@ -650,8 +719,14 @@ impl Interval for Call {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -697,8 +772,14 @@ impl Interval for CallForTenders {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -744,6 +825,9 @@ impl Thing for CallForTenders {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -756,11 +840,17 @@ impl Thing for CallForTenders {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -818,6 +908,9 @@ impl Thing for Company {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -830,11 +923,17 @@ impl Thing for Company {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -877,6 +976,9 @@ impl Value for Company {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Thing for Contract {
     fn id(&self) -> &str {
@@ -909,6 +1011,9 @@ impl Thing for Contract {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -921,11 +1026,17 @@ impl Thing for Contract {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -968,6 +1079,9 @@ impl Value for Contract {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interest for ContractAward {
     fn id(&self) -> &str {
@@ -975,6 +1089,12 @@ impl Interest for ContractAward {
     }
     fn schema(&self) -> &str {
         &self.schema
+    }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
     }
 }
 impl Interval for ContractAward {
@@ -1008,8 +1128,14 @@ impl Interval for ContractAward {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1039,6 +1165,9 @@ impl Value for ContractAward {
     }
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
+    }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
     }
 }
 impl Thing for CourtCase {
@@ -1072,6 +1201,9 @@ impl Thing for CourtCase {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -1084,11 +1216,17 @@ impl Thing for CourtCase {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -1122,6 +1260,12 @@ impl Interest for CourtCaseParty {
     fn schema(&self) -> &str {
         &self.schema
     }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
+    }
 }
 impl Interval for CourtCaseParty {
     fn id(&self) -> &str {
@@ -1154,8 +1298,14 @@ impl Interval for CourtCaseParty {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1201,6 +1351,9 @@ impl Thing for CryptoWallet {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -1213,11 +1366,17 @@ impl Thing for CryptoWallet {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -1260,6 +1419,9 @@ impl Value for CryptoWallet {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interval for Debt {
     fn id(&self) -> &str {
@@ -1292,8 +1454,14 @@ impl Interval for Debt {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1324,6 +1492,9 @@ impl Value for Debt {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interest for Directorship {
     fn id(&self) -> &str {
@@ -1331,6 +1502,12 @@ impl Interest for Directorship {
     }
     fn schema(&self) -> &str {
         &self.schema
+    }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
     }
 }
 impl Interval for Directorship {
@@ -1364,8 +1541,14 @@ impl Interval for Directorship {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1449,6 +1632,9 @@ impl Thing for Document {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -1461,11 +1647,17 @@ impl Thing for Document {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -1499,6 +1691,12 @@ impl Interest for Documentation {
     fn schema(&self) -> &str {
         &self.schema
     }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
+    }
 }
 impl Interval for Documentation {
     fn id(&self) -> &str {
@@ -1531,8 +1729,14 @@ impl Interval for Documentation {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1578,8 +1782,14 @@ impl Interval for EconomicActivity {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1663,6 +1873,9 @@ impl Thing for Email {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -1675,11 +1888,17 @@ impl Thing for Email {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -1713,6 +1932,12 @@ impl Interest for Employment {
     fn schema(&self) -> &str {
         &self.schema
     }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
+    }
 }
 impl Interval for Employment {
     fn id(&self) -> &str {
@@ -1745,8 +1970,14 @@ impl Interval for Employment {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1830,8 +2061,14 @@ impl Interval for Event {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -1877,6 +2114,9 @@ impl Thing for Event {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -1889,11 +2129,17 @@ impl Thing for Event {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -1951,8 +2197,14 @@ impl Interval for Family {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -2036,6 +2288,9 @@ impl Thing for Folder {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2048,11 +2303,17 @@ impl Thing for Folder {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2148,6 +2409,9 @@ impl Thing for HyperText {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2160,11 +2424,17 @@ impl Thing for HyperText {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2222,8 +2492,14 @@ impl Interval for Identification {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -2307,6 +2583,9 @@ impl Thing for Image {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2319,11 +2598,17 @@ impl Thing for Image {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2381,6 +2666,9 @@ impl Thing for LegalEntity {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2393,11 +2681,17 @@ impl Thing for LegalEntity {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2455,6 +2749,9 @@ impl Thing for License {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2467,11 +2764,17 @@ impl Thing for License {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2514,6 +2817,9 @@ impl Value for License {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interest for Membership {
     fn id(&self) -> &str {
@@ -2521,6 +2827,12 @@ impl Interest for Membership {
     }
     fn schema(&self) -> &str {
         &self.schema
+    }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
     }
 }
 impl Interval for Membership {
@@ -2554,8 +2866,14 @@ impl Interval for Membership {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -2639,8 +2957,14 @@ impl Interval for Message {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -2686,6 +3010,9 @@ impl Thing for Message {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2698,11 +3025,17 @@ impl Thing for Message {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2798,6 +3131,9 @@ impl Thing for Note {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2810,11 +3146,17 @@ impl Thing for Note {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2872,8 +3214,14 @@ impl Interval for Occupancy {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -2919,6 +3267,9 @@ impl Thing for Organization {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -2931,11 +3282,17 @@ impl Thing for Organization {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -2969,6 +3326,12 @@ impl Interest for Ownership {
     fn schema(&self) -> &str {
         &self.schema
     }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
+    }
 }
 impl Interval for Ownership {
     fn id(&self) -> &str {
@@ -3001,8 +3364,14 @@ impl Interval for Ownership {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -3086,6 +3455,9 @@ impl Thing for Package {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3098,11 +3470,17 @@ impl Thing for Package {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3198,6 +3576,9 @@ impl Thing for Pages {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3210,11 +3591,17 @@ impl Thing for Pages {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3272,8 +3659,14 @@ impl Interval for Passport {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -3319,8 +3712,14 @@ impl Interval for Payment {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -3350,6 +3749,9 @@ impl Value for Payment {
     }
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
+    }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
     }
 }
 impl Thing for Person {
@@ -3383,6 +3785,9 @@ impl Thing for Person {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3395,11 +3800,17 @@ impl Thing for Person {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3495,6 +3906,9 @@ impl Thing for PlainText {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3507,11 +3921,17 @@ impl Thing for PlainText {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3569,6 +3989,9 @@ impl Thing for Position {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3581,11 +4004,17 @@ impl Thing for Position {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3643,8 +4072,14 @@ impl Interval for Project {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -3690,6 +4125,9 @@ impl Thing for Project {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3702,11 +4140,17 @@ impl Thing for Project {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3749,6 +4193,9 @@ impl Value for Project {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interest for ProjectParticipant {
     fn id(&self) -> &str {
@@ -3756,6 +4203,12 @@ impl Interest for ProjectParticipant {
     }
     fn schema(&self) -> &str {
         &self.schema
+    }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
     }
 }
 impl Interval for ProjectParticipant {
@@ -3789,8 +4242,14 @@ impl Interval for ProjectParticipant {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -3836,6 +4295,9 @@ impl Thing for PublicBody {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3848,11 +4310,17 @@ impl Thing for PublicBody {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3910,6 +4378,9 @@ impl Thing for RealEstate {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -3922,11 +4393,17 @@ impl Thing for RealEstate {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -3969,6 +4446,9 @@ impl Value for RealEstate {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interest for Representation {
     fn id(&self) -> &str {
@@ -3976,6 +4456,12 @@ impl Interest for Representation {
     }
     fn schema(&self) -> &str {
         &self.schema
+    }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
     }
 }
 impl Interval for Representation {
@@ -4009,8 +4495,14 @@ impl Interval for Representation {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4056,8 +4548,14 @@ impl Interval for Risk {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4103,8 +4601,14 @@ impl Interval for Sanction {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4150,6 +4654,9 @@ impl Thing for Security {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4162,11 +4669,17 @@ impl Thing for Security {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -4209,6 +4722,9 @@ impl Value for Security {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Interest for Succession {
     fn id(&self) -> &str {
@@ -4216,6 +4732,12 @@ impl Interest for Succession {
     }
     fn schema(&self) -> &str {
         &self.schema
+    }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
     }
 }
 impl Interval for Succession {
@@ -4249,8 +4771,14 @@ impl Interval for Succession {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4334,6 +4862,9 @@ impl Thing for Table {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4346,11 +4877,17 @@ impl Thing for Table {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -4408,8 +4945,14 @@ impl Interval for TaxRoll {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4493,8 +5036,14 @@ impl Interval for Trip {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4540,6 +5089,9 @@ impl Thing for Trip {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4552,11 +5104,17 @@ impl Thing for Trip {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -4590,6 +5148,12 @@ impl Interest for UnknownLink {
     fn schema(&self) -> &str {
         &self.schema
     }
+    fn role(&self) -> Option<&[String]> {
+        self.role.as_deref()
+    }
+    fn status(&self) -> Option<&[String]> {
+        self.status.as_deref()
+    }
 }
 impl Interval for UnknownLink {
     fn id(&self) -> &str {
@@ -4622,8 +5186,14 @@ impl Interval for UnknownLink {
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
     }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
+    }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
+    }
+    fn record_id(&self) -> Option<&[String]> {
+        self.record_id.as_deref()
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
@@ -4669,6 +5239,9 @@ impl Thing for UserAccount {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4681,11 +5254,17 @@ impl Thing for UserAccount {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -4743,6 +5322,9 @@ impl Thing for Vehicle {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4755,11 +5337,17 @@ impl Thing for Vehicle {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -4802,6 +5390,9 @@ impl Value for Vehicle {
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
     }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
+    }
 }
 impl Thing for Vessel {
     fn id(&self) -> &str {
@@ -4834,6 +5425,9 @@ impl Thing for Vessel {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4846,11 +5440,17 @@ impl Thing for Vessel {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -4892,6 +5492,9 @@ impl Value for Vessel {
     }
     fn amount_usd(&self) -> Option<&[f64]> {
         self.amount_usd.as_deref()
+    }
+    fn currency(&self) -> Option<&[String]> {
+        self.currency.as_deref()
     }
 }
 impl Analyzable for Video {
@@ -4963,6 +5566,9 @@ impl Thing for Video {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -4975,11 +5581,17 @@ impl Thing for Video {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
@@ -5075,6 +5687,9 @@ impl Thing for Workbook {
     fn index_text(&self) -> Option<&[String]> {
         self.index_text.as_deref()
     }
+    fn keywords(&self) -> Option<&[String]> {
+        self.keywords.as_deref()
+    }
     fn modified_at(&self) -> Option<&[String]> {
         self.modified_at.as_deref()
     }
@@ -5087,11 +5702,17 @@ impl Thing for Workbook {
     fn previous_name(&self) -> Option<&[String]> {
         self.previous_name.as_deref()
     }
+    fn program(&self) -> Option<&[String]> {
+        self.program.as_deref()
+    }
     fn program_id(&self) -> Option<&[String]> {
         self.program_id.as_deref()
     }
     fn proof(&self) -> Option<&[String]> {
         self.proof.as_deref()
+    }
+    fn publisher(&self) -> Option<&[String]> {
+        self.publisher.as_deref()
     }
     fn publisher_url(&self) -> Option<&[String]> {
         self.publisher_url.as_deref()
