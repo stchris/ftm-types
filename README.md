@@ -4,7 +4,7 @@ Rust types for [followthemoney](https://github.com/opensanctions/followthemoney)
 
 
 > [!WARNING]
-> In development, use at your own risk, can suddenly swerve, entities in mirror are larger than they appear 😳
+> In development. Use at your own risk. Can suddenly swerve. Entities in mirror are larger than they appear 😳
 
 > [!TIP]
 > Suggestions welcome. Especially in terms of ergonomics and tooling.
