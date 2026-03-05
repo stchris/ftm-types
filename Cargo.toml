@@ -45,3 +45,12 @@ builder = ["bon"]
 inherits = "release"
 lto = "thin"
 
+[workspace.metadata.release]
+pre-release-hook = [
+  "git",
+  "cliff",
+  "-o",
+  "CHANGELOG.md",
+  "--tag",
+  "{{version}}",
+]
