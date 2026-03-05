@@ -40,3 +40,8 @@ path = "src/main.rs"
 default = ["builder"]
 builder = ["bon"]
 
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
