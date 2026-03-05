@@ -18,20 +18,20 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-ftm-schema = { path = "/path/to/ftm-schema" }
+ftm-types = "0.1"
 ```
 
 And start exploring:
 
 ```rust
-use ftm-types::generated::FtmEntity;
+use ftm_types::generated::FtmEntity;
 ```
 
 ### Download and Generate Schemas
 
 ```bash
-$ just download-ftm-schema 1.2.3
-$ cargo run -- 1.2.3
+$ just download-ftm-schema 4.5.0
+$ cargo run -- 4.5.0
 ```
 
 ### Using Generated Types
@@ -84,7 +84,7 @@ pub enum FtmEntity {
 The library uses a **hybrid approach**: entity structs have flat structures for direct access, but also implement traits for polymorphic code. See also [examples/first_steps.rs](./examples/first_steps.rs) by running:
 
 ```bash
-$ cargo run --example first_steps
+$ cargo run --example trait_polymorphism.rs
 ```
 ### Type Mapping
 
@@ -116,7 +116,6 @@ All properties are multi-valued by default (following FTM semantics) and optiona
 - [ ] Consider adding `required` fields to `new()` fn
 - [ ] Consider helpers for single-value access (like `first_name()`)
 - [ ] Consider impl `From<&str>` or accept `Into<String>` to reduce the String boilerplate
-- [ ] feature `random` generates awkward structs
 
 ## License
 

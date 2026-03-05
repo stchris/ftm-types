@@ -83,14 +83,7 @@ impl CodeGenerator {
             // Auto-generated - DO NOT EDIT
             #![allow(missing_docs)]
 
-            #[cfg(feature = "rand")]
-            use enum_derived::Rand;
             use serde::{Deserialize, Serialize};
-
-            #[cfg(feature = "rand")]
-            fn default_json_value() -> Option<serde_json::Value> {
-                Some(serde_json::Value::Object(serde_json::Map::new()))
-            }
 
             #[cfg(feature = "builder")] use bon::Builder;
 
@@ -168,13 +161,6 @@ impl CodeGenerator {
             let is_required = schema.all_required.contains(*prop_name);
             let field_type = self.map_property_type(prop_type, is_required);
 
-            // Add custom_rand attribute for serde_json::Value fields
-            let custom_rand_attr = if prop_type == "json" {
-                quote! { #[cfg_attr(feature = "rand", custom_rand(default_json_value))] }
-            } else {
-                quote! {}
-            };
-
             let field_doc = if let Some(label) = &property.label {
                 format!("Property: {}", label)
             } else {
@@ -202,7 +188,6 @@ impl CodeGenerator {
             fields.push(quote! {
                 #[doc = #field_doc]
                 #serde_attr
-                #custom_rand_attr
                 pub #field_name: #field_type
             });
         }
@@ -239,7 +224,6 @@ impl CodeGenerator {
         Ok(quote! {
             #[doc = #doc_comment]
             #[derive(Debug, Clone, Serialize, Deserialize)]
-            #[cfg_attr(feature = "rand", derive(Rand))]
             #[cfg_attr(feature = "builder", derive(Builder))]
             #[serde(rename_all = "camelCase")]
             pub struct #struct_name {

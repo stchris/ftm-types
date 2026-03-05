@@ -24,7 +24,6 @@ anyhow = "1.0"
 thiserror = "1.0"
 
 bon = {version = "3.8", optional = true}
-enum-derived = {version = "0.9", optional = true}
 zstd = "0.13.3"
 
 [dev-dependencies]
@@ -36,5 +35,4 @@ path = "src/main.rs"
 
 [features]
 default = ["builder"]
-rand = ["enum-derived"]
 builder = ["bon"]

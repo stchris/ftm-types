@@ -12,6 +12,3 @@ pub use schema::{FtmProperty, FtmSchema, ResolvedSchema, SchemaRegistry};
 pub mod generated;
 
 pub use generated::FtmEntity;
-
-#[cfg(feature = "rand")]
-pub use enum_derived;

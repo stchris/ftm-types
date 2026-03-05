@@ -1,13 +1,7 @@
 #![allow(missing_docs)]
-#[cfg(feature = "rand")]
-use enum_derived::Rand;
-use serde::{Deserialize, Serialize};
-#[cfg(feature = "rand")]
-fn default_json_value() -> Option<serde_json::Value> {
-    Some(serde_json::Value::Object(serde_json::Map::new()))
-}
 #[cfg(feature = "builder")]
 use bon::Builder;
+use serde::{Deserialize, Serialize};
 /// Deserialize a `Vec<f64>` whose elements may arrive as JSON strings
 /// (e.g. `["6000.00"]`) or as JSON numbers (e.g. `[6000.0]`).
 fn deserialize_f64_vec<'de, D>(deserializer: D) -> Result<Vec<f64>, D::Error>
@@ -38,7 +32,6 @@ where
 }
 ///FTM Schema: Address
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Address {
@@ -222,7 +215,6 @@ impl Address {
 }
 ///FTM Schema: Airplane
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Airplane {
@@ -418,7 +410,6 @@ impl Airplane {
 }
 ///FTM Schema: Article
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Article {
@@ -682,7 +673,6 @@ impl Article {
 }
 ///FTM Schema: Asset
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Asset {
@@ -834,7 +824,6 @@ impl Asset {
 }
 ///FTM Schema: Associate
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Associate {
@@ -930,7 +919,6 @@ impl Associate {
 }
 ///FTM Schema: Audio
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Audio {
@@ -1210,7 +1198,6 @@ impl Audio {
 }
 ///FTM Schema: Bank account
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct BankAccount {
@@ -1422,7 +1409,6 @@ impl BankAccount {
 }
 ///FTM Schema: Call
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Call {
@@ -1530,7 +1516,6 @@ impl Call {
 }
 ///FTM Schema: Call for tenders
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct CallForTenders {
@@ -1810,7 +1795,6 @@ impl CallForTenders {
 }
 ///FTM Schema: Company
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Company {
@@ -2194,7 +2178,6 @@ impl Company {
 }
 ///FTM Schema: Contract
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Contract {
@@ -2406,7 +2389,6 @@ impl Contract {
 }
 ///FTM Schema: Contract award
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct ContractAward {
@@ -2566,7 +2548,6 @@ impl ContractAward {
 }
 ///FTM Schema: Court case
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct CourtCase {
@@ -2718,7 +2699,6 @@ impl CourtCase {
 }
 ///FTM Schema: Case party
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct CourtCaseParty {
@@ -2818,7 +2798,6 @@ impl CourtCaseParty {
 }
 ///FTM Schema: Cryptocurrency wallet
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct CryptoWallet {
@@ -3010,7 +2989,6 @@ impl CryptoWallet {
 }
 ///FTM Schema: Debt
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Debt {
@@ -3130,7 +3108,6 @@ impl Debt {
 }
 ///FTM Schema: Directorship
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Directorship {
@@ -3234,7 +3211,6 @@ impl Directorship {
 }
 ///FTM Schema: File
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Document {
@@ -3498,7 +3474,6 @@ impl Document {
 }
 ///FTM Schema: Documentation
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Documentation {
@@ -3598,7 +3573,6 @@ impl Documentation {
 }
 ///FTM Schema: Customs declaration
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct EconomicActivity {
@@ -3774,7 +3748,6 @@ impl EconomicActivity {
 }
 ///FTM Schema: E-Mail
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Email {
@@ -3871,7 +3844,6 @@ pub struct Email {
     pub generator: Option<Vec<String>>,
     ///Property: Raw headers
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
     pub headers: Option<serde_json::Value>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4091,7 +4063,6 @@ impl Email {
 }
 ///FTM Schema: Employment
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Employment {
@@ -4191,7 +4162,6 @@ impl Employment {
 }
 ///FTM Schema: Event
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Event {
@@ -4387,7 +4357,6 @@ impl Event {
 }
 ///FTM Schema: Family
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Family {
@@ -4483,7 +4452,6 @@ impl Family {
 }
 ///FTM Schema: Folder
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Folder {
@@ -4747,7 +4715,6 @@ impl Folder {
 }
 ///FTM Schema: Web page
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct HyperText {
@@ -5015,7 +4982,6 @@ impl HyperText {
 }
 ///FTM Schema: Identification
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Identification {
@@ -5119,7 +5085,6 @@ impl Identification {
 }
 ///FTM Schema: Image
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Image {
@@ -5391,7 +5356,6 @@ impl Image {
 }
 ///FTM Schema: Legal entity
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct LegalEntity {
@@ -5651,7 +5615,6 @@ impl LegalEntity {
 }
 ///FTM Schema: License
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct License {
@@ -5879,7 +5842,6 @@ impl License {
 }
 ///FTM Schema: Membership
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Membership {
@@ -5979,7 +5941,6 @@ impl Membership {
 }
 ///FTM Schema: Mention
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Mention {
@@ -6031,7 +5992,6 @@ impl Mention {
 }
 ///FTM Schema: Message
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Message {
@@ -6146,7 +6106,6 @@ pub struct Message {
     pub message_id: Option<Vec<String>>,
     ///Property: Metadata
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
     pub metadata: Option<serde_json::Value>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -6348,7 +6307,6 @@ impl Message {
 }
 ///FTM Schema: Note
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Note {
@@ -6516,7 +6474,6 @@ impl Note {
 }
 ///FTM Schema: Occupancy
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Occupancy {
@@ -6616,7 +6573,6 @@ impl Occupancy {
 }
 ///FTM Schema: Organization
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Organization {
@@ -6892,7 +6848,6 @@ impl Organization {
 }
 ///FTM Schema: Ownership
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Ownership {
@@ -7020,7 +6975,6 @@ impl Ownership {
 }
 ///FTM Schema: Package
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Package {
@@ -7284,7 +7238,6 @@ impl Package {
 }
 ///FTM Schema: Page
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Page {
@@ -7340,7 +7293,6 @@ impl Page {
 }
 ///FTM Schema: Document
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Pages {
@@ -7608,7 +7560,6 @@ impl Pages {
 }
 ///FTM Schema: Passport
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Passport {
@@ -7740,7 +7691,6 @@ impl Passport {
 }
 ///FTM Schema: Payment
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Payment {
@@ -7892,7 +7842,6 @@ impl Payment {
 }
 ///FTM Schema: Person
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Person {
@@ -8276,7 +8225,6 @@ impl Person {
 }
 ///FTM Schema: Text file
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct PlainText {
@@ -8540,7 +8488,6 @@ impl PlainText {
 }
 ///FTM Schema: Position
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Position {
@@ -8688,7 +8635,6 @@ impl Position {
 }
 ///FTM Schema: Project
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Project {
@@ -8876,7 +8822,6 @@ impl Project {
 }
 ///FTM Schema: Project participant
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct ProjectParticipant {
@@ -8976,7 +8921,6 @@ impl ProjectParticipant {
 }
 ///FTM Schema: Public body
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct PublicBody {
@@ -9252,7 +9196,6 @@ impl PublicBody {
 }
 ///FTM Schema: Real estate
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct RealEstate {
@@ -9468,7 +9411,6 @@ impl RealEstate {
 }
 ///FTM Schema: Representation
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Representation {
@@ -9568,7 +9510,6 @@ impl Representation {
 }
 ///FTM Schema: Risk
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Risk {
@@ -9684,7 +9625,6 @@ impl Risk {
 }
 ///FTM Schema: Sanction
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Sanction {
@@ -9824,7 +9764,6 @@ impl Sanction {
 }
 ///FTM Schema: Security
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Security {
@@ -10016,7 +9955,6 @@ impl Security {
 }
 ///FTM Schema: Similar
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Similar {
@@ -10064,7 +10002,6 @@ impl Similar {
 }
 ///FTM Schema: Succession
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Succession {
@@ -10164,7 +10101,6 @@ impl Succession {
 }
 ///FTM Schema: Table
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Table {
@@ -10197,7 +10133,6 @@ pub struct Table {
     pub body_text: Option<Vec<String>>,
     ///Property: Column headings
     #[serde(skip_serializing_if = "Option::is_none")]
-    #[cfg_attr(feature = "rand", custom_rand(default_json_value))]
     pub columns: Option<serde_json::Value>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -10445,7 +10380,6 @@ impl Table {
 }
 ///FTM Schema: Tax roll
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct TaxRoll {
@@ -10561,7 +10495,6 @@ impl TaxRoll {
 }
 ///FTM Schema: Trip
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Trip {
@@ -10769,7 +10702,6 @@ impl Trip {
 }
 ///FTM Schema: Other link
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct UnknownLink {
@@ -10869,7 +10801,6 @@ impl UnknownLink {
 }
 ///FTM Schema: User account
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct UserAccount {
@@ -11021,7 +10952,6 @@ impl UserAccount {
 }
 ///FTM Schema: Vehicle
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Vehicle {
@@ -11205,7 +11135,6 @@ impl Vehicle {
 }
 ///FTM Schema: Vessel
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Vessel {
@@ -11453,7 +11382,6 @@ impl Vessel {
 }
 ///FTM Schema: Video
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Video {
@@ -11725,7 +11653,6 @@ impl Video {
 }
 ///FTM Schema: Workbook
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[cfg_attr(feature = "rand", derive(Rand))]
 #[cfg_attr(feature = "builder", derive(Builder))]
 #[serde(rename_all = "camelCase")]
 pub struct Workbook {
