@@ -185,9 +185,27 @@ impl CodeGenerator {
                 (_, false) => quote! { #[serde(skip_serializing_if = "Option::is_none")] },
             };
 
+            // Builder single-value setter: wraps a single value into Vec/Option<Vec>
+            let builder_attr = match (prop_type, is_required) {
+                ("json", _) => quote! {},
+                ("number", true) => {
+                    quote! { #[cfg_attr(feature = "builder", builder(with = |value: f64| vec![value]))] }
+                }
+                ("number", false) => {
+                    quote! { #[cfg_attr(feature = "builder", builder(with = |value: f64| vec![value]))] }
+                }
+                (_, true) => {
+                    quote! { #[cfg_attr(feature = "builder", builder(with = |value: impl Into<String>| vec![value.into()]))] }
+                }
+                (_, false) => {
+                    quote! { #[cfg_attr(feature = "builder", builder(with = |value: impl Into<String>| vec![value.into()]))] }
+                }
+            };
+
             fields.push(quote! {
                 #[doc = #field_doc]
                 #serde_attr
+                #builder_attr
                 pub #field_name: #field_type
             });
         }
@@ -992,20 +1010,37 @@ properties:
 
     #[test]
     fn test_builder() {
-        let _person = Person::builder()
-            .name(vec!["Huh".to_string()])
-            .height(vec![123.45]);
+        let _person = Person::builder().name("Huh").height(123.45);
     }
 
     #[test]
     fn test_to_ftm_json() {
-        let person = Person::builder()
-            .name(vec!["Hello Sir".into()])
-            .id("123".into())
-            .build();
+        let person = Person::builder().name("Hello Sir").id("123".into()).build();
         let v: serde_json::Value = serde_json::from_str(&person.to_ftm_json().unwrap()).unwrap();
         let v = v.as_object().unwrap();
         let keys: Vec<_> = Vec::from_iter(v.keys());
         assert_eq!(keys, vec!["id", "properties", "schema"]);
+    }
+
+    #[test]
+    fn test_builder_single_value_setter() {
+        let person = Person::builder()
+            .name("John Doe")
+            .id("123".to_string())
+            .build();
+        assert_eq!(person.name, vec!["John Doe".to_string()]);
+    }
+
+    #[test]
+    fn test_builder_mutate_after_build() {
+        let mut person = Person::builder()
+            .name("John Doe")
+            .id("123".to_string())
+            .build();
+        person.name.push("Johnny".into());
+        assert_eq!(
+            person.name,
+            vec!["John Doe".to_string(), "Johnny".to_string()]
+        );
     }
 }
