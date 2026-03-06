@@ -40,39 +40,87 @@ pub struct Address {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: City
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub city: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Full address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub full: Option<Vec<String>>,
     ///Property: Google Places ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub google_place_id: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Latitude
     #[serde(
@@ -80,6 +128,7 @@ pub struct Address {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub latitude: Option<Vec<f64>>,
     ///Property: Longitude
     #[serde(
@@ -87,78 +136,175 @@ pub struct Address {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub longitude: Option<Vec<f64>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: OpenStreetmap Place ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub osm_id: Option<Vec<String>>,
     ///Property: PO Box
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub post_office_box: Option<Vec<String>>,
     ///Property: Postal code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub postal_code: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Region
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub region: Option<Vec<String>>,
     ///Property: Remarks
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub remarks: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: State
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub state: Option<Vec<String>>,
     ///Property: Street address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub street: Option<Vec<String>>,
     ///Property: Street address (ctd.)
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub street2: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Address {
@@ -242,15 +388,31 @@ pub struct Airplane {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -258,6 +420,7 @@ pub struct Airplane {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -265,6 +428,7 @@ pub struct Airplane {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -272,105 +436,238 @@ pub struct Airplane {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Build Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub build_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: De-registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub deregistration_date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: ICAO aircraft type designator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub icao_code: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Manufacturer
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub manufacturer: Option<Vec<String>>,
     ///Property: Model
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub model: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Operator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub operator: Option<Vec<String>>,
     ///Property: Owner
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub owner: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_date: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Serial Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub serial_number: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Airplane {
@@ -456,66 +753,150 @@ pub struct Article {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -523,117 +904,266 @@ pub struct Article {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Article {
@@ -738,15 +1268,31 @@ pub struct Asset {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -754,6 +1300,7 @@ pub struct Asset {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -761,6 +1308,7 @@ pub struct Asset {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -768,72 +1316,161 @@ pub struct Asset {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Asset {
@@ -908,57 +1545,129 @@ pub struct Associate {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Associate
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub associate: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Person
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub person: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Relationship
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub relationship: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Associate {
@@ -1022,54 +1731,122 @@ pub struct Audio {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Duration
     #[serde(
@@ -1077,18 +1854,35 @@ pub struct Audio {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub duration: Option<Vec<f64>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -1096,90 +1890,203 @@ pub struct Audio {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sampling Rate
     #[serde(
@@ -1187,33 +2094,70 @@ pub struct Audio {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub sampling_rate: Option<Vec<f64>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Audio {
@@ -1320,21 +2264,45 @@ pub struct BankAccount {
     pub schema: String,
     ///Property: Account number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub account_number: Option<Vec<String>>,
     ///Property: Account type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub account_type: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -1342,6 +2310,7 @@ pub struct BankAccount {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -1349,6 +2318,7 @@ pub struct BankAccount {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -1356,6 +2326,7 @@ pub struct BankAccount {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Balance
     #[serde(
@@ -1363,45 +2334,98 @@ pub struct BankAccount {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub balance: Option<Vec<f64>>,
     ///Property: Balance date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub balance_date: Option<Vec<String>>,
     ///Property: Bank
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bank: Option<Vec<String>>,
     ///Property: Bank address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bank_address: Option<Vec<String>>,
     ///Property: Bank name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bank_name: Option<Vec<String>>,
     ///Property: Bank Identifier Code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bic: Option<Vec<String>>,
     ///Property: Closing date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub closing_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: IBAN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Maximum balance
     #[serde(
@@ -1409,60 +2433,133 @@ pub struct BankAccount {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub max_balance: Option<Vec<f64>>,
     ///Property: Maximum balance date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub max_balance_date: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Opening date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub opening_date: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl BankAccount {
@@ -1550,18 +2647,38 @@ pub struct Call {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Caller
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub caller: Option<Vec<String>>,
     ///Property: Caller's Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub caller_number: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Duration
     #[serde(
@@ -1569,48 +2686,105 @@ pub struct Call {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub duration: Option<Vec<f64>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Receiver
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub receiver: Option<Vec<String>>,
     ///Property: Receiver's Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub receiver_number: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Call {
@@ -1676,84 +2850,192 @@ pub struct CallForTenders {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Name of contracting authority
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority: Vec<String>,
     ///Property: Contracting authority reference ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority_reference_id: Option<Vec<String>>,
     ///Property: Award Notice Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub award_notice_date: Option<Vec<String>>,
     ///Property: Contract awarded in Lots
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub awarded_in_lots: Option<Vec<String>>,
     ///Property: Date of awarding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub awarding_date: Option<Vec<String>>,
     ///Property: CfT unique id
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub call_id: Option<Vec<String>>,
     ///Property: Certification check
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub certification_check: Option<Vec<String>>,
     ///Property: End of clarification period
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub clarification_deadline: Option<Vec<String>>,
     ///Property: Contract notice date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract_notice_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: CPV code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cpv_code: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Directive
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub directive: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: EU funding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub eu_funding: Option<Vec<String>>,
     ///Property: Evaluation mechanism
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub evaluation_mechanism: Option<Vec<String>>,
     ///Property: Does this call fall under the scope of GPP?
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub falls_under_gppscope: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Call for tenders result
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub involves_outcome: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Lots names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lots_names: Option<Vec<String>>,
     ///Property: Maximum number of lots
     #[serde(
@@ -1761,21 +3043,42 @@ pub struct CallForTenders {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub maximum_number_of_lots: Option<Vec<f64>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Multiple tenders will be accepted
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub multiple_tenders: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Number of lots
     #[serde(
@@ -1783,90 +3086,203 @@ pub struct CallForTenders {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub number_of_lots: Option<Vec<f64>>,
     ///Property: NUTS code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub nuts_code: Option<Vec<String>>,
     ///Property: Published on behalf of
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub on_behalf_of: Option<Vec<String>>,
     ///Property: Payment options
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub payment_options: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Procedure
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub procedure: Option<Vec<String>>,
     ///Property: Procurement type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub procurement_type: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Date of publication/invitation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publication_date: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Above or below threshold
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub relation_to_threshold: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Inclusion of e-Auctions
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub reverse_auctions_included: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Submission deadline
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub submission_deadline: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: TED link for published notices
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ted_url: Option<Vec<String>>,
     ///Property: Tenderers
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tenderers: Option<Vec<String>>,
     ///Property: Tenders for lots
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tenders_for_lots: Option<Vec<String>>,
     ///Property: Title
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl CallForTenders {
@@ -1974,18 +3390,38 @@ pub struct Company {
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub abbreviation: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -1993,6 +3429,7 @@ pub struct Company {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -2000,6 +3437,7 @@ pub struct Company {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -2007,243 +3445,560 @@ pub struct Company {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: BIK
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bik_code: Option<Vec<String>>,
     ///Property: BrightQuery ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_id: Option<Vec<String>>,
     ///Property: BrightQuery Organization ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_org_id: Option<Vec<String>>,
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bvd_id: Option<Vec<String>>,
     ///Property: COD CAEM
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub caem_code: Option<Vec<String>>,
     ///Property: CAGE
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cage_code: Option<Vec<String>>,
     ///Property: Capital
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub capital: Option<Vec<String>>,
     ///Property: SEC Central Index Key
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cik_code: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: COATO / SOATO / OKATO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub coato_code: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Dissolution date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dissolution_date: Option<Vec<String>>,
     ///Property: DUNS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub duns_code: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email: Option<Vec<String>>,
     ///Property: Federal tax service code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub fns_code: Option<Vec<String>>,
     ///Property: FSS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub fss_code: Option<Vec<String>>,
     ///Property: GIIN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub gii_number: Option<Vec<String>>,
     ///Property: ICIJ ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub id_number: Option<Vec<String>>,
     ///Property: IMO Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub imo_number: Option<Vec<String>>,
     ///Property: Incorporation date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub incorporation_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: INN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub inn_code: Option<Vec<String>>,
     ///Property: IPO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ipo_code: Option<Vec<String>>,
     ///Property: IRS Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub irs_code: Option<Vec<String>>,
     ///Property: ISIN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub isin_code: Option<Vec<String>>,
     ///Property: JIB
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub jib_code: Option<Vec<String>>,
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub jurisdiction: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: KPP
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub kpp_code: Option<Vec<String>>,
     ///Property: Legal form
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lei_code: Option<Vec<String>>,
     ///Property: License Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub license_number: Option<Vec<String>>,
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub main_country: Option<Vec<String>>,
     ///Property: MBS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mbs_code: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: NPI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub npi_code: Option<Vec<String>>,
     ///Property: OGRN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ogrn_code: Option<Vec<String>>,
     ///Property: OKOPF
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okopf_code: Option<Vec<String>>,
     ///Property: OKPO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okpo_code: Option<Vec<String>>,
     ///Property: OKSM
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub oksm_code: Option<Vec<String>>,
     ///Property: OKVED(2) Classifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okved_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub opencorporates_url: Option<Vec<String>>,
     ///Property: Parent company
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: PermID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub perm_id: Option<Vec<String>>,
     ///Property: PFR Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub pfr_number: Option<Vec<String>>,
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Reuters Instrument Code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ric_code: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sayari_id: Option<Vec<String>>,
     ///Property: Sector
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: SWIFT/BIC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub swift_bic: Option<Vec<String>>,
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_number: Option<Vec<String>>,
     ///Property: Tax status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_status: Option<Vec<String>>,
     ///Property: Stock ticker symbol
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ticker: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Unique Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub unique_entity_id: Option<Vec<String>>,
     ///Property: USCC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub usc_code: Option<Vec<String>>,
     ///Property: V.A.T. Identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub vat_code: Option<Vec<String>>,
     ///Property: VOEN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub voen_code: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Website
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub website: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Company {
@@ -2376,15 +4131,31 @@ pub struct Contract {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -2392,6 +4163,7 @@ pub struct Contract {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -2399,6 +4171,7 @@ pub struct Contract {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -2406,117 +4179,266 @@ pub struct Contract {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Contract authority
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority: Option<Vec<String>>,
     ///Property: Cancelled?
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cancelled: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Contract date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Contract award criteria
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub criteria: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Procurement method
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub method: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Contract Award Notice ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notice_id: Option<Vec<String>>,
     ///Property: Number of awards
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub number_awards: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Contract procedure
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub procedure: Option<Vec<String>>,
     ///Property: Procedure number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub procedure_number: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Project
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub project: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Contract {
@@ -2606,9 +4528,17 @@ pub struct ContractAward {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Amended
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub amended: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -2616,6 +4546,7 @@ pub struct ContractAward {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -2623,6 +4554,7 @@ pub struct ContractAward {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -2630,84 +4562,189 @@ pub struct ContractAward {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Call For Tenders
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub call_for_tenders: Option<Vec<String>>,
     ///Property: Contract
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract: Vec<String>,
     ///Property: CPV code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cpv_code: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Decision reason
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub decision_reason: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Document number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub document_number: Option<Vec<String>>,
     ///Property: Document type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub document_type: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Lot number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lot_number: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: NUTS code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub nuts_code: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Supplier
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub supplier: Vec<String>,
 }
 impl ContractAward {
@@ -2784,99 +4821,227 @@ pub struct CourtCase {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Case number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub case_number: Option<Vec<String>>,
     ///Property: Category
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub category: Option<Vec<String>>,
     ///Property: Close date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub close_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Court
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub court: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: File date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl CourtCase {
@@ -2954,60 +5119,136 @@ pub struct CourtCaseParty {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Case
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub case: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Party
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub party: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl CourtCaseParty {
@@ -3072,18 +5313,38 @@ pub struct CryptoWallet {
     pub schema: String,
     ///Property: Account ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub account_id: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -3091,6 +5352,7 @@ pub struct CryptoWallet {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -3098,6 +5360,7 @@ pub struct CryptoWallet {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -3105,6 +5368,7 @@ pub struct CryptoWallet {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Balance
     #[serde(
@@ -3112,93 +5376,210 @@ pub struct CryptoWallet {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub balance: Option<Vec<f64>>,
     ///Property: Balance date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub balance_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Creation date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub creation_date: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Currency short code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency_symbol: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Wallet holder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub holder: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Managing exchange
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub managing_exchange: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Private key
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub private_key: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub public_key: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl CryptoWallet {
@@ -3282,6 +5663,10 @@ pub struct Debt {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -3289,6 +5674,7 @@ pub struct Debt {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -3296,6 +5682,7 @@ pub struct Debt {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -3303,57 +5690,126 @@ pub struct Debt {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Creditor
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub creditor: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Debtor
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub debtor: Vec<String>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Debt {
@@ -3420,63 +5876,143 @@ pub struct Directorship {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Director
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub director: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Organization
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub organization: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Secretary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub secretary: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Directorship {
@@ -3542,66 +6078,150 @@ pub struct Document {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -3609,117 +6229,266 @@ pub struct Document {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Document {
@@ -3824,60 +6593,136 @@ pub struct Documentation {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Document
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub document: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Documentation {
@@ -3942,117 +6787,269 @@ pub struct EconomicActivity {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Bank Account
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bank_account: Option<Vec<String>>,
     ///Property: Foreign currency bank
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bank_foreign: Option<Vec<String>>,
     ///Property: Rouble bank
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bank_rub: Option<Vec<String>>,
     ///Property: Customs Cargo Declaration Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ccd_number: Option<Vec<String>>,
     ///Property: CCD Value
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ccd_value: Option<Vec<String>>,
     ///Property: Contract
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract: Option<Vec<String>>,
     ///Property: Contract holder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract_holder: Option<Vec<String>>,
     ///Property: Customs Value Amount
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub customs_amount: Option<Vec<String>>,
     ///Property: Customs Procedure
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub customs_procedure: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Declarant
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub declarant: Option<Vec<String>>,
     ///Property: Country of departure
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub departure_country: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Country of destination
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub destination_country: Option<Vec<String>>,
     ///Property: Direction of transportation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub direction_of_transportation: Option<Vec<String>>,
     ///Property: USD Exchange Rate
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dollar_exch_rate: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Description of goods
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub goods_description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Invoice Value Amount
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub invoice_amount: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub origin_country: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Receiver
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub receiver: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sender
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sender: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Trading Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub trading_country: Option<Vec<String>>,
     ///Property: Transport
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub transport: Option<Vec<String>>,
     ///Property: FEAC Code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ved_code: Option<Vec<String>>,
     ///Property: FEAC Code description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ved_code_description: Option<Vec<String>>,
 }
 impl EconomicActivity {
@@ -4136,78 +7133,178 @@ pub struct Email {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: BCC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bcc: Option<Vec<String>>,
     ///Property: HTML
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_html: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: CC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cc: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: Emitter
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub emitters: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -4215,144 +7312,325 @@ pub struct Email {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: From
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub from: Option<Vec<String>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Raw headers
     #[serde(skip_serializing_if = "Option::is_none")]
     pub headers: Option<serde_json::Value>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: In Reply To
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub in_reply_to: Option<Vec<String>>,
     ///Property: Responding to
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub in_reply_to_email: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Recipients
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub recipients: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sender
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sender: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Subject
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub subject: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Thread topic
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub thread_topic: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: To
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub to: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Email {
@@ -4470,60 +7748,136 @@ pub struct Employment {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Employee
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub employee: Vec<String>,
     ///Property: Employer
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub employer: Vec<String>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Employment {
@@ -4588,132 +7942,304 @@ pub struct Event {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Important
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub important: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Involved
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub involved: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Location
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Organizer
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub organizer: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Event {
@@ -4802,57 +8328,129 @@ pub struct Family {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Person
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub person: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Relationship
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub relationship: Option<Vec<String>>,
     ///Property: Relative
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub relative: Vec<String>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Family {
@@ -4916,66 +8514,150 @@ pub struct Folder {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -4983,117 +8665,266 @@ pub struct Folder {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Folder {
@@ -5198,69 +9029,157 @@ pub struct HyperText {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: HTML
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_html: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -5268,117 +9187,266 @@ pub struct HyperText {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl HyperText {
@@ -5484,63 +9552,143 @@ pub struct Identification {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Authority
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Identification holder
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Document number
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub number: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
 }
 impl Identification {
@@ -5606,69 +9754,157 @@ pub struct Image {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Credit
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub credit: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -5676,120 +9912,273 @@ pub struct Image {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Pictured
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub pictured: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Image {
@@ -5896,180 +10285,416 @@ pub struct LegalEntity {
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub abbreviation: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: BrightQuery ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_id: Option<Vec<String>>,
     ///Property: BrightQuery Organization ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_org_id: Option<Vec<String>>,
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bvd_id: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Dissolution date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dissolution_date: Option<Vec<String>>,
     ///Property: DUNS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub duns_code: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email: Option<Vec<String>>,
     ///Property: ICIJ ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub id_number: Option<Vec<String>>,
     ///Property: Incorporation date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub incorporation_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: INN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub inn_code: Option<Vec<String>>,
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub jurisdiction: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Legal form
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lei_code: Option<Vec<String>>,
     ///Property: License Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub license_number: Option<Vec<String>>,
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub main_country: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: NPI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub npi_code: Option<Vec<String>>,
     ///Property: OGRN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ogrn_code: Option<Vec<String>>,
     ///Property: OKPO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okpo_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub opencorporates_url: Option<Vec<String>>,
     ///Property: Parent company
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sayari_id: Option<Vec<String>>,
     ///Property: Sector
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: SWIFT/BIC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub swift_bic: Option<Vec<String>>,
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_number: Option<Vec<String>>,
     ///Property: Tax status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_status: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Unique Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub unique_entity_id: Option<Vec<String>>,
     ///Property: USCC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub usc_code: Option<Vec<String>>,
     ///Property: V.A.T. Identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub vat_code: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Website
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub website: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl LegalEntity {
@@ -6174,15 +10799,31 @@ pub struct License {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -6190,6 +10831,7 @@ pub struct License {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -6197,6 +10839,7 @@ pub struct License {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -6204,6 +10847,7 @@ pub struct License {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Area
     #[serde(
@@ -6211,123 +10855,280 @@ pub struct License {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub area: Option<Vec<f64>>,
     ///Property: Contract authority
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority: Vec<String>,
     ///Property: Cancelled?
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cancelled: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Commodities
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub commodities: Option<Vec<String>>,
     ///Property: Contract date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Contract award criteria
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub criteria: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Procurement method
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub method: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Contract Award Notice ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notice_id: Option<Vec<String>>,
     ///Property: Number of awards
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub number_awards: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Contract procedure
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub procedure: Option<Vec<String>>,
     ///Property: Procedure number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub procedure_number: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Project
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub project: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: License review date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub review_date: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Vec<String>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl License {
@@ -6420,60 +11221,136 @@ pub struct Membership {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Member
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub member: Vec<String>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Organization
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub organization: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Membership {
@@ -6538,24 +11415,52 @@ pub struct Mention {
     pub schema: String,
     ///Property: Co-occurring countries
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub context_country: Option<Vec<String>>,
     ///Property: Co-occurring e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub context_email: Option<Vec<String>>,
     ///Property: Co-occurring phone numbers
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub context_phone: Option<Vec<String>>,
     ///Property: Detected entity type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_schema: Option<Vec<String>>,
     ///Property: Document
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub document: Vec<String>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Entity
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub resolved: Option<Vec<String>>,
 }
 impl Mention {
@@ -6608,72 +11513,164 @@ pub struct Message {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: HTML
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_html: Option<Vec<String>>,
     ///Property: Text
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Vec<String>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -6681,150 +11678,339 @@ pub struct Message {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: In Reply To
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub in_reply_to: Option<Vec<String>>,
     ///Property: Responding to
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub in_reply_to_message: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: Metadata
     #[serde(skip_serializing_if = "Option::is_none")]
     pub metadata: Option<serde_json::Value>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Recipient Account
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub recipient_account: Option<Vec<String>>,
     ///Property: Recipients
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub recipients: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sender
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sender: Vec<String>,
     ///Property: Sender Account
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sender_account: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Subject
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub subject: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Thread topic
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub thread_topic: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Message {
@@ -6942,111 +12128,255 @@ pub struct Note {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: Entity
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub entity: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Note {
@@ -7128,60 +12458,136 @@ pub struct Occupancy {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Declaration date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub declaration_date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Holder
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Position occupied
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub post: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Occupancy {
@@ -7246,192 +12652,444 @@ pub struct Organization {
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub abbreviation: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: BrightQuery ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_id: Option<Vec<String>>,
     ///Property: BrightQuery Organization ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_org_id: Option<Vec<String>>,
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bvd_id: Option<Vec<String>>,
     ///Property: CAGE
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cage_code: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Dissolution date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dissolution_date: Option<Vec<String>>,
     ///Property: DUNS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub duns_code: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email: Option<Vec<String>>,
     ///Property: GIIN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub gii_number: Option<Vec<String>>,
     ///Property: ICIJ ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub id_number: Option<Vec<String>>,
     ///Property: IMO Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub imo_number: Option<Vec<String>>,
     ///Property: Incorporation date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub incorporation_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: INN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub inn_code: Option<Vec<String>>,
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub jurisdiction: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Legal form
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lei_code: Option<Vec<String>>,
     ///Property: License Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub license_number: Option<Vec<String>>,
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub main_country: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: NPI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub npi_code: Option<Vec<String>>,
     ///Property: OGRN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ogrn_code: Option<Vec<String>>,
     ///Property: OKPO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okpo_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub opencorporates_url: Option<Vec<String>>,
     ///Property: Parent company
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: PermID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub perm_id: Option<Vec<String>>,
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sayari_id: Option<Vec<String>>,
     ///Property: Sector
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: SWIFT/BIC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub swift_bic: Option<Vec<String>>,
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_number: Option<Vec<String>>,
     ///Property: Tax status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_status: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Unique Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub unique_entity_id: Option<Vec<String>>,
     ///Property: USCC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub usc_code: Option<Vec<String>>,
     ///Property: V.A.T. Identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub vat_code: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Website
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub website: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Organization {
@@ -7540,81 +13198,185 @@ pub struct Ownership {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Asset
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub asset: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Legal basis
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub legal_basis: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Owner
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub owner: Vec<String>,
     ///Property: Type of ownership
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ownership_type: Option<Vec<String>>,
     ///Property: Percentage held
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub percentage: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Number of shares
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub shares_count: Option<Vec<String>>,
     ///Property: Currency of shares
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub shares_currency: Option<Vec<String>>,
     ///Property: Type of shares
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub shares_type: Option<Vec<String>>,
     ///Property: Value of shares
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub shares_value: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Ownership {
@@ -7686,66 +13448,150 @@ pub struct Package {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -7753,117 +13599,266 @@ pub struct Package {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Package {
@@ -7968,12 +13963,24 @@ pub struct Page {
     pub schema: String,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub document: Option<Vec<String>>,
     ///Property: Index
     #[serde(
@@ -7981,15 +13988,28 @@ pub struct Page {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub index: Option<Vec<f64>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text_language: Option<Vec<String>>,
 }
 impl Page {
@@ -8042,66 +14062,150 @@ pub struct Pages {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -8109,120 +14213,273 @@ pub struct Pages {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: PDF alternative version checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub pdf_hash: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Pages {
@@ -8328,84 +14585,192 @@ pub struct Passport {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Authority
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority: Option<Vec<String>>,
     ///Property: Birth date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub birth_date: Option<Vec<String>>,
     ///Property: Place of birth
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub birth_place: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Gender
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub gender: Option<Vec<String>>,
     ///Property: Given name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub given_name: Option<Vec<String>>,
     ///Property: Identification holder
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub holder: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Document number
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub number: Vec<String>,
     ///Property: Passport number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub passport_number: Option<Vec<String>>,
     ///Property: Personal number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub personal_number: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Surname
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub surname: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
 }
 impl Passport {
@@ -8478,6 +14843,10 @@ pub struct Payment {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -8485,6 +14854,7 @@ pub struct Payment {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -8492,6 +14862,7 @@ pub struct Payment {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -8499,81 +14870,182 @@ pub struct Payment {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Beneficiary
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub beneficiary: Vec<String>,
     ///Property: Beneficiary bank account
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub beneficiary_account: Option<Vec<String>>,
     ///Property: Contract
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub contract: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Payer
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub payer: Vec<String>,
     ///Property: Payer bank account
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub payer_account: Option<Vec<String>>,
     ///Property: Payment programme
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub programme: Option<Vec<String>>,
     ///Property: Project
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub project: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Payment purpose
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub purpose: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sequence number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sequence_number: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Transaction number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub transaction_number: Option<Vec<String>>,
 }
 impl Payment {
@@ -8648,87 +15120,199 @@ pub struct Person {
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub abbreviation: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Physical appearance
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub appearance: Option<Vec<String>>,
     ///Property: Country of birth
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub birth_country: Option<Vec<String>>,
     ///Property: Birth date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub birth_date: Option<Vec<String>>,
     ///Property: Place of birth
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub birth_place: Option<Vec<String>>,
     ///Property: BrightQuery ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_id: Option<Vec<String>>,
     ///Property: BrightQuery Organization ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_org_id: Option<Vec<String>>,
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bvd_id: Option<Vec<String>>,
     ///Property: Citizenship
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub citizenship: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Death date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub death_date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Dissolution date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dissolution_date: Option<Vec<String>>,
     ///Property: DUNS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub duns_code: Option<Vec<String>>,
     ///Property: Education
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub education: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email: Option<Vec<String>>,
     ///Property: Ethnicity
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ethnicity: Option<Vec<String>>,
     ///Property: Eye color
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub eye_color: Option<Vec<String>>,
     ///Property: Patronymic
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub father_name: Option<Vec<String>>,
     ///Property: First name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub first_name: Option<Vec<String>>,
     ///Property: Gender
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub gender: Option<Vec<String>>,
     ///Property: Hair color
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub hair_color: Option<Vec<String>>,
     ///Property: Height
     #[serde(
@@ -8736,174 +15320,399 @@ pub struct Person {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub height: Option<Vec<f64>>,
     ///Property: ICIJ ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub id_number: Option<Vec<String>>,
     ///Property: Incorporation date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub incorporation_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: INN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub inn_code: Option<Vec<String>>,
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub jurisdiction: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Last name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub last_name: Option<Vec<String>>,
     ///Property: Legal form
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lei_code: Option<Vec<String>>,
     ///Property: License Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub license_number: Option<Vec<String>>,
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub main_country: Option<Vec<String>>,
     ///Property: Middle name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub middle_name: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Matronymic
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mother_name: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Name suffix
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name_suffix: Option<Vec<String>>,
     ///Property: Nationality
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub nationality: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: NPI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub npi_code: Option<Vec<String>>,
     ///Property: OGRN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ogrn_code: Option<Vec<String>>,
     ///Property: OKPO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okpo_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub opencorporates_url: Option<Vec<String>>,
     ///Property: Parent company
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Passport number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub passport_number: Option<Vec<String>>,
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone: Option<Vec<String>>,
     ///Property: Political association
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub political: Option<Vec<String>>,
     ///Property: Position
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub position: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Profession
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub profession: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Religion
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub religion: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sayari_id: Option<Vec<String>>,
     ///Property: Second name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub second_name: Option<Vec<String>>,
     ///Property: Sector
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sector: Option<Vec<String>>,
     ///Property: Social security number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub social_security_number: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Spoken language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub spoken_language: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: SWIFT/BIC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub swift_bic: Option<Vec<String>>,
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_number: Option<Vec<String>>,
     ///Property: Tax status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_status: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Unique Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub unique_entity_id: Option<Vec<String>>,
     ///Property: USCC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub usc_code: Option<Vec<String>>,
     ///Property: V.A.T. Identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub vat_code: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Website
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub website: Option<Vec<String>>,
     ///Property: Weight
     #[serde(
@@ -8911,12 +15720,21 @@ pub struct Person {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub weight: Option<Vec<f64>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Person {
@@ -9050,66 +15868,150 @@ pub struct PlainText {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -9117,117 +16019,266 @@ pub struct PlainText {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl PlainText {
@@ -9332,45 +16383,101 @@ pub struct Position {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Dissolution date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dissolution_date: Option<Vec<String>>,
     ///Property: Inception date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub inception_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Total number of seats
     #[serde(
@@ -9378,51 +16485,112 @@ pub struct Position {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub number_of_seats: Option<Vec<f64>>,
     ///Property: Organization
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub organization: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Subnational jurisdiction name or code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub subnational_area: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Position {
@@ -9498,15 +16666,31 @@ pub struct Project {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -9514,6 +16698,7 @@ pub struct Project {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -9521,6 +16706,7 @@ pub struct Project {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -9528,99 +16714,224 @@ pub struct Project {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Project goal
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub goal: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Phase
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phase: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Project ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub project_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Project {
@@ -9704,60 +17015,136 @@ pub struct ProjectParticipant {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Participant
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub participant: Option<Vec<String>>,
     ///Property: Project
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub project: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl ProjectParticipant {
@@ -9822,192 +17209,444 @@ pub struct PublicBody {
     pub schema: String,
     ///Property: Abbreviation
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub abbreviation: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: BrightQuery ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_id: Option<Vec<String>>,
     ///Property: BrightQuery Organization ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bright_query_org_id: Option<Vec<String>>,
     ///Property: Bureau van Dijk ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub bvd_id: Option<Vec<String>>,
     ///Property: CAGE
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cage_code: Option<Vec<String>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Dissolution date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub dissolution_date: Option<Vec<String>>,
     ///Property: DUNS
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub duns_code: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email: Option<Vec<String>>,
     ///Property: GIIN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub gii_number: Option<Vec<String>>,
     ///Property: ICIJ ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub icij_id: Option<Vec<String>>,
     ///Property: ID Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub id_number: Option<Vec<String>>,
     ///Property: IMO Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub imo_number: Option<Vec<String>>,
     ///Property: Incorporation date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub incorporation_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: INN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub inn_code: Option<Vec<String>>,
     ///Property: Jurisdiction
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub jurisdiction: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Legal form
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub legal_form: Option<Vec<String>>,
     ///Property: LEI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub lei_code: Option<Vec<String>>,
     ///Property: License Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub license_number: Option<Vec<String>>,
     ///Property: Country of origin
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub main_country: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: NPI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub npi_code: Option<Vec<String>>,
     ///Property: OGRN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ogrn_code: Option<Vec<String>>,
     ///Property: OKPO
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub okpo_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub opencorporates_url: Option<Vec<String>>,
     ///Property: Parent company
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: PermID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub perm_id: Option<Vec<String>>,
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sayari_id: Option<Vec<String>>,
     ///Property: Sector
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub sector: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: SWIFT/BIC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub swift_bic: Option<Vec<String>>,
     ///Property: Tax Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_number: Option<Vec<String>>,
     ///Property: Tax status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_status: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Unique Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub unique_entity_id: Option<Vec<String>>,
     ///Property: USCC
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub usc_code: Option<Vec<String>>,
     ///Property: V.A.T. Identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub vat_code: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Website
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub website: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl PublicBody {
@@ -10116,15 +17755,31 @@ pub struct RealEstate {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -10132,6 +17787,7 @@ pub struct RealEstate {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -10139,6 +17795,7 @@ pub struct RealEstate {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -10146,6 +17803,7 @@ pub struct RealEstate {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Area
     #[serde(
@@ -10153,39 +17811,84 @@ pub struct RealEstate {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub area: Option<Vec<f64>>,
     ///Property: Cadastral code
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub cadastral_code: Option<Vec<String>>,
     ///Property: Census block
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub census_block: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Record date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub create_date: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Encumbrance
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encumbrance: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Land type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub land_type: Option<Vec<String>>,
     ///Property: Latitude
     #[serde(
@@ -10193,6 +17896,7 @@ pub struct RealEstate {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub latitude: Option<Vec<f64>>,
     ///Property: Longitude
     #[serde(
@@ -10200,69 +17904,154 @@ pub struct RealEstate {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub longitude: Option<Vec<f64>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Parent unit
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Property type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub property_type: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Tenure
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tenure: Option<Vec<String>>,
     ///Property: Title number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title_number: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl RealEstate {
@@ -10350,60 +18139,136 @@ pub struct Representation {
     pub schema: String,
     ///Property: Agent
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub agent: Vec<String>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Client
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub client: Vec<String>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Representation {
@@ -10468,15 +18333,31 @@ pub struct Risk {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Duration
     #[serde(
@@ -10484,57 +18365,126 @@ pub struct Risk {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub duration: Option<Vec<f64>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Listing date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub listing_date: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Reason
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub reason: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
 }
 impl Risk {
@@ -10602,21 +18552,45 @@ pub struct Sanction {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Authority
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority: Option<Vec<String>>,
     ///Property: Authority-issued identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authority_id: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Duration
     #[serde(
@@ -10624,69 +18598,154 @@ pub struct Sanction {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub duration: Option<Vec<f64>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Entity
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub entity: Vec<String>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Listing date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub listing_date: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Program URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_url: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Scope of sanctions
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub provisions: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Reason
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub reason: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: UN SC identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub unsc_id: Option<Vec<String>>,
 }
 impl Sanction {
@@ -10760,15 +18819,31 @@ pub struct Security {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -10776,6 +18851,7 @@ pub struct Security {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -10783,6 +18859,7 @@ pub struct Security {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -10790,102 +18867,231 @@ pub struct Security {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Classification
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub classification: Option<Vec<String>>,
     ///Property: Collateral
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub collateral: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Financial Instrument Global Identifier
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub figi_code: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: ISIN
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub isin: Option<Vec<String>>,
     ///Property: Date issued
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub issue_date: Option<Vec<String>>,
     ///Property: Issuer
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub issuer: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Maturity date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub maturity_date: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Stock ticker symbol
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ticker: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Security {
@@ -10970,6 +19176,10 @@ pub struct Similar {
     pub schema: String,
     ///Property: Candidate
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub candidate: Option<Vec<String>>,
     ///Property: Confidence score
     #[serde(
@@ -10977,15 +19187,28 @@ pub struct Similar {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub confidence_score: Option<Vec<f64>>,
     ///Property: Matching criteria
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub criteria: Option<Vec<String>>,
     ///Property: Match
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub match_: Option<Vec<String>>,
     ///Property: Matcher
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub matcher: Option<Vec<String>>,
 }
 impl Similar {
@@ -11036,60 +19259,136 @@ pub struct Succession {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Predecessor
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub predecessor: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Successor
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub successor: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl Succession {
@@ -11154,72 +19453,160 @@ pub struct Table {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Column headings
     #[serde(skip_serializing_if = "Option::is_none")]
     pub columns: Option<serde_json::Value>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: CSV alternative version checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub csv_hash: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -11227,90 +19614,203 @@ pub struct Table {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Number of rows
     #[serde(
@@ -11318,33 +19818,70 @@ pub struct Table {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub row_count: Option<Vec<f64>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Table {
@@ -11452,72 +19989,164 @@ pub struct TaxRoll {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Birth date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub birth_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Given name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub given_name: Option<Vec<String>>,
     ///Property: Registered income
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub income: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Surname
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub surname: Option<Vec<String>>,
     ///Property: Amount of tax paid
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub tax_paid: Option<Vec<String>>,
     ///Property: Taxee
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub taxee: Vec<String>,
     ///Property: Registered wealth
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wealth: Option<Vec<String>>,
 }
 impl TaxRoll {
@@ -11586,141 +20215,325 @@ pub struct Trip {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: End location
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_location: Vec<String>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Important
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub important: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Involved
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub involved: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Location
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Organizer
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub organizer: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Start location
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_location: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Vehicle
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub vehicle: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Trip {
@@ -11812,60 +20625,136 @@ pub struct UnknownLink {
     pub schema: String,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub end_date: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Object
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub object: Vec<String>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Record ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub record_id: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Role
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub role: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Start date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub start_date: Option<Vec<String>>,
     ///Property: Status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub status: Option<Vec<String>>,
     ///Property: Subject
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub subject: Vec<String>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
 }
 impl UnknownLink {
@@ -11930,99 +20819,227 @@ pub struct UserAccount {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: E-Mail
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: IP address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_address: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Owner
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub owner: Option<Vec<String>>,
     ///Property: Password
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub password: Option<Vec<String>>,
     ///Property: Phone
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Service
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub service: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Username
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub username: Vec<String>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl UserAccount {
@@ -12100,15 +21117,31 @@ pub struct Vehicle {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -12116,6 +21149,7 @@ pub struct Vehicle {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -12123,6 +21157,7 @@ pub struct Vehicle {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -12130,96 +21165,217 @@ pub struct Vehicle {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Build Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub build_date: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: De-registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub deregistration_date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Model
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub model: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Operator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub operator: Option<Vec<String>>,
     ///Property: Owner
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub owner: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_date: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Vehicle {
@@ -12302,15 +21458,31 @@ pub struct Vessel {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Amount
     #[serde(
@@ -12318,6 +21490,7 @@ pub struct Vessel {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount: Option<Vec<f64>>,
     ///Property: Amount in EUR
     #[serde(
@@ -12325,6 +21498,7 @@ pub struct Vessel {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_eur: Option<Vec<f64>>,
     ///Property: Amount in USD
     #[serde(
@@ -12332,24 +21506,49 @@ pub struct Vessel {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub amount_usd: Option<Vec<f64>>,
     ///Property: Build Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub build_date: Option<Vec<String>>,
     ///Property: Call Sign
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub call_sign: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: CRS Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crs_number: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub currency: Option<Vec<String>>,
     ///Property: Deadweight Tonnage
     #[serde(
@@ -12357,15 +21556,28 @@ pub struct Vessel {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub deadweight_tonnage: Option<Vec<f64>>,
     ///Property: De-registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub deregistration_date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Flag
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub flag: Option<Vec<String>>,
     ///Property: Gross Registered Tonnage
     #[serde(
@@ -12373,84 +21585,189 @@ pub struct Vessel {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub gross_registered_tonnage: Option<Vec<f64>>,
     ///Property: IMO Number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub imo_number: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: MMSI
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mmsi: Option<Vec<String>>,
     ///Property: Model
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub model: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Date of Name Change
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name_change_date: Option<Vec<String>>,
     ///Property: Navigation Area
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub navigation_area: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Operator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub operator: Option<Vec<String>>,
     ///Property: Owner
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub owner: Option<Vec<String>>,
     ///Property: Past Flags
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub past_flags: Option<Vec<String>>,
     ///Property: Past Types
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub past_types: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Registration Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_date: Option<Vec<String>>,
     ///Property: Registration number
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_number: Option<Vec<String>>,
     ///Property: Port of Registration
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub registration_port: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Tonnage
     #[serde(
@@ -12458,21 +21775,42 @@ pub struct Vessel {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub tonnage: Option<Vec<f64>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: Type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub type_: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Vessel {
@@ -12568,54 +21906,122 @@ pub struct Video {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Duration
     #[serde(
@@ -12623,18 +22029,35 @@ pub struct Video {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub duration: Option<Vec<f64>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -12642,117 +22065,266 @@ pub struct Video {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Video {
@@ -12858,66 +22430,150 @@ pub struct Workbook {
     pub schema: String,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address: Option<Vec<String>>,
     ///Property: Address
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub address_entity: Option<Vec<String>>,
     ///Property: Aleph URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub aleph_url: Option<Vec<String>>,
     ///Property: Alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub alias: Option<Vec<String>>,
     ///Property: Ancestors
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ancestors: Option<Vec<String>>,
     ///Property: Author
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub author: Option<Vec<String>>,
     ///Property: Authored on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub authored_at: Option<Vec<String>>,
     ///Property: Text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub body_text: Option<Vec<String>>,
     ///Property: Detected companies
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub companies_mentioned: Option<Vec<String>>,
     ///Property: Checksum
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub content_hash: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub country: Option<Vec<String>>,
     ///Property: Crawler
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub crawler: Option<Vec<String>>,
     ///Property: Created at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub created_at: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub date: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub description: Option<Vec<String>>,
     ///Property: Detected country
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_country: Option<Vec<String>>,
     ///Property: Detected language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub detected_language: Option<Vec<String>>,
     ///Property: Detected e-mail addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub email_mentioned: Option<Vec<String>>,
     ///Property: File encoding
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub encoding: Option<Vec<String>>,
     ///Property: File extension
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub extension: Option<Vec<String>>,
     ///Property: File name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub file_name: Vec<String>,
     ///Property: File size
     #[serde(
@@ -12925,117 +22581,266 @@ pub struct Workbook {
         deserialize_with = "deserialize_opt_f64_vec",
         default
     )]
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
     pub file_size: Option<Vec<f64>>,
     ///Property: Generator
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub generator: Option<Vec<String>>,
     ///Property: Detected IBANs
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub iban_mentioned: Option<Vec<String>>,
     ///Property: Index text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub index_text: Option<Vec<String>>,
     ///Property: Detected IP addresses
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub ip_mentioned: Option<Vec<String>>,
     ///Property: Keywords
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub keywords: Option<Vec<String>>,
     ///Property: Language
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub language: Option<Vec<String>>,
     ///Property: Detected locations
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub location_mentioned: Option<Vec<String>>,
     ///Property: Message ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub message_id: Option<Vec<String>>,
     ///Property: MIME type
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub mime_type: Option<Vec<String>>,
     ///Property: Modified on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub modified_at: Option<Vec<String>>,
     ///Property: Name
     #[serde(default)]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub name: Vec<String>,
     ///Property: Detected names
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub names_mentioned: Option<Vec<String>>,
     ///Property: Notes
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub notes: Option<Vec<String>>,
     ///Property: Folder
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub parent: Option<Vec<String>>,
     ///Property: Detected people
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub people_mentioned: Option<Vec<String>>,
     ///Property: Detected phones
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub phone_mentioned: Option<Vec<String>>,
     ///Property: Previous name
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub previous_name: Option<Vec<String>>,
     ///Property: Processed at
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processed_at: Option<Vec<String>>,
     ///Property: Processing agent
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_agent: Option<Vec<String>>,
     ///Property: Processing error
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_error: Option<Vec<String>>,
     ///Property: Processing status
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub processing_status: Option<Vec<String>>,
     ///Property: Program
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program: Option<Vec<String>>,
     ///Property: Program ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub program_id: Option<Vec<String>>,
     ///Property: Source document
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub proof: Option<Vec<String>>,
     ///Property: Published on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub published_at: Option<Vec<String>>,
     ///Property: Publishing source
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher: Option<Vec<String>>,
     ///Property: Publishing source URL
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub publisher_url: Option<Vec<String>>,
     ///Property: Retrieved on
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub retrieved_at: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub source_url: Option<Vec<String>>,
     ///Property: Summary
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub summary: Option<Vec<String>>,
     ///Property: Title
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub title: Option<Vec<String>>,
     ///Property: Topics
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub topics: Option<Vec<String>>,
     ///Property: The language of the translated text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_language: Option<Vec<String>>,
     ///Property: Translated version of the body text
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub translated_text: Option<Vec<String>>,
     ///Property: Weak alias
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub weak_alias: Option<Vec<String>>,
     ///Property: Wikidata ID
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikidata_id: Option<Vec<String>>,
     ///Property: Wikipedia Article
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
     pub wikipedia_url: Option<Vec<String>>,
 }
 impl Workbook {

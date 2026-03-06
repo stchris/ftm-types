@@ -48,25 +48,25 @@ fn main() {
     println!("=== FTM Trait-Based Polymorphism Example ===\n");
 
     // Create some entities using the builder
-    let mut person = Person::builder()
+    let person = Person::builder()
         .id("person-1".to_string())
-        .name(vec!["Alice Smith".to_string()])
+        .name("Alice Smith")
+        .country("us")
+        .birth_date("1990-01-15")
         .build();
-    person.country = Some(vec!["us".to_string(), "gb".to_string()]);
-    person.birth_date = Some(vec!["1990-01-15".to_string()]);
 
-    let mut company = Company::builder()
+    let company = Company::builder()
         .id("company-1".to_string())
-        .name(vec!["Acme Corporation".to_string()])
+        .name("Acme Corporation")
+        .country("us")
+        .incorporation_date("2010-05-20")
         .build();
-    company.country = Some(vec!["us".to_string()]);
-    company.incorporation_date = Some(vec!["2010-05-20".to_string()]);
 
-    let mut org = Organization::builder()
+    let org = Organization::builder()
         .id("org-1".to_string())
-        .name(vec!["United Nations".to_string()])
+        .name("United Nations")
+        .country("un")
         .build();
-    org.country = Some(vec!["un".to_string()]);
 
     println!("--- Using generic function with different entity types ---\n");
 
