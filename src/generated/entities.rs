@@ -3490,12 +3490,13 @@ pub struct Company {
     )]
     pub cage_code: Option<Vec<String>>,
     ///Property: Capital
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[cfg_attr(
-        feature = "builder",
-        builder(with = |value:impl Into<String>|vec![value.into()])
+    #[serde(
+        skip_serializing_if = "Option::is_none",
+        deserialize_with = "deserialize_opt_f64_vec",
+        default
     )]
-    pub capital: Option<Vec<String>>,
+    #[cfg_attr(feature = "builder", builder(with = |value:f64|vec![value]))]
+    pub capital: Option<Vec<f64>>,
     ///Property: SEC Central Index Key
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -3559,7 +3560,7 @@ pub struct Company {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub duns_code: Option<Vec<String>>,
-    ///Property: E-Mail
+    ///Property: Email
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -10381,7 +10382,7 @@ pub struct LegalEntity {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub duns_code: Option<Vec<String>>,
-    ///Property: E-Mail
+    ///Property: Email
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -12463,6 +12464,13 @@ pub struct Occupancy {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub aleph_url: Option<Vec<String>>,
+    ///Property: Constituency
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub constituency: Option<Vec<String>>,
     ///Property: Date
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -12519,6 +12527,13 @@ pub struct Occupancy {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub names_mentioned: Option<Vec<String>>,
+    ///Property: Political group
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub political_group: Option<Vec<String>>,
     ///Property: Position occupied
     #[serde(default)]
     #[cfg_attr(
@@ -12598,6 +12613,7 @@ impl Occupancy {
             id: id.into(),
             schema: "Occupancy".to_string(),
             aleph_url: None,
+            constituency: None,
             date: None,
             declaration_date: None,
             description: None,
@@ -12606,6 +12622,7 @@ impl Occupancy {
             index_text: None,
             modified_at: None,
             names_mentioned: None,
+            political_group: None,
             post: Vec::new(),
             proof: None,
             publisher: None,
@@ -12755,7 +12772,7 @@ pub struct Organization {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub duns_code: Option<Vec<String>>,
-    ///Property: E-Mail
+    ///Property: Email
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -15265,7 +15282,7 @@ pub struct Person {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub education: Option<Vec<String>>,
-    ///Property: E-Mail
+    ///Property: Email
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -16550,7 +16567,7 @@ pub struct Position {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub source_url: Option<Vec<String>>,
-    ///Property: Subnational jurisdiction name or code
+    ///Property: Subnational area
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -17312,7 +17329,7 @@ pub struct PublicBody {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub duns_code: Option<Vec<String>>,
-    ///Property: E-Mail
+    ///Property: Email
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -20866,7 +20883,7 @@ pub struct UserAccount {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub description: Option<Vec<String>>,
-    ///Property: E-Mail
+    ///Property: Email
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
