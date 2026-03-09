@@ -1,6 +1,13 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.3.0] - 2026-03-09
+
+### New
+
+- Fix schema download hint
+- Add followthemoney 4.6.0 schema compatibility
+
 ## [0.2.0] - 2026-03-06
 
 ### New
@@ -9,6 +16,7 @@ All notable changes to this project will be documented in this file.
 - More convenient builder API
 - Merge pull request #12 from stchris/api-ergonomics
 - Add git cliff config
+- Chore: Release ftm-types version 0.2.0
 
 ## [0.1.1] - 2026-03-05
 
