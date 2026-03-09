@@ -248,37 +248,25 @@ impl FtmEntity {
             "Audio" => Ok(FtmEntity::Audio(serde_json::from_value(value)?)),
             "BankAccount" => Ok(FtmEntity::BankAccount(serde_json::from_value(value)?)),
             "Call" => Ok(FtmEntity::Call(serde_json::from_value(value)?)),
-            "CallForTenders" => {
-                Ok(FtmEntity::CallForTenders(serde_json::from_value(value)?))
-            }
+            "CallForTenders" => Ok(FtmEntity::CallForTenders(serde_json::from_value(value)?)),
             "Company" => Ok(FtmEntity::Company(serde_json::from_value(value)?)),
             "Contract" => Ok(FtmEntity::Contract(serde_json::from_value(value)?)),
-            "ContractAward" => {
-                Ok(FtmEntity::ContractAward(serde_json::from_value(value)?))
-            }
+            "ContractAward" => Ok(FtmEntity::ContractAward(serde_json::from_value(value)?)),
             "CourtCase" => Ok(FtmEntity::CourtCase(serde_json::from_value(value)?)),
-            "CourtCaseParty" => {
-                Ok(FtmEntity::CourtCaseParty(serde_json::from_value(value)?))
-            }
+            "CourtCaseParty" => Ok(FtmEntity::CourtCaseParty(serde_json::from_value(value)?)),
             "CryptoWallet" => Ok(FtmEntity::CryptoWallet(serde_json::from_value(value)?)),
             "Debt" => Ok(FtmEntity::Debt(serde_json::from_value(value)?)),
             "Directorship" => Ok(FtmEntity::Directorship(serde_json::from_value(value)?)),
             "Document" => Ok(FtmEntity::Document(serde_json::from_value(value)?)),
-            "Documentation" => {
-                Ok(FtmEntity::Documentation(serde_json::from_value(value)?))
-            }
-            "EconomicActivity" => {
-                Ok(FtmEntity::EconomicActivity(serde_json::from_value(value)?))
-            }
+            "Documentation" => Ok(FtmEntity::Documentation(serde_json::from_value(value)?)),
+            "EconomicActivity" => Ok(FtmEntity::EconomicActivity(serde_json::from_value(value)?)),
             "Email" => Ok(FtmEntity::Email(serde_json::from_value(value)?)),
             "Employment" => Ok(FtmEntity::Employment(serde_json::from_value(value)?)),
             "Event" => Ok(FtmEntity::Event(serde_json::from_value(value)?)),
             "Family" => Ok(FtmEntity::Family(serde_json::from_value(value)?)),
             "Folder" => Ok(FtmEntity::Folder(serde_json::from_value(value)?)),
             "HyperText" => Ok(FtmEntity::HyperText(serde_json::from_value(value)?)),
-            "Identification" => {
-                Ok(FtmEntity::Identification(serde_json::from_value(value)?))
-            }
+            "Identification" => Ok(FtmEntity::Identification(serde_json::from_value(value)?)),
             "Image" => Ok(FtmEntity::Image(serde_json::from_value(value)?)),
             "LegalEntity" => Ok(FtmEntity::LegalEntity(serde_json::from_value(value)?)),
             "License" => Ok(FtmEntity::License(serde_json::from_value(value)?)),
@@ -298,14 +286,12 @@ impl FtmEntity {
             "PlainText" => Ok(FtmEntity::PlainText(serde_json::from_value(value)?)),
             "Position" => Ok(FtmEntity::Position(serde_json::from_value(value)?)),
             "Project" => Ok(FtmEntity::Project(serde_json::from_value(value)?)),
-            "ProjectParticipant" => {
-                Ok(FtmEntity::ProjectParticipant(serde_json::from_value(value)?))
-            }
+            "ProjectParticipant" => Ok(FtmEntity::ProjectParticipant(serde_json::from_value(
+                value,
+            )?)),
             "PublicBody" => Ok(FtmEntity::PublicBody(serde_json::from_value(value)?)),
             "RealEstate" => Ok(FtmEntity::RealEstate(serde_json::from_value(value)?)),
-            "Representation" => {
-                Ok(FtmEntity::Representation(serde_json::from_value(value)?))
-            }
+            "Representation" => Ok(FtmEntity::Representation(serde_json::from_value(value)?)),
             "Risk" => Ok(FtmEntity::Risk(serde_json::from_value(value)?)),
             "Sanction" => Ok(FtmEntity::Sanction(serde_json::from_value(value)?)),
             "Security" => Ok(FtmEntity::Security(serde_json::from_value(value)?)),
@@ -320,7 +306,9 @@ impl FtmEntity {
             "Vessel" => Ok(FtmEntity::Vessel(serde_json::from_value(value)?)),
             "Video" => Ok(FtmEntity::Video(serde_json::from_value(value)?)),
             "Workbook" => Ok(FtmEntity::Workbook(serde_json::from_value(value)?)),
-            _ => Err(serde::de::Error::custom(format!("unknown FTM schema: {schema:?}"))),
+            _ => Err(serde::de::Error::custom(format!(
+                "unknown FTM schema: {schema:?}"
+            ))),
         }
     }
     /// Serialize to standard FTM nested JSON format
