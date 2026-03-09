@@ -10,7 +10,7 @@ download-ftm-schema VERSION:
     mkdir -p schemas/{{VERSION}}/
     wget https://github.com/opensanctions/followthemoney/archive/refs/tags/v{{VERSION}}.zip
     unzip v{{VERSION}}.zip >/dev/null
-    mv followthemoney-{{VERSION}}/followthemoney/schema/*.yaml followthemoney-{{VERSION}}/followthemoney/schema/*.yml schemas/{{VERSION}}/ 2>/dev/null; true
+    mv followthemoney-{{VERSION}}/followthemoney/schema/*.yaml schemas/{{VERSION}}/
     rm -rf followthemoney-{{VERSION}}/ v{{VERSION}}.zip
 
 test:
