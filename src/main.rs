@@ -49,7 +49,7 @@ fn print_usage() {
         "  SCHEMA_VERSION  Schema version to use (required, one of {})",
         get_available_versions().join(", ")
     );
-    eprintln!("Hint: run ./download.sh <version> to download schema files.")
+    eprintln!("Hint: run just download-ftm-schema <version> to download schema files.")
 }
 
 pub fn main() -> anyhow::Result<()> {
