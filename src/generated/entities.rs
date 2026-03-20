@@ -5386,6 +5386,13 @@ pub struct CryptoWallet {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub balance_date: Option<Vec<String>>,
+    ///Property: Blockchain
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub blockchain: Option<Vec<String>>,
     ///Property: Country
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -5407,6 +5414,13 @@ pub struct CryptoWallet {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub creation_date: Option<Vec<String>>,
+    ///Property: Crypto address
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub crypto_address: Option<Vec<String>>,
     ///Property: Currency
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -5421,6 +5435,13 @@ pub struct CryptoWallet {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub currency_symbol: Option<Vec<String>>,
+    ///Property: Custody type
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub custody_type: Option<Vec<String>>,
     ///Property: Description
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -5600,11 +5621,14 @@ impl CryptoWallet {
             amount_usd: None,
             balance: None,
             balance_date: None,
+            blockchain: None,
             country: None,
             created_at: None,
             creation_date: None,
+            crypto_address: None,
             currency: None,
             currency_symbol: None,
+            custody_type: None,
             description: None,
             holder: None,
             index_text: None,
@@ -12492,6 +12516,13 @@ pub struct Occupancy {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub description: Option<Vec<String>>,
+    ///Property: Election date
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub election_date: Option<Vec<String>>,
     ///Property: End date
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -12527,6 +12558,20 @@ pub struct Occupancy {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub names_mentioned: Option<Vec<String>>,
+    ///Property: Period end
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub period_end: Option<Vec<String>>,
+    ///Property: Period start
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub period_start: Option<Vec<String>>,
     ///Property: Political group
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -12617,11 +12662,14 @@ impl Occupancy {
             date: None,
             declaration_date: None,
             description: None,
+            election_date: None,
             end_date: None,
             holder: Vec::new(),
             index_text: None,
             modified_at: None,
             names_mentioned: None,
+            period_end: None,
+            period_start: None,
             political_group: None,
             post: Vec::new(),
             proof: None,
