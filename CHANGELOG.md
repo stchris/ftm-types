@@ -1,12 +1,19 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.4.0] - 2026-03-20
+
+### New
+
+- Followthemoney 4.7.0 support
+
 ## [0.3.0] - 2026-03-09
 
 ### New
 
 - Fix schema download hint
 - Add followthemoney 4.6.0 schema compatibility
+- Chore: Release ftm-types version 0.3.0
 
 ## [0.2.0] - 2026-03-06
 
