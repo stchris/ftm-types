@@ -37,7 +37,7 @@ fn schema_from_json(json: &str) -> &str {
 
 fn run_ftm_random(extra_args: &[&str]) -> Vec<String> {
     let mut cmd = Command::new("uvx");
-    cmd.args(["ftm-random"]);
+    cmd.args(["ftm-random", "entities"]);
     for arg in extra_args {
         cmd.arg(arg);
     }
