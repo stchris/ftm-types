@@ -1,11 +1,21 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.5.0] - 2026-06-29
+
+### New
+
+- Update ftm_random cli interface (#14)
+- Some GHA updates, sprinkling caching here and there ✨ (#15)
+- Actions/checkout@v7
+- Support followthemoney 4.9.2 (#17)
+
 ## [0.4.0] - 2026-03-20
 
 ### New
 
 - Followthemoney 4.7.0 support
+- Chore: Release ftm-types version 0.4.0
 
 ## [0.3.0] - 2026-03-09
 
