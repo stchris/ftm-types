@@ -243,6 +243,13 @@ pub struct Address {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -343,6 +350,7 @@ impl Address {
             region: None,
             remarks: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             state: None,
             street: None,
@@ -613,6 +621,13 @@ pub struct Airplane {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Serial Number
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -709,6 +724,7 @@ impl Airplane {
             registration_date: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             serial_number: None,
             source_url: None,
             summary: None,
@@ -1102,6 +1118,13 @@ pub struct Article {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -1223,6 +1246,7 @@ impl Article {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -1430,6 +1454,13 @@ pub struct Asset {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -1503,6 +1534,7 @@ impl Asset {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             topics: None,
@@ -2088,6 +2120,13 @@ pub struct Audio {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sampling Rate
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -2218,6 +2257,7 @@ impl Audio {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             sampling_rate: None,
             source_url: None,
             summary: None,
@@ -2519,6 +2559,13 @@ pub struct BankAccount {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -2605,6 +2652,7 @@ impl BankAccount {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             topics: None,
@@ -3200,6 +3248,13 @@ pub struct CallForTenders {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub reverse_auctions_included: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -3342,6 +3397,7 @@ impl CallForTenders {
             relation_to_threshold: None,
             retrieved_at: None,
             reverse_auctions_included: None,
+            risk_source: None,
             source_url: None,
             start_date: None,
             submission_deadline: None,
@@ -3770,7 +3826,7 @@ pub struct Company {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub oksm_code: Option<Vec<String>>,
-    ///Property: OKVED(2) Classifier
+    ///Property: OKVED
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
         feature = "builder",
@@ -3875,6 +3931,13 @@ pub struct Company {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub ric_code: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -4078,6 +4141,7 @@ impl Company {
             registration_number: None,
             retrieved_at: None,
             ric_code: None,
+            risk_source: None,
             sayari_id: None,
             sector: None,
             source_url: None,
@@ -4378,6 +4442,13 @@ pub struct Contract {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -4484,6 +4555,7 @@ impl Contract {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             status: None,
             summary: None,
@@ -4988,6 +5060,13 @@ pub struct CourtCase {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -5076,6 +5155,7 @@ impl CourtCase {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             status: None,
             summary: None,
@@ -5561,6 +5641,13 @@ pub struct CryptoWallet {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -5646,6 +5733,7 @@ impl CryptoWallet {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             topics: None,
@@ -6452,6 +6540,13 @@ pub struct Document {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -6573,6 +6668,7 @@ impl Document {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -7566,6 +7662,13 @@ pub struct Email {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sender
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -7724,6 +7827,7 @@ impl Email {
             publisher_url: None,
             recipients: None,
             retrieved_at: None,
+            risk_source: None,
             sender: None,
             source_url: None,
             subject: None,
@@ -8217,6 +8321,13 @@ pub struct Event {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -8310,6 +8421,7 @@ impl Event {
             publisher_url: None,
             record_id: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             start_date: None,
             summary: None,
@@ -8888,6 +9000,13 @@ pub struct Folder {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -9009,6 +9128,7 @@ impl Folder {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -9410,6 +9530,13 @@ pub struct HyperText {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -9532,6 +9659,7 @@ impl HyperText {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -10142,6 +10270,13 @@ pub struct Image {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -10265,6 +10400,7 @@ impl Image {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -10532,6 +10668,13 @@ pub struct LegalEntity {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub okpo_code: Option<Vec<String>>,
+    ///Property: OKVED
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub okved_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -10609,6 +10752,13 @@ pub struct LegalEntity {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -10761,6 +10911,7 @@ impl LegalEntity {
             npi_code: None,
             ogrn_code: None,
             okpo_code: None,
+            okved_code: None,
             opencorporates_url: None,
             parent: None,
             phone: None,
@@ -10772,6 +10923,7 @@ impl LegalEntity {
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             sayari_id: None,
             sector: None,
             source_url: None,
@@ -11092,6 +11244,13 @@ pub struct License {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub review_date: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -11201,6 +11360,7 @@ impl License {
             publisher_url: None,
             retrieved_at: None,
             review_date: None,
+            risk_source: None,
             source_url: None,
             status: None,
             summary: None,
@@ -11939,6 +12099,13 @@ pub struct Message {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sender
     #[serde(default)]
     #[cfg_attr(
@@ -12103,6 +12270,7 @@ impl Message {
             recipients: None,
             record_id: None,
             retrieved_at: None,
+            risk_source: None,
             sender: Vec::new(),
             sender_account: None,
             source_url: None,
@@ -12361,6 +12529,13 @@ pub struct Note {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -12441,6 +12616,7 @@ impl Note {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             topics: None,
@@ -12960,6 +13136,13 @@ pub struct Organization {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub okpo_code: Option<Vec<String>>,
+    ///Property: OKVED
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub okved_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -13044,6 +13227,13 @@ pub struct Organization {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -13199,6 +13389,7 @@ impl Organization {
             npi_code: None,
             ogrn_code: None,
             okpo_code: None,
+            okved_code: None,
             opencorporates_url: None,
             parent: None,
             perm_id: None,
@@ -13211,6 +13402,7 @@ impl Organization {
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             sayari_id: None,
             sector: None,
             source_url: None,
@@ -13862,6 +14054,13 @@ pub struct Package {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -13983,6 +14182,7 @@ impl Package {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -14483,6 +14683,13 @@ pub struct Pages {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -14605,6 +14812,7 @@ impl Pages {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -15225,6 +15433,13 @@ pub struct Person {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub appearance: Option<Vec<String>>,
+    ///Property: Biography
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub biography: Option<Vec<String>>,
     ///Property: Country of birth
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -15541,6 +15756,13 @@ pub struct Person {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub okpo_code: Option<Vec<String>>,
+    ///Property: OKVED
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub okved_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -15653,6 +15875,13 @@ pub struct Person {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -15815,6 +16044,7 @@ impl Person {
             aleph_url: None,
             alias: None,
             appearance: None,
+            biography: None,
             birth_country: None,
             birth_date: None,
             birth_place: None,
@@ -15860,6 +16090,7 @@ impl Person {
             npi_code: None,
             ogrn_code: None,
             okpo_code: None,
+            okved_code: None,
             opencorporates_url: None,
             parent: None,
             passport_number: None,
@@ -15876,6 +16107,7 @@ impl Person {
             registration_number: None,
             religion: None,
             retrieved_at: None,
+            risk_source: None,
             sayari_id: None,
             second_name: None,
             sector: None,
@@ -16282,6 +16514,13 @@ pub struct PlainText {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -16403,6 +16642,7 @@ impl PlainText {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -16608,6 +16848,13 @@ pub struct Position {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -16688,6 +16935,7 @@ impl Position {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             subnational_area: None,
             summary: None,
@@ -16942,6 +17190,13 @@ pub struct Project {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -17036,6 +17291,7 @@ impl Project {
             publisher_url: None,
             record_id: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             start_date: None,
             status: None,
@@ -17517,6 +17773,13 @@ pub struct PublicBody {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub okpo_code: Option<Vec<String>>,
+    ///Property: OKVED
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub okved_code: Option<Vec<String>>,
     ///Property: OpenCorporates URL
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -17601,6 +17864,13 @@ pub struct PublicBody {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Sayari Entity ID
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -17756,6 +18026,7 @@ impl PublicBody {
             npi_code: None,
             ogrn_code: None,
             okpo_code: None,
+            okved_code: None,
             opencorporates_url: None,
             parent: None,
             perm_id: None,
@@ -17768,6 +18039,7 @@ impl PublicBody {
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             sayari_id: None,
             sector: None,
             source_url: None,
@@ -18062,6 +18334,13 @@ pub struct RealEstate {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -18160,6 +18439,7 @@ impl RealEstate {
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             tenure: None,
@@ -19102,6 +19382,13 @@ pub struct Security {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -19197,6 +19484,7 @@ impl Security {
             publisher_url: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             ticker: None,
@@ -19877,6 +20165,13 @@ pub struct Table {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Number of rows
     #[serde(
         skip_serializing_if = "Option::is_none",
@@ -20008,6 +20303,7 @@ impl Table {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             row_count: None,
             source_url: None,
             summary: None,
@@ -20537,6 +20833,13 @@ pub struct Trip {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -20645,6 +20948,7 @@ impl Trip {
             publisher_url: None,
             record_id: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             start_date: None,
             start_location: Vec::new(),
@@ -21050,6 +21354,13 @@ pub struct UserAccount {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Service
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -21138,6 +21449,7 @@ impl UserAccount {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             service: None,
             source_url: None,
             summary: None,
@@ -21393,6 +21705,13 @@ pub struct Vehicle {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -21480,6 +21799,7 @@ impl Vehicle {
             registration_date: None,
             registration_number: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             topics: None,
@@ -21820,6 +22140,13 @@ pub struct Vessel {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -21927,6 +22254,7 @@ impl Vessel {
             registration_number: None,
             registration_port: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             tonnage: None,
@@ -22328,6 +22656,13 @@ pub struct Video {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -22450,6 +22785,7 @@ impl Video {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,
@@ -22844,6 +23180,13 @@ pub struct Workbook {
         builder(with = |value:impl Into<String>|vec![value.into()])
     )]
     pub retrieved_at: Option<Vec<String>>,
+    ///Property: Risk source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(
+        feature = "builder",
+        builder(with = |value:impl Into<String>|vec![value.into()])
+    )]
+    pub risk_source: Option<Vec<String>>,
     ///Property: Source link
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(
@@ -22965,6 +23308,7 @@ impl Workbook {
             publisher: None,
             publisher_url: None,
             retrieved_at: None,
+            risk_source: None,
             source_url: None,
             summary: None,
             title: None,

@@ -65,6 +65,9 @@ impl Thing for Address {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -147,6 +150,9 @@ impl Thing for Airplane {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -289,6 +295,9 @@ impl Thing for Article {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -371,6 +380,9 @@ impl Thing for Asset {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -566,6 +578,9 @@ impl Thing for Audio {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -648,6 +663,9 @@ impl Thing for BankAccount {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -858,6 +876,9 @@ impl Thing for CallForTenders {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -940,6 +961,9 @@ impl Thing for Company {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -1043,6 +1067,9 @@ impl Thing for Contract {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -1234,6 +1261,9 @@ impl Thing for CourtCase {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -1383,6 +1413,9 @@ impl Thing for CryptoWallet {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -1665,6 +1698,9 @@ impl Thing for Document {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -1905,6 +1941,9 @@ impl Thing for Email {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -2147,6 +2186,9 @@ impl Thing for Event {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -2321,6 +2363,9 @@ impl Thing for Folder {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -2441,6 +2486,9 @@ impl Thing for HyperText {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -2616,6 +2664,9 @@ impl Thing for Image {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -2699,6 +2750,9 @@ impl Thing for LegalEntity {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -2781,6 +2835,9 @@ impl Thing for License {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -3043,6 +3100,9 @@ impl Thing for Message {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -3163,6 +3223,9 @@ impl Thing for Note {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -3299,6 +3362,9 @@ impl Thing for Organization {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -3488,6 +3554,9 @@ impl Thing for Package {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -3608,6 +3677,9 @@ impl Thing for Pages {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -3818,6 +3890,9 @@ impl Thing for Person {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -3939,6 +4014,9 @@ impl Thing for PlainText {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -4021,6 +4099,9 @@ impl Thing for Position {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -4157,6 +4238,9 @@ impl Thing for Project {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -4328,6 +4412,9 @@ impl Thing for PublicBody {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -4410,6 +4497,9 @@ impl Thing for RealEstate {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -4687,6 +4777,9 @@ impl Thing for Security {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -4894,6 +4987,9 @@ impl Thing for Table {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -5122,6 +5218,9 @@ impl Thing for Trip {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -5272,6 +5371,9 @@ impl Thing for UserAccount {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -5354,6 +5456,9 @@ impl Thing for Vehicle {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -5457,6 +5562,9 @@ impl Thing for Vessel {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
@@ -5599,6 +5707,9 @@ impl Thing for Video {
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
     }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
+    }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()
     }
@@ -5719,6 +5830,9 @@ impl Thing for Workbook {
     }
     fn retrieved_at(&self) -> Option<&[String]> {
         self.retrieved_at.as_deref()
+    }
+    fn risk_source(&self) -> Option<&[String]> {
+        self.risk_source.as_deref()
     }
     fn source_url(&self) -> Option<&[String]> {
         self.source_url.as_deref()

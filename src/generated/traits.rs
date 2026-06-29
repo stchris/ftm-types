@@ -122,6 +122,8 @@ pub trait Thing {
     fn publisher_url(&self) -> Option<&[String]>;
     ///Get Retrieved on property
     fn retrieved_at(&self) -> Option<&[String]>;
+    ///Get Risk source property
+    fn risk_source(&self) -> Option<&[String]>;
     ///Get Source link property
     fn source_url(&self) -> Option<&[String]>;
     ///Get Summary property
