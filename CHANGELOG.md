@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Some GHA updates, sprinkling caching here and there ✨ (#15)
 - Actions/checkout@v7
 - Support followthemoney 4.9.2 (#17)
+- Chore: Release ftm-types version 0.5.0
 
 ## [0.4.0] - 2026-03-20
 
